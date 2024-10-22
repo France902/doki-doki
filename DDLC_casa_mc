@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    #scatola1{
+        background-color: palevioletred;
+        width: 1350px;
+        height: 600px;
+        padding: 0%;
+    }
+    #scatola2{
+        width: 400px;
+        height: 150px;
+        padding: 0%;
+        margin-top: 100px;
+        margin-left: 250px;
+        opacity: 83%;
+        border-radius: 50%;
+
+    
+    }
+    #scatola4{
+        width: 400px;
+        height: 150px;
+        padding: 0%;
+        margin-top: -55px;
+        margin-left: -100px;
+        text-align: center;
+
+    
+    }
+    #scatola3{
+        width: 900px;
+        height: 350px;
+        padding: 0%;
+        
+    
+    }
+    </style>
+    
+</head>
+<body>
+
+    
+    <div id= "scatola1">
+        <div id="scatola3" >
+            <img src="House_DDLC.jpg" alt="" width="1350" height="600" >
+        </div>
+        
+        <div id="scatola2">
+            <img src="textbox_DDLC.jpg" alt="" width="850" height="140" style="border: 1px solid white; border-radius: 15px;">
+            <h3 style="margin-top: -145px; margin-left: 10px;">Hmph</h3>
+            <div id="scatola4">
+                <img src="textbox_DDLC.jpg" alt="" width="120" height="35" style="border: 1px solid white; margin-top: -300px; border-radius: 5px;">
+                <h3 style="margin-top: -40px; margin-left: 0px;">testo</h3>
+            </div>
+        </div>
+    </div> 
+</body>
+</html>
