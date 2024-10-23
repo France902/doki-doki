@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nascondi Scatole</title>
+    <style>
+        .scatola {
+            border: 2px solid #000; /* Bordo della scatola */
+            padding: 20px; /* Spazio interno */
+            margin: 20px 0; /* Margine sopra e sotto */
+            background-color: #f0f0f0; /* Colore di sfondo */
+            border-radius: 5px; /* Angoli arrotondati */
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Scatole Interattive</h1>
+    
+    <div id="scatola1" class="scatola">
+        <h2>Ciao dalla Scatola 1</h2>
+    </div>
+
+    <div id="scatola2" class="scatola">
+        <h2>Ciao dalla Scatola 2</h2>
+    </div>
+
+    <button onclick="nascondiScatole()">Nascondi Scatole</button>
+
+    <script>
+        function nascondiScatole() {
+            // Nasconde entrambe le scatole
+            document.getElementById('scatola1').style.display = 'none';
+            document.getElementById('scatola2').style.display = 'none';
+        }
+    </script>
+
+
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .container {
+            margin-bottom: 20px;
+        }
+    </style>
+
+    <h1>Interruttori in HTML</h1>
+
+    <div class="container">
+        <h2>Checkbox</h2>
+        <label>
+            <input type="checkbox" id="checkbox1">
+            Opzione 1
+        </label><br>
+        <label>
+            <input type="checkbox" id="checkbox2">
+            Opzione 2
+        </label><br>
+        <label>
+            <input type="checkbox" id="checkbox3" checked>
+            Opzione 3 (selezionata di default)
+        </label>
+    </div>
+
+    <div class="container">
+        <h2>Radio Button</h2>
+        <label>
+            <input type="radio" name="opzione" value="opzione1" checked>
+            Opzione A
+        </label><br>
+        <label>
+            <input type="radio" name="opzione" value="opzione2">
+            Opzione B
+        </label><br>
+        <label>
+            <input type="radio" name="opzione" value="opzione3">
+            Opzione C
+        </label>
+    </div>
+
+    <div class="container">
+        <h2>Interruttore (Toggle Switch)</h2>
+        <label>
+            <input type="checkbox" id="toggleSwitch">
+            Attiva/Disattiva
+        </label>
+    </div>
+
+    <button onclick="submitForm()">Invia</button>
+
+    <script>
+        function submitForm() {
+            const checkbox1 = document.getElementById('checkbox1').checked;
+            const checkbox2 = document.getElementById('checkbox2').checked;
+            const checkbox3 = document.getElementById('checkbox3').checked;
+            const radioValue = document.querySelector('input[name="opzione"]:checked').value;
+            const toggleSwitch = document.getElementById('toggleSwitch').checked;
+
+            alert(`Checkbox 1: ${checkbox1}\nCheckbox 2: ${checkbox2}\nCheckbox 3: ${checkbox3}\nRadio selezionata: ${radioValue}\nInterruttore: ${toggleSwitch}`);
+        }
+    </script>
+       <button onclick="location.href='pagina.html'">Vai a un'altra pagina</button>
+</body>
+</html>
