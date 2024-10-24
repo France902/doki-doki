@@ -104,5 +104,9 @@
         }
     </script>
        <button onclick="location.href='pagina.html'">Vai a un'altra pagina</button>
+    <p>La terra è piatta?</p>
+
+    <a href="#" onclick="alert('HAI INDOVINATO!')" style="text-decoration: none; padding: 10px 20px; background-color: red; color: white; border-radius: 5px;">SI</a>
+    <a href="#" onclick="alert('HAI SBAGLIATO!')" style="text-decoration: none; padding: 10px 20px; background-color: red; color: white; border-radius: 5px;">NO</a>
 </body>
 </html>
