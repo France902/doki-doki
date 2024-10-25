@@ -47,13 +47,18 @@
         margin-top: -650px;
         margin-left: -60px;
     }
-        
+
+
+
     .buttone1{
         margin-left: 100px;
         border: 0px;
         width: 200px;
         margin-left: 30px;
         margin-top: -70px;
+        cursor: pointer;
+        
+
     }
     .buttone2{
         margin-left: 100px;
@@ -61,6 +66,7 @@
         width: 200px;
         margin-left: 30px;
         margin-top: -45px;
+        cursor: pointer;
     }
     .buttone3{
         margin-left: 100px;
@@ -68,6 +74,7 @@
         width: 200px;
         margin-left: 0px;
         margin-top: -50px;
+        cursor: pointer;
     }
     .buttone4{
         margin-left: 100px;
@@ -75,6 +82,7 @@
         width: 200px;
         margin-left: -25px;
         margin-top: -45px;
+        cursor: pointer;
     }
     .buttone5{
         margin-left: 100px;
@@ -82,6 +90,7 @@
         width: 200px;
         margin-left: -30px;
         margin-top: -50px;
+        cursor: pointer;
     }
     </style>
 
@@ -106,36 +115,36 @@
     <img id="nuovaImmagine" src="https://i.pinimg.com/originals/c5/ac/d8/c5acd8084aa5f96eac759a10b92e04d9.jpg" alt="Immagine Aggiunta" width="2000" height="1040" >
     <div class="buttone1">
         <button 
-        style="width: 300px; height: 100px;background: none;border: none;"
+        style="width: 300px; height: 100px;background: none;border: none; cursor: pointer;transition: box-shadow 0.3s;"    
         onclick="nascondiScatole()">
         <p style="color: white;width:300px;height: 80px;font-size: 35px; -webkit-text-stroke: 2.5px rgb(179, 77, 179); font-family: 'Arial Black', Arial, sans-serif; letter-spacing: -3px;"> New Game</p>
     </button> 
     </div>
     <div class="buttone2">
         <button 
-        style="width: 300px; height: 100px;background: none;border: none;"
+        style="width: 300px; height: 100px;background: none;border: none;cursor: pointer;"
         onclick="nascondiScatole()">
         <p style="color: white;width:300px;height: 80px;font-size: 35px; -webkit-text-stroke: 2.5px rgb(179, 77, 179); font-family: 'Arial Black', Arial, sans-serif; letter-spacing: -3px;"> Load Game</p>
     </button> 
     </div>
     <div class="buttone3">
         <button 
-        style="width: 300px; height: 100px;background: none;border: none;"
+        style="width: 300px; height: 100px;background: none;border: none;cursor: pointer;"
         onclick="nascondiScatole()">
         <p style="color: white;width:300px;height: 80px;font-size: 35px; -webkit-text-stroke: 2.5px rgb(179, 77, 179); font-family: 'Arial Black', Arial, sans-serif; letter-spacing: -3px;"> Settings</p>
     </button> 
     </div>
     <div class="buttone4">
         <button 
-        style="width: 300px; height: 100px;background: none;border: none;"
+        style="width: 300px; height: 100px;background: none;border: none;cursor: pointer;"
         onclick="nascondiScatole()">
         <p style="color: white;width:300px;height: 80px;font-size: 35px; -webkit-text-stroke: 2.5px rgb(179, 77, 179); font-family: 'Arial Black', Arial, sans-serif; letter-spacing: -3px;"> Help</p>
     </button> 
     </div>
     <div class="buttone5">
         <button 
-        style="width: 300px; height: 100px;background: none;border: none;"
-        onclick="nascondiScatole()">
+        style="width: 300px; height: 100px;background: none;border: none;cursor: pointer;"
+        onclick="location.href='sad_face_LMAO.html'">
         <p style="color: white;width:300px;height: 80px;font-size: 35px; -webkit-text-stroke: 2.5px rgb(179, 77, 179); font-family: 'Arial Black', Arial, sans-serif; letter-spacing: -3px;"> Quit</p>
     </button> 
     </div>
@@ -154,9 +163,9 @@
             document.getElementById('scatola2').style.display = 'none';
             document.getElementById('nuovaImmagine').style.display = 'block';
         }
-
+        
+        
     </script>
     </div>
     
 </body>
-</html>
