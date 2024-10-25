@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #scatola1{
+            margin-left: 180px;
+            
+        }
+        #Sad_Violin{
+            opacity: 0; 
+            position: absolute; 
+        }
+        .buttone{
+        margin-left: 100px;
+        border: 0px;
+        width: 200px;
+        margin-left: 1000px;
+        margin-top: -500px;
+        cursor: pointer;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div id="scatola1"> <img src="sad_face.png" alt="" style="width: 700px; height: 350px;"> </div>
+    <div class="buttone">
+        <button 
+        style="width: 300px; height: 100px;background: none;border: none; cursor: pointer;transition: box-shadow 0.3s;"    
+        onclick="location.href='index.html'">
+        <p style="color: white;width:300px;height: 80px;font-size: 35px; -webkit-text-stroke: 2.5px rgb(179, 77, 179); font-family: 'Arial Black', Arial, sans-serif; letter-spacing: -3px;"> Return</p>
+    </button> 
+
+    </div>
+        <p id="messaggio" style="display:none; color: white;width:300px;height: 80px;font-size: 35px; -webkit-text-stroke: 2.5px rgb(179, 77, 179); font-family: 'Arial Black', Arial, sans-serif; letter-spacing: -3px;">Mi hai reso molto triste :(</p>
+    
+    <div>
+        <audio id="Sad_Violin" controls autoplay loop>
+            <source src="sad-violin-sound-effect.mp3-made-with-Voicemod.mp3" type="audio/mpeg">
+            Il tuo browser non supporta l'elemento audio.
+    </div>
+    </audio>
+    <script>
+        const audio = document.getElementById('Sad_Violin');
+        const message = document.getElementById('messagio');
+
+        audio.addEventListener('play', () => {
+            messaggio.style.display = 'block'
+        });
+    </script>
+</body>
+</html>
