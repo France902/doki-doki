@@ -92,6 +92,11 @@
         margin-top: -50px;
         cursor: pointer;
     }
+    #doki_main_theme{
+            opacity: 0;
+            position: absolute; 
+        }
+    
     </style>
 
     
@@ -169,3 +174,21 @@
     </div>
     
 </body>
+
+
+
+        
+    <div>
+        <audio id="doki_main_theme" controls autoplay loop>
+            <source src="1-01. Doki Doki Literature Club!.mp3" type="audio/mpeg">
+            Il tuo browser non supporta l'elemento audio.
+    </div>
+    </audio>
+    <script>
+        const audio = document.getElementById('doki_main_theme');
+
+        audio.addEventListener('play', () => {
+            messaggio.style.display = 'block'
+        });
+    </script>
+</html>
