@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animazione Obliqua CSS</title>
+    <style>
+        .scatola {
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+            animation: spostaObliquamente 2s forwards  ;
+        }
+
+        @keyframes spostaObliquamente {
+            from {
+                transform: translate(0, 0);
+            }
+            to {
+                transform: translate(200px, 100px); /* Sposta obliquamente */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="scatola"></div>
+</body>
+</html>
