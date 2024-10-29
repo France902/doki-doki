@@ -1,63 +1,53 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="it">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Offset Dots Background</title>
+    <link rel="stylesheet" href="styles.css">
+    <title>Video di Sfondo</title>
     <style>
-        /* Imposta lo stile del body per riempire l'intera finestra */
-        body, html {
-            margin: 0;
-            padding: 0;
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background-color: white;
-            position: relative;
-            
-        }
-
-        /* Crea un contenitore per l'animazione di sfondo */
-        .background {
-            position: absolute;
-            width: 200%;
-            height: 45%;
-            background-image: 
-                radial-gradient(circle, #f3c6f3 30%, transparent 30%), 
-                radial-gradient(circle, #f3c6f3 30%, transparent 30%);
-            background-size: 30px 30px;
-            background-position: 0px 0px, 15px 15px; /* Sposta la seconda fila */
-            animation: moveDots 8s linear infinite;
-            pointer-events: none;
-        }
-
-        /* Anima lo sfondo dei pallini */
-        @keyframes moveDots {
-            0% {
-                background-position: 0px 0px, 15px 15px;
-            }
-            100% {
-                background-position: -30px -30px, -15px -15px;
-            }
-        }
-
-        /* Testo per vedere l'effetto */
-        .content {
-            position: relative;
-            z-index: 1;
-            font-size: 2rem;
-            color: #333;
-        }
-    </style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    
+    html, body {
+        height: 100%;
+        overflow: hidden;
+    }
+    
+    .video-background {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        min-width: 100%;
+        min-height: 100%;
+        width: auto;
+        height: auto;
+        z-index: -1;
+        transform: translate(-50%, -50%);
+    }
+    
+    video {
+        object-fit: cover;
+    }
+    
+    .contenuto {
+        position: relative;
+        z-index: 1;
+        color: white;
+        text-align: center;
+        padding: 20px;
+    }
+</style>
 </head>
 <body>
-    <!-- Sfondo animato -->
-    <div class="background"></div>
-
-    <!-- Contenuto centrale, sopra l'animazione -->
+    <div class="video-background">
+        <video autoplay muted loop>
+            <source src="video_sfondo.mp4" type="video/mp4">
+            Il tuo browser non supporta il tag video.
+        </video>
     </div>
 </body>
 </html>
