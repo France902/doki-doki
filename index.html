@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        .image-container {
+            position: relative;
+            width: 2050px; /* Imposta la larghezza dell'immagine */
+            height: 1000px; /* Imposta l'altezza dell'immagine */
+        }
+
+        img {
+            width: 100%;
+            height: 100%; /* Rende l'immagine responsiva */
+            height: auto;
+        }
+
+        #buttone {
+            position: absolute;
+            top: 50%; 
+            left: 50%; 
+            transform: translate(-50%, -50%); 
+            z-index: 1;
+            margin-top: -80px;
+            margin-left: -200px;
+        }
+
+        button {
+            width: 299px;
+            height: 100px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            transition: box-shadow 0.3s;
+        }
+
+        p {
+            color: white;
+            font-size: 50px;
+            -webkit-text-stroke: 2.5px rgb(179, 77, 179);
+            font-family: 'Arial Black', Arial, sans-serif;
+            letter-spacing: -3px;
+            margin: 0; /* Rimuovi margini dal paragrafo */
+            font-size: 150px;
+        }
+    </style>
+</head>
+<body>
+    <div class="image-container">
+        <img style="500" src="sfondo_start.jpg"  alt="">
+        <div id="buttone">
+            <button onclick="location.href='ambiente_menu.html'">
+                <p >INIZIA</p>
+            </button>
+        </div>
+    </div>
+</body>
+</html>
+   
+
+
+</body>
+</html>
