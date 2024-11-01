@@ -30,7 +30,7 @@
         padding: 0%;
         margin-top: -30px;
         margin-left: -300px;
-        animation: menu1 0.5s forwards;
+        animation: menu1 0.5s forwards 0.3s;
     }
     #scatola4{
         width: 2000px;
@@ -150,26 +150,30 @@
         width: 2000px;
         height: 970px;
         padding: 0%;
-        margin-top: 700px;
-        margin-left: 1620px;
+        margin-top: 1160px;
+        margin-left: 1200px;
         position: absolute;;
-        z-index: 1;
+        z-index: 0;
+        transform-origin: center;
+        animation: krilin1 1.5s forwards ease-in-out;
+        display: inline-block;
+        
     }
     #scatola8{
         width: 2000px;
         height: 970px;
         padding: 0%;
-        margin-top: 640px;
-        margin-left: 1000px;
+        margin-top: 300px;
+        margin-left: 600px;
         position: absolute;
-        z-index: 1;
+        z-index: 0;
     }
     #scatola7{
         width: 2000px;
         height: 970px;
         padding: 0%;
         margin-top: 375px;
-        margin-left: 500px;
+        margin-left: 300px;
         position: absolute;
         z-index: 1;
     }
@@ -178,9 +182,9 @@
         height: 2000px;
         padding: 0%;
         margin-top: 375px;
-        margin-left: 1000px;
+        margin-left: 1500px;
         position: absolute;
-        z-index: 0;
+        z-index: 1;
     }
         @keyframes  cerchio1{
             from {
@@ -217,14 +221,14 @@
                 transform: translatey(400px);
             }
             to {
-                transform: translatey(380px); 
+                transform: translatey(385px); 
     
             }
         
         }
         @keyframes  cerchio5{
             from {
-                transform: translatey(380px);
+                transform: translatey(385px);
             }
             to {
                 transform: translatey(400px); 
@@ -242,7 +246,18 @@
             }
         
         }
-
+        @keyframes  krilin1{
+            0% {
+                transform: translate(0, 0) scale(1);
+            }
+            50% {
+                transform: translate(0, -800px) scale(0.9); 
+    
+            }
+            100% {
+                transform: translate(0, -800px) scale(1);
+            }
+        }
 
 
 
@@ -256,7 +271,7 @@
     
     <div id= "scatola1">
         <div id="scatola3" >
-            <img src="menù.png" alt="" width="1700" height="1110" >
+            <img src="menù.png" alt="" width="1700" height="1040" >
         </div>
         <div id="scatola2" >
             <img src="doki doki cerchio.png" alt="" width="800" height="450" >
@@ -268,10 +283,10 @@
             <img src="krilin.png" alt="Character" width="300" height="600">
         </div>
         <div id="scatola7">
-            <img src="Nezuko.png" alt="Character" width="700" height="700">
+            <img src="Nezuko.png" alt="Character" width="900" height="900">
         </div>
         <div id="scatola8">
-            <img src="Yajirobe2.png" alt="Character" width="650" height="650">
+            <img src="Yajirobe2.png" alt="Character" width="700" height="700">
         </div>
         <div id="scatola9">
             <img src="Nami.png" alt="Character" width="650" height="650">
@@ -279,7 +294,7 @@
 
     </div> 
      <div class="video-background" >
-        <video autoplay muted loop style="width: 2600px; height: 1090px; position: absolute; top: -580px; left: -200px; z-index: -1;">
+        <video autoplay muted loop style="width: 2500px; height: 1040px; position: absolute; top: -580px; left: -200px; z-index: -1;">
             <source src="video_sfondo.mp4" type="video/mp4">
             Il tuo browser non supporta il tag video.
         </video>
