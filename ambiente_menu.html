@@ -29,7 +29,8 @@
         height: 600px;
         padding: 0%;
         margin-top: -30px;
-        margin-left: 0px
+        margin-left: -300px;
+        animation: menu1 0.5s forwards;
     }
     #scatola4{
         width: 2000px;
@@ -43,7 +44,7 @@
         padding: 0%;
         margin-top: -1050px;
         margin-left: -60px;
-        animation: spostaObliquamente1 2s forwards;
+        animation: cerchio1 1.5s forwards 0.5s, cerchio2 1.3s forwards 2s,cerchio3 1.3s forwards 3.4s,cerchio4 1.3s forwards 4.7s,cerchio5 1s forwards 6.1s;
         
     }
     #scatola5{
@@ -181,14 +182,70 @@
         position: absolute;
         z-index: 0;
     }
-        @keyframes  spostaObliquamente1 {
+        @keyframes  cerchio1{
+            from {
+                transform: translate(0, -100px);
+            }
+            to {
+                transform: translatey(400px); 
+    
+            }
+        
+        }
+        @keyframes  cerchio2{
+            from {
+                transform: translatey(400px);
+            }
+            to {
+                transform: translatey(300px); 
+    
+            }
+        
+        }
+        @keyframes  cerchio3{
+            from {
+                transform: translatey(300px);
+            }
+            to {
+                transform: translatey(400px); 
+    
+            }
+        
+        }
+        @keyframes  cerchio4{
+            from {
+                transform: translatey(400px);
+            }
+            to {
+                transform: translatey(375px); 
+    
+            }
+        
+        }
+        @keyframes  cerchio5{
+            from {
+                transform: translatey(375px);
+            }
+            to {
+                transform: translatey(400px); 
+    
+            }
+        
+        }
+        @keyframes  menu1{
             from {
                 transform: translate(0, 0);
             }
             to {
-                transform: translate(0px, 400px); /* Sposta obliquamente */
+                transform: translatex(300px); 
+    
             }
+        
         }
+
+
+
+
         
     </style>
 
@@ -267,7 +324,7 @@
         <button 
         style="width: 300px; height: 100px;background: none;border: none;cursor: pointer;"
         onclick="nascondiScatole()">
-        <p style="color: white;width:300px;height: 80px;font-size: 45px; -webkit-text-stroke: 2.5px rgb(179, 77, 179); font-family: 'Arial Black', Arial, sans-serif; letter-spacing: -3px; opacity: 100;"> OK</p>
+        <p style="color: white;width:300px;height: 80px;font-size: 45px; -webkit-text-stroke: 2.5px rgb(179, 77, 179); font-family: 'Arial Black', Arial, sans-serif; letter-spacing: -3px; opacity: 0;"> OK</p>
     </button> 
     </div>
 
