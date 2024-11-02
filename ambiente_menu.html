@@ -163,10 +163,11 @@
         width: 2000px;
         height: 970px;
         padding: 0%;
-        margin-top: 300px;
+        margin-top: 1100px;
         margin-left: 600px;
         position: absolute;
         z-index: 0;
+        animation: yajirobe1 1.5s forwards ease-in-out;
     }
     #scatola7{
         width: 2000px;
@@ -247,6 +248,18 @@
         
         }
         @keyframes  krilin1{
+            0% {
+                transform: translate(0, 0) scale(1);
+            }
+            50% {
+                transform: translate(0, -800px) scale(0.9); 
+    
+            }
+            100% {
+                transform: translate(0, -800px) scale(1);
+            }
+        }
+        @keyframes  yajirobe1{
             0% {
                 transform: translate(0, 0) scale(1);
             }
