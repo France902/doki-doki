@@ -54,5 +54,12 @@
             messaggio.style.display = 'block'
         });
     </script>
+        <h1>Valore ricevuto:</h1>
+        <p id="output"></p>
+    
+        <script>
+            const nome = localStorage.getItem('salva_nome');
+            document.getElementById('output').textContent = nome;
+        </script>
 </body>
 </html>
