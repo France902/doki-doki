@@ -30,6 +30,18 @@
         margin-top: -30px;
         margin-left: -400px;
         animation: menu1 0.5s forwards 0.3s;
+        
+    }
+    .overlay1{
+        position: relative;
+        top: -1000px;
+        left: 0;
+        width: 300%;
+        height: 225%;
+        background-color: rgba(0, 0, 0, 0.5); /* Overlay scuro */
+        opacity: 0; /* Inizialmente invisibile */
+        transition: opacity 0.1s ease; /* Animazione per l'overlay */
+        z-index: 0;
     }
     #scatola4{
         width: 2000px;
@@ -47,14 +59,18 @@
         
     }
     #scatola5{
-            width: 500px;
-            height: 310px;
             opacity: 100%;
             padding: 0%;
-            margin-top: 300px;
-            margin-left: 450px;
+            margin-top: 350px;
+            margin-left: 750px;
             position: relative;
-            z-index: 0;
+            z-index: -2;
+            width: 500px; 
+            height: 370px;  
+            border: 5.5px solid rgb(247, 135, 178); 
+            opacity: 0;
+            background-color: rgb(248, 210, 216);
+
         }
 
 
@@ -140,7 +156,7 @@
         margin-top: 260px;
         margin-left: 1200px;
         position: absolute;;
-        z-index: 0;
+        z-index: -1;
         transform-origin: center;
         animation: krilin1 1.5s forwards ease-in-out;
         display: inline-block;
@@ -164,7 +180,7 @@
         margin-top: 275px;
         margin-left: 300px;
         position: absolute;
-        z-index: -1;
+        z-index: 0;
         animation: nezuko1 1.5s forwards ease-in-out;
     }
         #scatola9{
@@ -175,15 +191,6 @@
         margin-left: 1500px;
         position: absolute;
         z-index: 1;
-    }
-    .input{
-        width: 200px;
-        height: 30px;
-        margin-left: 765px;
-        margin-top: -1560px;
-        cursor: pointer;
-        z-index: 1;
-        position: absolute;
     }
         @keyframes  cerchio1{
             from {
@@ -300,7 +307,7 @@
             <img src="doki doki cerchio.png" alt="" width="800" height="450" >
         </div>
         <div id="scatola5">
-            <img src="Cattura.PNG" alt="" style="width: 500px; height: 370px; margin-left: 220px; margin-top: -65px; border: 5px solid pink; opacity: 100;"><p style="margin-top: -305px;font-size:35px; font-weight: bold; margin-left: 300px;width: 450px; height: 370px; opacity: 100;">Please enter your name</p>
+            <p style="margin-top: 30px; font-size:35px; font-weight: bold; margin-left: 80px;width: 450px; height: 370px; opacity: 0; position: relative; z-index: -2; ">Please enter your name</p>
         </div>
         <div id="scatola6">
             <img src="krilin.png" alt="Character" width="300" height="600">
@@ -314,7 +321,7 @@
         <div id="scatola9">
             <img src="Nami.png" alt="Character" width="650" height="650">
         </div>
-
+        <div class="overlay1"></div>
     </div> 
      <div class="video-background" >
         <video autoplay muted loop style="width: 2500px; height: 1040px; position: absolute; top: -580px; left: -200px; z-index: -1;">
@@ -326,7 +333,7 @@
     <div class="buttone1">
         <button 
         style="width: 300px; height: 100px;background: none;border: none; cursor: pointer;transition: box-shadow 0.3s;"    
-        onclick="nascondiScatole()">
+        onclick="tasto1()">
         <p style="color: white;width:300px;height: 80px;font-size: 35px; -webkit-text-stroke: 2.5px rgb(179, 77, 179); font-family: 'Arial Black', Arial, sans-serif; letter-spacing: -3px;"> New Game</p>
     </button> 
     </div>
@@ -359,15 +366,9 @@
     </button> 
     </div>
     <form id="salva_nome">
-    <input type="text" name="scritta" id="scritta" style="color:black;margin-top: -1700px; margin-left: 750px;position: absolute; background: none; width: 350px; height: 80px; font-size: 25px;  opacity: 100;" >
-    <div class="input">
+    <input type="text" name="scritta" id="scritta" style="color:black;margin-top: -1600px; margin-left: 830px;position: absolute; background: none; width: 350px; height: 80px; font-size: 25px;  opacity: 100; display: none; " >
     </form>
-        <button 
-        style="width: 300px; height: 100px;background: none;border: none;cursor: pointer; "
-        onclick="input()">
-        <p style="color: white;width:300px;height: 80px;font-size: 45px; -webkit-text-stroke: 2.5px rgb(179, 77, 179); font-family: 'Arial Black', Arial, sans-serif; letter-spacing: -3px; opacity: 100;"> OK </p>
-    </button> 
-    </div>
+
 
     <script>
         // Nascondi l'immagine al caricamento della pagina
@@ -391,6 +392,18 @@
             localStorage.setItem('scritta', nome);
             window.location.href = 'sad_face_LMAO.html';
         };
+
+            function tasto1() {
+            const overlay1 = document.querySelector('.overlay1');
+            overlay1.style.opacity = '1'; // Rende l'overlay visibile
+            overlay1.style.zIndex = '2';
+            document.getElementById('scatola5').style.opacity = 1;
+            document.getElementById('scatola5').style.zIndex = 3;
+            document.querySelector('#scatola5 p').style.opacity = 1;
+            document.querySelector('#scritta').style.display = 'block';
+            document.querySelector('#scritta').style.zIndex = 3;
+        }
+
 
         
     
