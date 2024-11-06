@@ -427,7 +427,7 @@
     </script>
             <audio id="doki_main_theme" controls autoplay loop>
                 <source src="1-01. Doki Doki Literature Club!.mp3" type="audio/mpeg">
-                Il tuo browser non supporta l'elemento audio.
+                
         </audio>
         <script>
             const audio = document.getElementById('doki_main_theme');
@@ -435,6 +435,9 @@
             audio.addEventListener('play', () => {
                 messaggio.style.display = 'block'
             });
+            document.getElementById('doki_main_theme').oncanplaythrough = function() {
+            this.currentTime = 8;
+        };
         </script>
     
 </body>
