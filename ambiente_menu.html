@@ -140,6 +140,8 @@
         transition: opacity 0.3s ease;
         position:relative;
         height:30px;
+        opacity:0;
+        z-index:-2;
     }
     .buttone1:hover{
         opacity: 0.5;
@@ -154,6 +156,9 @@
         opacity: 0.5;
     }
     .buttone5:hover{
+        opacity: 0.5;
+    }
+    .buttone6:hover{
         opacity: 0.5;
     }
     #doki_main_theme{
@@ -399,7 +404,7 @@
     </button> 
     </div>
     <form id="salva_nome">
-    <input type="text" name="scritta" id="scritta" style="color:black;margin-top: -100px; margin-left: 850px;position: absolute; background: none; width: 350px; height: 80px; font-size: 25px;  opacity: 100; display: none; " >
+    <input type="text" name="scritta" id="scritta" style="color:black;margin-top: -100px; margin-left: 750px;position: absolute; background: none; width: 350px; height: 80px; font-size: 25px;  opacity: 100; display: none; " >
     </form>
 
 
@@ -435,6 +440,8 @@
             document.querySelector('#scatola5 p').style.opacity = 1;
             document.querySelector('#scritta').style.display = 'block';
             document.querySelector('#scritta').style.zIndex = 3;
+            document.querySelector('#buttone6').style.display = 'block';
+            document.querySelector('#buttone6').style.zIndex = 3;
         }
 
 
