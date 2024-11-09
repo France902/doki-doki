@@ -32,8 +32,8 @@
 
         #buttone {
             position: absolute;
-            width:150px;
-            height:150px;
+            width: 150px;
+            height: 150px;
             top: 65%; 
             left: 50%; 
             transform: translate(-50%, -50%); 
@@ -52,7 +52,9 @@
             cursor: pointer;
             margin-top: -10px;
             margin-left: 100px;
-            transition: box shadow 0.5s;
+            transition: box-shadow 0.5s;
+        } /* Chiusura corretta del CSS */
+
         p {
             color: white;
             font-size: 25px;
@@ -69,15 +71,15 @@
         <img src="desktop.jpg" alt="">
         <div class="image-container2">
             <img src="cartella_doki-doki.png" alt="">
-    <div id="buttone">
-        <button onclick="location.href='ambiente_menu.html'" style="background: none; border: none;">
-            <img src="Doki_Doki_Literature_Club_Logo.jpg" alt="">
-            <p>Avvia DDLC</p>
-        </button>
-    <button id="button" onclick="location.href=''">
-        <img src="cartella.png" alt="">
-        <p>Characters</p>
-    </button>
+            <div id="buttone">
+                <button onclick="location.href='ambiente_menu.html'" style="background: none; border: none;">
+                    <img src="Doki_Doki_Literature_Club_Logo.jpg" alt="">
+                    <p>Avvia DDLC</p> <!-- Testo ora visibile -->
+                </button>
+                <button id="button" onclick="location.href=''">
+                    <img src="cartella.png" alt="">
+                    <p>Characters</p>
+                </button>
             </div>
         </div>
     </div>
