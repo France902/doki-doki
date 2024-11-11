@@ -131,18 +131,28 @@
         height:30px;
     }
     .buttone6{
-        margin-left: 100px;
         border: 0px;
         width: 200px;
-        margin-left: 710px;
+        margin-left: 810px;
         margin-top: -1520px;
         cursor: pointer;
         transition: opacity 0.3s ease;
         position:relative;
         height:30px;
-        opacity: 100;
         z-index: 3;
-        opacity: 0;
+        opacity: 100;
+    }
+    .buttone7{
+        border: 0px;
+        width: 200px;
+        margin-left: 910px;
+        margin-top: -1520px;
+        cursor: pointer;
+        transition: opacity 0.3s ease;
+        position:relative;
+        height:30px;
+        z-index: 3;
+        opacity: 100;
     }
     .buttone1:hover{
         opacity: 0.5;
@@ -404,6 +414,13 @@
         <p style="color: white;width:300px;height: 80px;font-size: 45px; -webkit-text-stroke: 2.8px rgb(179, 77, 179); font-family: 'Arial Black', Arial, sans-serif; letter-spacing: -3px;"> Return</p>
     </button> 
     </div>
+    <div class="buttone6">
+        <button 
+        style="width: 300px; height: 100px;background: none;border: none;cursor: pointer;transition: opacity 0.3s ease; "
+        onclick="salva_nome()">
+        <p style="color: white;width:300px;height: 80px;font-size: 45px; -webkit-text-stroke: 2.8px rgb(179, 77, 179); font-family: 'Arial Black', Arial, sans-serif; letter-spacing: -3px;"> OK</p>
+    </button> 
+    </div>
     <form id="salva_nome">
     <input type="text" name="scritta" id="scritta" style="color:black;margin-top: -100px; margin-left: 750px;position: absolute; background: none; width: 350px; height: 80px; font-size: 25px;  opacity: 100; display: none; " >
     </form>
@@ -431,6 +448,11 @@
             localStorage.setItem('scritta', nome);
             window.location.href = 'sad_face_LMAO.html';
         };
+        function salva_nome() {
+            let nome = document.getElementById('scritta').value;
+            localStorage.setItem('scritta', nome);
+            window.location.href = 'sad_face_LMAO.html';
+        }
 
             function tasto1() {
             const overlay1 = document.querySelector('.overlay1');
@@ -439,6 +461,9 @@
             const buttone6 = document.querySelector('.buttone6');
             buttone6.style.opacity = '1'; 
             buttone6.style.zIndex = '3';
+            const buttone7 = document.querySelector('.buttone7');
+            buttone7.style.opacity = '1'; 
+            buttone7.style.zIndex = '3';
             document.getElementById('scatola5').style.opacity = 1;
             document.getElementById('scatola5').style.zIndex = 3;
             document.querySelector('#scatola5 p').style.opacity = 1;
