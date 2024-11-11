@@ -139,8 +139,8 @@
         transition: opacity 0.3s ease;
         position:relative;
         height:30px;
-        z-index: 3;
-        opacity: 100;
+        z-index: -1;
+        opacity: 0;
     }
     .buttone7{
         border: 0px;
@@ -151,8 +151,8 @@
         transition: opacity 0.3s ease;
         position: relative;
         height:30px;
-        z-index: 3;
-        opacity: 100;
+        z-index: -1;
+        opacity: 0;
     }
     .buttone1:hover{
         opacity: 0.5;
@@ -456,7 +456,23 @@
             localStorage.setItem('scritta', nome);
             window.location.href = 'sad_face_LMAO.html';
         }
-
+        function tasto2() {
+            const overlay1 = document.querySelector('.overlay1');
+            overlay1.style.opacity = '0'; 
+            overlay1.style.zIndex = '0';
+            const buttone6 = document.querySelector('.buttone6');
+            buttone6.style.opacity = '0'; 
+            buttone6.style.zIndex = '-1';
+            const buttone7 = document.querySelector('.buttone7');
+            buttone7.style.opacity = '0'; 
+            buttone7.style.zIndex = '-1';
+            document.getElementById('scatola5').style.opacity = 0;
+            document.getElementById('scatola5').style.zIndex = -2;
+            document.querySelector('#scatola5 p').style.opacity = -2;
+            document.querySelector('#scritta').style.display = 'block';
+            document.querySelector('#scritta').style.zIndex = 3;
+            document.querySelector('#buttone6 p').style.zIndex = 4;
+        }
             function tasto1() {
             const overlay1 = document.querySelector('.overlay1');
             overlay1.style.opacity = '1'; 
