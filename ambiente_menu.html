@@ -230,6 +230,7 @@
         margin-top:-600px;
         margin-left: 600px;
         padding:0%;
+        opacity: 0;
     }
         @keyframes  cerchio1{
             from {
@@ -375,7 +376,7 @@
         
         </div>
         <div id="scatola10">
-            <p id= testo_aiuto style="margin_left:600px; color: black;width:1300px;height: 1000px;font-size: 35px; font-family: 'Arial Black', Arial, sans-serif; opacity:100;"> Help page prova prova</p>
+            <p style="margin_left:600px; color: black;width:1300px;height: 1000px;font-size: 35px; font-family: 'Arial Black', Arial, sans-serif; "> Help page prova prova</p>
         </div>
         <div class="overlay1"></div>
     </div> 
@@ -441,7 +442,6 @@
 
 
     <script>
-        // Nascondi l'immagine al caricamento della pagina
         window.onload = function() {
             var immagine = document.getElementById("nuovaImmagine");
             immagine.style.display = "none"; 
@@ -509,12 +509,13 @@
             
         }
         function tasto4() {
-            let scatola10 = document.getElementbyId('scatola10');
+            var scatola10 = document.getElementbyId('scatola10');
             document.getElementById('scatola6').style.opacity = 0;
             document.getElementById('scatola7').style.opacity = 0;
             document.getElementById('scatola8').style.opacity = 0;
             document.getElementById('scatola9').style.opacity = 0;
-            document.getElementById('testo_aiuto').style.opacity = 1;
+            document.getElementById('scatola10').style.opacity = 1;
+            scatola10.style.opacity = 1;
             
         }
 
