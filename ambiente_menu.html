@@ -223,15 +223,15 @@
         z-index: -1;
         animation: hulk1 1.5s forwards ease-in-out;
     }
-        #scatola10{
-            width: 1300px;
-            height: 930px;
-            position:relative;
-            z-index: -2;
-            margin-top:-600px;
-            margin-left: 600px;
-            padding:0%;
-        }
+    #scatola10{
+        width: 1300px;
+        height: 930px;
+        position:relative;
+        z-index: -2;
+        margin-top:-600px;
+        margin-left: 600px;
+        padding:0%;
+    }
         @keyframes  cerchio1{
             from {
                 transform: translate(0, -100px);
@@ -510,12 +510,13 @@
             
         }
         function tasto4() {
+            const scatola10 = document.getElementById('scatola10');
             document.getElementById('scatola6').style.opacity = 0;
             document.getElementById('scatola7').style.opacity = 0;
             document.getElementById('scatola8').style.opacity = 0;
             document.getElementById('scatola9').style.opacity = 0;
-            document.getElementById('scatola10').style.zIndex = 3;
-            document.getElementById('scatola10').style.opacity = 1;
+            scatola10.style.zIndex = 3;
+            scatola10.style.opacity = 1;
             document.querySelector('#scatola10 p').style.opacity = 1;
             
         }
