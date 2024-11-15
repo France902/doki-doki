@@ -226,10 +226,10 @@
     #scatola10{
         width: 1300px;
         height: 930px;
-        position:relative;
-        opacity: 100;
+        position: relative;
+        opacity: 0;
         margin-top:-600px;
-        margin-left: 900px;
+        margin-left: 600px;
         padding:0%;
     }
         @keyframes  cerchio1{
@@ -376,7 +376,7 @@
         
         </div>
         <div id="scatola10">
-            <p style="margin_left:900px; color: black;width:1300px;height: 1000px;font-size: 35px; font-family: 'Arial Black', Arial, sans-serif; "> Help page prova prova</p>
+            <p style="margin_left:600px; color: black;width:1300px;height: 1000px;font-size: 35px; font-family: 'Arial Black', Arial, sans-serif; "> Help page prova prova</p>
         </div>
         <div class="overlay1"></div>
     </div> 
@@ -510,11 +510,12 @@
             
         }
         function tasto4() {
+            const scatola10 = document.getElementbyId('scatola10');
             document.getElementById('scatola6').style.opacity = 0;
             document.getElementById('scatola7').style.opacity = 0;
             document.getElementById('scatola8').style.opacity = 0;
             document.getElementById('scatola9').style.opacity = 0;
-            document.getElementById('scatola10').style.opacity = 1;
+            scatola10.style.opacity = 1;
             
         }
 
