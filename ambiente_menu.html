@@ -392,7 +392,7 @@
     <div class="buttone3">
         <button 
         style="width: 300px; height: 100px;background: none;border: none;cursor: pointer;"
-        onclick="nascondiScatole()">
+        onclick="tasto3()">
         <p style="color: white;width:100px;height: 90px;font-size: 35px; -webkit-text-stroke: 2.3px rgb(179, 77, 179); font-family: 'Arial Black', Arial, sans-serif; letter-spacing: -3px;"> Impostazioni</p>
     </button> 
     </div>
@@ -489,6 +489,12 @@
             document.querySelector('#scritta').style.display = 'block';
             document.querySelector('#scritta').style.zIndex = 3;
             document.querySelector('#buttone6 p').style.zIndex = 4;
+        }
+        function tasto3() {
+            document.getElementById('scatola6').style.opacity = 0;
+            document.getElementById('scatola7').style.opacity = 0;
+            document.getElementById('scatola8').style.opacity = 0;
+            document.getElementById('scatola9').style.opacity = 0;
         }
 
 
