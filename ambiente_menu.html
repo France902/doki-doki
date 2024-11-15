@@ -227,10 +227,10 @@
             width: 1300px;
             height: 930px;
             position:relative;
-            z-index: 2;
+            z-index: -2;
             margin-top:-600px;
             margin-left: 600px;
-            border:1px solid;
+            padding:0%;
         }
         @keyframes  cerchio1{
             from {
@@ -376,7 +376,7 @@
         
         </div>
         <div id="scatola10">
-            <p style="margin_left:800px; color: black;width:1300px;height: 1000px;font-size: 35px; font-family: 'Arial Black', Arial, sans-serif;"> Help page prova prova</p>
+            <p style="margin_left:800px; color: black;width:1300px;height: 1000px;font-size: 35px; font-family: 'Arial Black', Arial, sans-serif; opacity: 0; "> Help page prova prova</p>
         </div>
         <div class="overlay1"></div>
     </div> 
@@ -411,7 +411,7 @@
     <div class="buttone4">
         <button 
         style="width: 300px; height: 100px;background: none;border: none;cursor: pointer;"
-        onclick="nascondiScatole()">
+        onclick="tasto4()">
         <p style="color: white;width:300px;height: 80px;font-size: 35px; -webkit-text-stroke: 2.3px rgb(179, 77, 179); font-family: 'Arial Black', Arial, sans-serif; letter-spacing: -3px;"> Aiuto</p>
     </button> 
     </div>
@@ -503,12 +503,19 @@
             document.querySelector('#buttone6 p').style.zIndex = 4;
         }
         function tasto3() {
-            var buttone3 = document.querySelector('.buttone3');
-            buttone3.style.webkitTextStroke = '0px white'; 
             document.getElementById('scatola6').style.opacity = 0;
             document.getElementById('scatola7').style.opacity = 0;
             document.getElementById('scatola8').style.opacity = 0;
             document.getElementById('scatola9').style.opacity = 0;
+            
+        }
+        function tasto4() {
+            document.getElementById('scatola6').style.opacity = 0;
+            document.getElementById('scatola7').style.opacity = 0;
+            document.getElementById('scatola8').style.opacity = 0;
+            document.getElementById('scatola9').style.opacity = 0;
+            document.getElementById('scatola10').style.zIndex = 3;
+            document.querySelector('#scatola10 p').style.opacity = 1;
             
         }
 
