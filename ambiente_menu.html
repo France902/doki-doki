@@ -456,9 +456,14 @@
     
     <script>
         function nascondiScatole() {
-            document.getElementById('scatola1').style.display = 'none';
-            document.getElementById('scatola2').style.display = 'none';
-            document.getElementById('nuovaImmagine').style.display = 'block';
+            const scatola2 = document.getElementById("scatola2");
+            const scatola1 = document.getElementById("scatola1");
+            const Misa = document.getElementById("nuovaImmagine");
+            if(Misa.style.display == 'none'){
+                Misa.style.display = 'block';
+            }else{
+                Misa.style.display = 'none';
+            }
             
         }
         document.getElementById('salva_nome').onsubmit = function(event) {
