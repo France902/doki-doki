@@ -512,10 +512,18 @@
             document.querySelector('#buttone6 p').style.zIndex = 4;
         }
         function tasto3() {
-            document.getElementById('scatola6').style.opacity = 0;
-            document.getElementById('scatola7').style.opacity = 0;
-            document.getElementById('scatola8').style.opacity = 0;
-            document.getElementById('scatola9').style.opacity = 0;
+            const scatola6 = document.getElementById("scatola6");
+            if(scatola6.style.opacity == 100){
+                document.getElementById('scatola6').style.opacity = 0;
+                document.getElementById('scatola7').style.opacity = 0;
+                document.getElementById('scatola8').style.opacity = 0;
+                document.getElementById('scatola9').style.opacity = 0;
+            }else{
+                document.getElementById('scatola6').style.opacity = 100;
+                document.getElementById('scatola7').style.opacity = 100;
+                document.getElementById('scatola8').style.opacity = 100;
+                document.getElementById('scatola9').style.opacity = 100;
+            }
         }
         function tasto4() {
             document.getElementById('scatola6').style.opacity = 0;
