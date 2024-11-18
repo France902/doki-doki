@@ -468,16 +468,11 @@
             }
             
         }
-        document.getElementById('salva_nome').onsubmit = function(event) {
-            event.preventDefault();
-            const nome = document.getElementById('scritta').value;
-            localStorage.setItem('scritta', nome);
-            window.location.href = 'ambiente_strada.html';
-        };
+
         function salva_nome() {
             let nome = document.getElementById('scritta').value;
             localStorage.setItem('scritta', nome);
-            window.location.href = 'sad_face_LMAO.html';
+            window.location.href = 'ambiente_strada.html';
         }
         function tasto2() {
             const overlay1 = document.querySelector('.overlay1');
