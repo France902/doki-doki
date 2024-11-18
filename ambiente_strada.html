@@ -55,9 +55,15 @@
             <h3 style="margin-top: -145px; margin-left: 10px;">Hmph</h3>
             <div id="scatola4">
                 <img src="quadrato_bianco.jpg" alt="" width="120" height="35" style="border: 1px solid white; margin-top: -300px; border-radius: 5px;">
-                <h3 style="margin-top: -40px; margin-left: 0px;">testo</h3>
+                <h3 id="nome" style="margin-top: -40px; margin-left: 0px;">testo</h3>
             </div>
         </div>
     </div> 
+        <script>
+            const nome = localStorage.getItem('scritta');
+            document.getElementById('nome').textContent = nome;
+
+            console.log(nome);
+        </script>
 </body>
 </html>
