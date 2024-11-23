@@ -13,7 +13,9 @@
         z-index:-2;
         
     }
-    
+    #sfondo_nero{
+        position:relative;
+    }
 
     </style>
     <style>
@@ -30,7 +32,7 @@
         margin-top: -30px;
         margin-left: -400px;
         animation: menu1 0.5s forwards 0.3s;
-        
+        animation-delay: 1.5s;
     }
     .overlay1{
         position: relative;
@@ -55,8 +57,7 @@
         padding: 0%;
         margin-top: -1050px;
         margin-left: -60px;
-        animation: cerchio1 1.5s forwards ease-in-out 0.5s, cerchio2 1.3s forwards 2s,cerchio3 1.3s forwards ease-in-out 3.4s,cerchio4 1.3s forwards 4.7s,cerchio5 1s forwards 6.1s;
-        
+        animation: cerchio1 1.5s forwards ease-in-out 1.5s, cerchio2 1.3s forwards 3s,cerchio3 1.3s forwards ease-in-out 4.4s,cerchio4 1.3s forwards 5.7s,cerchio5 1s forwards 7.1s;
     }
     #scatola5{
             opacity: 100%;
@@ -82,8 +83,8 @@
         cursor: pointer;
         transition: opacity 0.3s ease;
         position:absolute;
-        height:30px;
-
+        height:0px;
+        padding: 0%;
     }
     .buttone2{
         margin-left: 100px;
@@ -94,21 +95,23 @@
         cursor: pointer;
         transition: opacity 0.3s ease;
         position:absolute;
-        height:30px;
+        height:0px;
+        padding: 0%;
     }
     .buttone3{
         margin-left: 100px;
         border: 0px;
         width: 200px;
-        margin-left: 80px;
+        margin-left: 60px;
         margin-top: -1890px;
         cursor: pointer;
         transition: opacity 0.3s ease;
         position:absolute;
-        height:30px;
+        height:0px;
+        padding: 0%;
     }
     .buttone4{
-        margin-left: 100px;
+        margin-left: 150px;
         border: 0px;
         width: 200px;
         margin-left: 30px;
@@ -116,7 +119,8 @@
         cursor: pointer;
         transition: opacity 0.3s ease;
         position:absolute;
-        height:30px;
+        height:0px;
+        padding: 0%;
     }
     .buttone5{
         margin-left: 100px;
@@ -127,13 +131,14 @@
         cursor: pointer;
         transition: opacity 0.3s ease;
         position:absolute;
-        height:30px;
+        height:0px;
+        padding: 0%;
     }
     .buttone6{
         border: 0px;
         width: 60px;
-        margin-left: 710px;
-        margin-top: -1940px;
+        margin-left: 90px;
+        margin-top: -1690px;
         cursor: pointer;
         transition: opacity 0.3s ease;
         position:absolute;
@@ -183,12 +188,12 @@
         width: 2000px;
         height: 970px;
         padding: 0%;
-        margin-top: 390px;
+        margin-top: 1190px;
         margin-left: 1470px;
         position: absolute;;
         z-index: 0;
         transform-origin: center;
-        animation: krilin1 1.5s forwards ease-in-out;
+        animation: krilin1 3s forwards ease-in-out;
         display: inline-block;
         
     }
@@ -196,32 +201,32 @@
         width: 2000px;
         height: 970px;
         padding: 0%;
-        margin-top: 350px;
+        margin-top: 1150px;
         margin-left: 400px;
         position: absolute;
         z-index: 0;
-        animation: yajirobe1 1.5s forwards ease-in-out;
+        animation: yajirobe1 3s forwards ease-in-out;
         display: inline-block;
     }
     #scatola7{
         width: 2000px;
         height: 970px;
         padding: 0%;
-        margin-top: 150px;
+        margin-top: 950px;
         margin-left: 800px;
         position: absolute;
         z-index: -1;
-        animation: nezuko1 1.5s forwards ease-in-out;
+        animation: nezuko1 3s forwards ease-in-out;
     }
     #scatola9{
         width: 2000px;
         height: 2000px;
         padding: 0%;
-        margin-top: 210px;
+        margin-top: 1010px;
         margin-left: 1000px;
         position: absolute;
         z-index: -1;
-        animation: hulk1 1.5s forwards ease-in-out;
+        animation: hulk1 3s forwards ease-in-out;
     }
     #scatola10{
         width: 1300px;
@@ -297,11 +302,11 @@
                 transform: translate(0, 0) scale(1);
             }
             50% {
-                transform: translate(0, -800px) scale(0.9); 
+                transform: translate(0, -1600px) scale(0.9); 
     
             }
             100% {
-                transform: translate(0, -800px) scale(1);
+                transform: translate(0, -1600px) scale(1);
             }
         }
         @keyframes  yajirobe1{
@@ -309,11 +314,11 @@
                 transform: translate(0, 0) scale(1);
             }
             50% {
-                transform: translate(0, -800px) scale(0.9); 
+                transform: translate(0, -1600px) scale(0.9); 
     
             }
             100% {
-                transform: translate(0, -800px) scale(1);
+                transform: translate(0, -1600px) scale(1);
             }
         }
     @keyframes nezuko1{
@@ -321,11 +326,11 @@
                 transform: translate(0, 0) scale(1);
             }
             50% {
-                transform: translate(0, -800px) scale(0.9); 
+                transform: translate(0, -1600px) scale(0.9); 
     
             }
             100% {
-                transform: translate(0, -800px) scale(1);
+                transform: translate(0, -1600px) scale(1);
             }
         }
 
@@ -334,17 +339,16 @@
                 transform: translate(0, 0) scale(1);
             }
             50% {
-                transform: translate(0, -800px) scale(0.9); 
+                transform: translate(0, -1600px) scale(0.9); 
     
             }
             100% {
-                transform: translate(0, -800px) scale(1);
+                transform: translate(0, -1600px) scale(1);
             }
         }
 
 
 
-        
     </style>
 
     
@@ -354,7 +358,7 @@
     
     <div id= "scatola1">
         <div id="scatola3" >
-            <img src="menù.png" alt="" width="1700" height="1060" >
+            <img src="menù.png" alt="" width="1700" height="1065" >
         </div>
         <div id="scatola2" >
             <img src="doki doki cerchio.png" alt="" width="800" height="450" >
@@ -386,63 +390,63 @@
                 <br> Buona fortuna per quello che vi aspetterà!</p>
         </div>
      <div class="video-background" >
-        <video autoplay muted loop style="width: 2570px; height: 1060px; position: absolute; top: -1060px; left: -200px; z-index: -1;">
-            <source src="video_sfondo1.mp4" type="video/mp4">
+        <video autoplay muted loop style="width: 2870px; height: 1060px; position: absolute; top: -1060px; left: -500px; z-index: -1;">
+            <source src="video_sfondo4.mp4" type="video/mp4">
             Il tuo browser non supporta il tag video.
         </video>
     </div>
-    <img id="nuovaImmagine" src="https://i.pinimg.com/originals/c5/ac/d8/c5acd8084aa5f96eac759a10b92e04d9.jpg" alt="Immagine Aggiunta" width="2000" height="1040" >
+    <img id="nuovaImmagine" src="https://i.pinimg.com/originals/c5/ac/d8/c5acd8084aa5f96eac759a10b92e04d9.jpg" alt="" width="2000" height="1040" >
     <div class="buttone1">
         <button 
-        style="width: 300px; height: 100px;background: none;border: none; cursor: pointer;transition: box-shadow 0.3s;"    
+        style="width: 30px; height: 0px;background: none; cursor: pointer;transition: box-shadow 0.3s; padding:0%; border:1px;"    
         onclick="tasto1()">
-        <p style="color: white;width:300px;height: 80px;font-size: 35px; -webkit-text-stroke: 2.3px rgb(179, 77, 179); font-family: 'Arial Black', Arial, sans-serif; letter-spacing: -3px;"> Nuova Partita</p>
+        <p style="color: white;width:300px;font-size: 40px; -webkit-text-stroke: 3px rgb(179, 77, 179); font-family: 'Arial Black', Arial, sans-serif; letter-spacing: -3px; border:1px;"> Nuova Partita</p>
     </button> 
     </div>
     <div class="buttone2">
         <button 
-        style="width: 300px; height: 100px;background: none;border: none;cursor: pointer;"
+        style="width: 30px; height: 0px;background: none;cursor: pointer; padding:0%; border:1px;"
         onclick="nascondiScatole()">
-        <p style="color: white;width:300px;height: 80px;font-size: 35px; -webkit-text-stroke: 2.3px rgb(179, 77, 179); font-family: 'Arial Black', Arial, sans-serif; letter-spacing: -3px;"> Carica Partita</p>
+        <p style="color: white;width:300px;font-size: 40px; -webkit-text-stroke: 3px rgb(179, 77, 179); font-family: 'Arial Black', Arial, sans-serif; letter-spacing: -3px; border:1px;"> Carica Partita</p>
     </button> 
     </div>
     <div class="buttone3">
         <button 
-        style="width: 300px; height: 100px;background: none;border: none;cursor: pointer;"
+        style="width: 30px; height: 0px;background: none;cursor: pointer; padding:0%; border:1px;"
         onclick="tasto3()">
-        <p style="color: white;width:100px;height: 90px;font-size: 35px; -webkit-text-stroke: 2.3px rgb(179, 77, 179); font-family: 'Arial Black', Arial, sans-serif; letter-spacing: -3px;"> Impostazioni</p>
+        <p style="color: white;width:100px;font-size: 40px; -webkit-text-stroke: 3px rgb(179, 77, 179); font-family: 'Arial Black', Arial, sans-serif; letter-spacing: -3px; border:1px;"> Impostazioni</p>
     </button> 
     </div>
     <div class="buttone4">
         <button 
-        style="width: 300px; height: 100px;background: none;border: none;cursor: pointer;"
-        onclick="tasto4()">
-        <p style="color: white;width:300px;height: 80px;font-size: 35px; -webkit-text-stroke: 2.3px rgb(179, 77, 179); font-family: 'Arial Black', Arial, sans-serif; letter-spacing: -3px;"> Aiuto</p>
+        style="width: 30px; height: 0px;background: none;cursor: pointer; padding:0%; border:1px;"
+        onclick="location.href='https://ddlc.plus/'">
+        <p style="color: white;width:30px;font-size: 40px; margin-left:100px; -webkit-text-stroke: 3px rgb(179, 77, 179); font-family: 'Arial Black', Arial, sans-serif; letter-spacing: -3px; border:1px;"> Aiuto</p>
     </button> 
     </div>
     <div class="buttone5">
         <button 
-        style="width: 301px; height: 100px;background: none;border: none;cursor: pointer;"
+        style="width: 30px; height: 0px;background: none;cursor: pointer; padding:0%; border:1px;"
         onclick="location.href='index.html'">
-        <p style="color: white;width:300px;height: 80px;font-size: 35px; -webkit-text-stroke: 2.3px rgb(179, 77, 179); font-family: 'Arial Black', Arial, sans-serif; letter-spacing: -3px;"> Esci</p>
+        <p style="color: white;width:300px;font-size: 40px; -webkit-text-stroke: 3px rgb(179, 77, 179); font-family: 'Arial Black', Arial, sans-serif; letter-spacing: -3px; border:1px;"> Esci</p>
     </button> 
     </div>
     <div class="buttone6">
         <button 
         style="width: 60px; height: 20px;background: none;border: none white;cursor: pointer;transition: opacity 0.3s ease; "
         onclick="tasto2()">
-        <p style="color: white;width:60px;height: 20px;font-size: 35px; -webkit-text-stroke: 2.3px rgb(179, 77, 179); font-family: 'Arial Black', Arial, sans-serif; letter-spacing: -3px;"> Indietro</p>
+        <p style="color: white;width:60px;height: 20px;font-size: 43px; -webkit-text-stroke: 3px rgb(179, 77, 179); font-family: 'Arial Black', Arial, sans-serif; letter-spacing: -3px;"> Indietro</p>
     </button> 
     </div>
     <div class="buttone7">
         <button 
         style="width: 60px; height: 20px;background: none;border: none;cursor: pointer;transition: opacity 0.3s ease; margin-left:-60px"
         onclick="salva_nome()">
-        <p style="color: white;width:60px;height: 20px;font-size: 45px; -webkit-text-stroke: 2.8px rgb(179, 77, 179); font-family: 'Arial Black', Arial, sans-serif; letter-spacing: -3px;"> OK</p>
+        <p style="color: white;width:60px;height: 20px;font-size: 45px; -webkit-text-stroke: 3px rgb(179, 77, 179); font-family: 'Arial Black', Arial, sans-serif; letter-spacing: -3px;"> OK</p>
     </button> 
     </div>
     <form id="salva_nome">
-    <input type="text" name="scritta" id="scritta" style="color:black;margin-top: -2050px; margin-left: 750px;position: absolute; background: none; width: 350px; height: 80px; font-size: 25px;  opacity: 100; display: none; " >
+    <input type="text" name="scritta" id="scritta" style="color:black;margin-top: -2050px; margin-left: 720px;position: absolute; background: none; width: 400px; height:80px;  font-size: 25px;  opacity: 100; display: none; " >
     </form>
 
 
@@ -455,22 +459,24 @@
     </script>
     
     <script>
+
+        
         function nascondiScatole() {
-            document.getElementById('scatola1').style.display = 'none';
-            document.getElementById('scatola2').style.display = 'none';
-            document.getElementById('nuovaImmagine').style.display = 'block';
+            const scatola2 = document.getElementById("scatola2");
+            const scatola1 = document.getElementById("scatola1");
+            const Misa = document.getElementById("nuovaImmagine");
+            if(Misa.style.display == 'none'){
+                Misa.style.display = 'block';
+            }else{
+                Misa.style.display = 'none';
+            }
             
         }
-        document.getElementById('salva_nome').onsubmit = function(event) {
-            event.preventDefault();
-            const nome = document.getElementById('scritta').value;
-            localStorage.setItem('scritta', nome);
-            window.location.href = 'sad_face_LMAO.html';
-        };
+
         function salva_nome() {
             let nome = document.getElementById('scritta').value;
             localStorage.setItem('scritta', nome);
-            window.location.href = 'sad_face_LMAO.html';
+            window.location.href = 'ambiente_strada.html';
         }
         function tasto2() {
             const overlay1 = document.querySelector('.overlay1');
@@ -490,9 +496,6 @@
             document.querySelector('#buttone6 p').style.zIndex = -2;
         }
             function tasto1() {
-            const overlay1 = document.querySelector('.overlay1');
-            overlay1.style.opacity = '1'; 
-            overlay1.style.zIndex = '2';
             const buttone6 = document.querySelector('.buttone6');
             buttone6.style.opacity = '1'; 
             buttone6.style.zIndex = '3';
@@ -507,24 +510,26 @@
             document.querySelector('#buttone6 p').style.zIndex = 4;
         }
         function tasto3() {
-            document.getElementById('scatola6').style.opacity = 0;
-            document.getElementById('scatola7').style.opacity = 0;
-            document.getElementById('scatola8').style.opacity = 0;
-            document.getElementById('scatola9').style.opacity = 0;
+            const scatola6 = document.getElementById("scatola6");
+            if(scatola6.style.opacity == 100){
+                document.getElementById('scatola6').style.opacity = 0;
+                document.getElementById('scatola7').style.opacity = 0;
+                document.getElementById('scatola8').style.opacity = 0;
+                document.getElementById('scatola9').style.opacity = 0;
+            }else{
+                document.getElementById('scatola6').style.opacity = 100;
+                document.getElementById('scatola7').style.opacity = 100;
+                document.getElementById('scatola8').style.opacity = 100;
+                document.getElementById('scatola9').style.opacity = 100;
+            }
         }
         function tasto4() {
             document.getElementById('scatola6').style.opacity = 0;
             document.getElementById('scatola7').style.opacity = 0;
             document.getElementById('scatola8').style.opacity = 0;
             document.getElementById('scatola9').style.opacity = 0;
-            document.getElementById('scatola10').style.opacity = 1;
-            
-
-            
-            
+            document.getElementById('scatola10').style.opacity = 1; 
         }
-
-
         
     
         
