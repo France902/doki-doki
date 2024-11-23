@@ -538,7 +538,7 @@
         }
         
         window.onload = function() {
-            Inizio();
+            window.parent.postMessage('AmbienteCaricata', window.location.origin);
         };
     
         
