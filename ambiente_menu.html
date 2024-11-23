@@ -538,7 +538,11 @@
         }
         
         window.onload = function() {
-            window.parent.postMessage('AmbienteCaricata', window.location.origin);
+            // Simula il caricamento dei contenuti
+            setTimeout(() => {
+                // Quando i contenuti sono caricati, salva lo stato in sessionStorage
+                sessionStorage.setItem('pagina2Caricata', 'true');
+            }, 2000); // Simulazione di caricamento dei contenuti
         };
     
         
