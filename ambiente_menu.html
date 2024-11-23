@@ -237,6 +237,9 @@
         padding:0%;
         opacity: 0;
     }
+    .ferma{
+        animation: none;
+    }
         @keyframes  cerchio1{
             from {
                 transform: translate(0, -100px);
@@ -369,7 +372,7 @@
         <div id="scatola6">
             <img src="krilin.png" alt="Character" width="350" height="700">
         </div>
-        <div id="scatola7">
+        <div id="scatola7 ferma">
             <img src="Nezuko.png" alt="Character" width="375" height="880">
         </div>
         <div id="scatola8">
@@ -530,7 +533,17 @@
             document.getElementById('scatola9').style.opacity = 0;
             document.getElementById('scatola10').style.opacity = 1; 
         }
+        function Inizio(){
+            const scatola7 = document.getElementById('scatola7');
+            scatola7.classList.remove("ferma");
+            setTimeout(() => {
+                scatola7.classList.add("Nezuko1");;
+            }, 10); 
+        }
         
+        window.onload = function() {
+            Inizio();
+        };
     
         
         
