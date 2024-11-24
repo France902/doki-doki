@@ -216,6 +216,7 @@
         margin-left: 800px;
         position: absolute;
         z-index: -1;
+        opacity: 0;
         animation: nezuko1 3s forwards ease-in-out;
     }
     #scatola9{
@@ -453,7 +454,24 @@
 
     
     <script>
+         window.onload = function() {
+            if (sessionStorage.getItem('pageLoaded') === 'true') {
+                // Mostra il messaggio che la pagina è stata ricaricata
+                document.getElementById("loadingMessage").style.display = "none";
+                document.getElementById("loadedMessage").style.display = "block";
+                
+                // Aggiungi la classe che attiva l'animazione sulla scatola
+                document.getElementById("scatola7").classList.add("nezuko1");
+            } else {
+                // Imposta la sessione per indicare che la pagina è stata caricata una volta
+                sessionStorage.setItem('pageLoaded', 'true');
 
+                // Ricarica la pagina dopo un breve ritardo per simulare una nuova visita
+                setTimeout(function() {
+                    location.reload(); // Ricarica la pagina
+                }, 3000);  // Ricarica dopo 3 secondi
+            }
+        };
         
         function nascondiScatole() {
             const scatola2 = document.getElementById("scatola2");
