@@ -397,7 +397,7 @@
             <source src="video_sfondo2.mp4" type="video/mp4">
         </video>
     </div>
-    <img id="nuovaImmagine" src="https://i.pinimg.com/originals/c5/ac/d8/c5acd8084aa5f96eac759a10b92e04d9.jpg" alt="" width="2000" height="1040" >
+    
     <div class="buttone1">
         <button 
         style="width: 30px; height: 0px;background: none; cursor: pointer;transition: box-shadow 0.3s; padding:0%; border:1px;"    
@@ -451,28 +451,13 @@
     <input type="text" name="scritta" id="scritta" style="color:black;margin-top: -2050px; margin-left: 720px;position: absolute; background: none; width: 400px; height:80px;  font-size: 25px;  opacity: 100; display: none; " >
     </form>
 
-
-    <script>
-        window.onload = function() {
-            var immagine = document.getElementById("nuovaImmagine");
-            immagine.style.display = "none"; 
-        };
-
-    </script>
     
     <script>
 
         
         function nascondiScatole() {
             const scatola2 = document.getElementById("scatola2");
-            const scatola1 = document.getElementById("scatola1");
-            const Misa = document.getElementById("nuovaImmagine");
-            if(Misa.style.display == 'none'){
-                Misa.style.display = 'block';
-            }else{
-                Misa.style.display = 'none';
-            }
-            
+            const scatola1 = document.getElementById("scatola1");  
         }
 
         function salva_nome() {
@@ -537,13 +522,6 @@
             scatola7.classList.remove("ferma");
         }
         
-        window.onload = function() {
-            // Simula il caricamento dei contenuti
-            setTimeout(() => {
-                // Quando i contenuti sono caricati, salva lo stato in sessionStorage
-                localStorage.setItem('pagina2Caricata', 'true');
-            }, 2000); // Simulazione di caricamento dei contenuti
-        };
     
         
         
