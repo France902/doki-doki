@@ -216,7 +216,7 @@
         margin-left: 800px;
         position: absolute;
         z-index: -1;
-        
+        display: none;
     }
     #scatola9{
         width: 2000px;
@@ -453,22 +453,27 @@
 
     
     <script>
-         window.onload = function() {
+window.onload = function() {
+            // Verifica se la pagina è stata ricaricata una volta
             if (sessionStorage.getItem('pageLoaded') === 'true') {
-                // Mostra il messaggio che la pagina è stata ricaricata
+                // La pagina è stata ricaricata una volta
                 document.getElementById("loadingMessage").style.display = "none";
                 document.getElementById("loadedMessage").style.display = "block";
                 
                 // Aggiungi la classe che attiva l'animazione sulla scatola
+                document.getElementById("scatola7").style.display = "block"; // Mostra la scatola
                 document.getElementById("scatola7").classList.add("nezuko1");
+
+                // Rimuovi l'indicatore di sessione per evitare ricariche successive
+                sessionStorage.removeItem('pageLoaded');  // Elimina la variabile della sessione
             } else {
                 // Imposta la sessione per indicare che la pagina è stata caricata una volta
                 sessionStorage.setItem('pageLoaded', 'true');
-
-                // Ricarica la pagina dopo un breve ritardo per simulare una nuova visita
+                
+                // Ricarica la pagina dopo un breve ritardo
                 setTimeout(function() {
                     location.reload(); // Ricarica la pagina
-                }, 10000); 
+                }, 3000);  // Ricarica dopo 3 secondi
             }
         };
         
