@@ -14,7 +14,7 @@
             position: relative;
             width: 1920px; 
             height: 1080px; 
-            
+            display: none;
         }
 
         .image-container2 {
@@ -87,7 +87,7 @@
          window.onload = function() {
             // Verifica se Pagina 2 ha finito il caricamento
             if (sessionStorage.getItem('pagina2Caricata') === 'true') {
-                document.getElementById('image-container1').style.display = 'block';
+                document.querySelector('image-container1').style.display = 'block';
             } else {
                 // Riprova dopo un breve ritardo se non è ancora stata caricata
                 setTimeout(() => {
