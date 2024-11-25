@@ -456,15 +456,10 @@
 window.onload = function() {
             // Verifica se la pagina è stata ricaricata una volta
             if (sessionStorage.getItem('pageLoaded') === 'true') {
-                // La pagina è stata ricaricata una volta
-                document.getElementById("loadingMessage").style.display = "none";
-                document.getElementById("loadedMessage").style.display = "block";
-                
-                // Aggiungi la classe che attiva l'animazione sulla scatola
-                document.getElementById("scatola7").style.display = "block"; // Mostra la scatola
-                document.getElementById("scatola7").classList.add("nezuko1");
+                const scatola7 = document.getElementById("scatola7")
+                scatola7.style.display = 'block'; 
+                scatola7.classList.add("nezuko1");
 
-                // Rimuovi l'indicatore di sessione per evitare ricariche successive
                 sessionStorage.removeItem('pageLoaded');  // Elimina la variabile della sessione
             } else {
                 // Imposta la sessione per indicare che la pagina è stata caricata una volta
