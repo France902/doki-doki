@@ -83,18 +83,6 @@
             </div>
         </div>
     </div>
-    <script>
-         window.onload = function() {
-            // Verifica se Pagina 2 ha finito il caricamento
-            if (localStorage.getItem('pagina2Caricata') === 'true') {
-                document.querySelector('.image-container1').style.display = 'block';
-            } else {
-                // Riprova dopo un breve ritardo se non è ancora stata caricata
-                setTimeout(() => {
-                    location.reload(); // Ricarica Pagina 1 per controllare di nuovo
-                }, 2000);
-            }
-        };
-    </script>
+    
 </body>
 </html>
