@@ -451,21 +451,26 @@
 
     
     <script>
-        let x = localStorage.getItem("x") ? parseInt(localStorage.getItem("x")) : 0;
+         let x = 0;
 
-        // Mostra il valore iniziale di x nella console e sulla pagina
-        console.log("Valore iniziale di x:", x);
-        document.getElementById("status").innerText = "Valore iniziale di x: " + x;
+        // Mostra il valore iniziale di x nella console e nella pagina
+        console.log("Stato iniziale di x:", x);
+        document.getElementById("status").innerText = "Stato iniziale di x: " + x;
 
-        // Imposta x = 1 quando window.onload viene attivato
+        // Aggiorna x e memorizza il suo stato solo dopo il completamento del caricamento
         window.onload = function() {
-            x = 1;
-            localStorage.setItem("x", x); // Salva x in localStorage
+            x = 1; // Cambia lo stato di x dopo il caricamento
+            localStorage.setItem("x", x); // Salva il valore aggiornato in localStorage
 
-            // Mostra il valore aggiornato di x nella console e sulla pagina
+            // Mostra il nuovo stato di x
             console.log("Caricamento completato, x = " + x);
             document.getElementById("status").innerText = "Caricamento completato, x = " + x;
         };
+
+        // Recupera lo stato precedente di x da localStorage al caricamento della pagina
+        if (localStorage.getItem("x") === "1") {
+            console.log("Pagina ricaricata, stato di x recuperato da localStorage: " + localStorage.getItem("x"));
+        }
         function nascondiScatole() {
             const scatola2 = document.getElementById("scatola2");
             const scatola1 = document.getElementById("scatola1");  
