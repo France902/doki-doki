@@ -216,7 +216,6 @@
         margin-left: 800px;
         position: absolute;
         z-index: -1;
-        animation: nezuko1 3s forwards ease-in-out;
     }
     #scatola9{
         width: 2000px;
@@ -237,6 +236,9 @@
         padding:0%;
         opacity: 0;
     }
+        .Bulma{
+            animation: nezuko1 3s forwards ease-in-out;
+        }
         @keyframes  cerchio1{
             from {
                 transform: translate(0, -100px);
@@ -452,17 +454,21 @@
     
     <script>
          let x = 0;
-
-        // Mostra il valore iniziale di x nella console e nella pagina
+        const scatola7 = document.getElementById("scatola7");
+        
         console.log("Stato iniziale di x:", x);
         document.getElementById("status").innerText = "Stato iniziale di x: " + x;
 
-        // Aggiorna x e memorizza il suo stato solo dopo il completamento del caricamento
+        
         window.onload = function() {
-            x = 1; // Cambia lo stato di x dopo il caricamento
-            localStorage.setItem("x", x); // Salva il valore aggiornato in localStorage
+            x = 1; 
+            localStorage.setItem("x", x); 
 
-            // Mostra il nuovo stato di x
+            if (x === 1) {
+                scatola7.classList.add("Bulma");
+                console.log("Animazione avviata, x = " + x);
+            }
+        };
             console.log("Caricamento completato, x = " + x);
             document.getElementById("status").innerText = "Caricamento completato, x = " + x;
         };
