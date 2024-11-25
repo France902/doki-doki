@@ -447,10 +447,25 @@
     <form id="salva_nome">
     <input type="text" name="scritta" id="scritta" style="color:black;margin-top: -2050px; margin-left: 720px;position: absolute; background: none; width: 400px; height:80px;  font-size: 25px;  opacity: 100; display: none; " >
     </form>
+      <p id="status">Caricamento in corso...</p>
 
     
     <script>
-        
+        let x = localStorage.getItem("x") ? parseInt(localStorage.getItem("x")) : 0;
+
+        // Mostra il valore iniziale di x nella console e sulla pagina
+        console.log("Valore iniziale di x:", x);
+        document.getElementById("status").innerText = "Valore iniziale di x: " + x;
+
+        // Imposta x = 1 quando window.onload viene attivato
+        window.onload = function() {
+            x = 1;
+            localStorage.setItem("x", x); // Salva x in localStorage
+
+            // Mostra il valore aggiornato di x nella console e sulla pagina
+            console.log("Caricamento completato, x = " + x);
+            document.getElementById("status").innerText = "Caricamento completato, x = " + x;
+        };
         function nascondiScatole() {
             const scatola2 = document.getElementById("scatola2");
             const scatola1 = document.getElementById("scatola1");  
