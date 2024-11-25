@@ -216,7 +216,6 @@
         margin-left: 800px;
         position: absolute;
         z-index: -1;
-        display: none;
     }
     #scatola9{
         width: 2000px;
@@ -453,24 +452,6 @@
 
     
     <script>
-window.onload = function() {
-            // Verifica se la pagina è stata ricaricata una volta
-            if (sessionStorage.getItem('pageLoaded') === 'true') {
-                const scatola7 = document.getElementById("scatola7")
-                scatola7.style.display = 'block'; 
-                scatola7.classList.add("nezuko1");
-
-                sessionStorage.removeItem('pageLoaded');  // Elimina la variabile della sessione
-            } else {
-                // Imposta la sessione per indicare che la pagina è stata caricata una volta
-                sessionStorage.setItem('pageLoaded', 'true');
-                
-                // Ricarica la pagina dopo un breve ritardo
-                setTimeout(function() {
-                    location.reload(); // Ricarica la pagina
-                }, 3000);  // Ricarica dopo 3 secondi
-            }
-        };
         
         function nascondiScatole() {
             const scatola2 = document.getElementById("scatola2");
