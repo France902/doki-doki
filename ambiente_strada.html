@@ -67,5 +67,18 @@
 
             console.log(nome);
         </script>
+        </script>
+            <audio id="doki_theme" controls autoplay loop>
+                <source src="1-02. Ohayou Sayori!.mp3" type="audio/mpeg">
+                
+        </audio>
+        <script>
+            const audio = document.getElementById('doki_theme');
+    
+            audio.addEventListener('play', () => {
+                messaggio.style.display = 'block'
+            });
+
+        </script>
 </body>
 </html>
