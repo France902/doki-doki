@@ -10,9 +10,14 @@
         width:2970px;
         height:1500px;
         margin-left: -6px;
-        z-index:-2;
-        
+        z-index:-2;   
     }
+    #boxSalvataggio1{ 
+        width: 300px;
+        height: 180px;
+        background-color: violet;
+
+        
     #sfondo_nero{
         position:relative;
     }
@@ -394,6 +399,12 @@
             <source src="video_sfondo2.mp4" type="video/mp4">
         </video>
     </div>
+    <div id="boxSalvataggio1"> </div>
+    <div id="boxSalvataggio2"> </div>
+    <div id="boxSalvataggio3"> </div>
+    <div id="boxSalvataggio4"> </div>
+    <div id="boxSalvataggio5"> </div>
+    <div id="boxSalvataggio6"> </div>
     
     <div class="buttone1">
         <button 
@@ -405,7 +416,7 @@
     <div class="buttone2">
         <button 
         style="width: 30px; height: 0px;background: none;cursor: pointer; padding:0%; border:1px;"
-        onclick="nascondiScatole()">
+        onclick="CaricaPartita()">
         <p style="color: white;width:300px;font-size: 40px; -webkit-text-stroke: 3px rgb(179, 77, 179); font-family: 'Arial Black', Arial, sans-serif; letter-spacing: -3px; border:1px;"> Carica Partita</p>
     </button> 
     </div>
@@ -517,7 +528,12 @@
             const scatola7 = document.getElementById('scatola7');
             scatola7.classList.remove("ferma");
         }
-        
+        function CaricaPartita(){
+            document.getElementById('scatola6').style.opacity = 0;
+            document.getElementById('scatola7').style.opacity = 0;
+            document.getElementById('scatola8').style.opacity = 0;
+            document.getElementById('scatola9').style.opacity = 0;
+        }
     
         
         
