@@ -37,6 +37,7 @@
         animation: menu1 0.5s forwards 0.3s;
         animation-delay: 1.5s;
     }
+    /*
     .overlay1{
         position: relative;
         top: -1000px;
@@ -51,6 +52,7 @@
     .overlay{
         animation: overlay 2s ease-in-out;
     }
+        */
     #scatola4{
         width: 2000px;
         height: 970px;
@@ -483,13 +485,14 @@
         }
 
         function salva_nome() {
+            /*
             const overlay = document.querySelector(".overlay1");
             overlay.classList.add("overlay");
-            /*
+            */
             let nome = document.getElementById('scritta').value;
             localStorage.setItem('scritta', nome);
             window.location.href = 'ambiente_strada.html';
-            */
+            
         }
         function tasto2() {
             const overlay1 = document.querySelector('.overlay1');
