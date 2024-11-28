@@ -43,6 +43,25 @@
         z-index:-2;
     
     }
+    .overlay1{
+        position: relative;
+        top: -1000px;
+        left: 0;
+        width: 2000px;
+        height: 225%;
+        background-color: black; 
+        opacity: 1; 
+        transition: overlay 1.5s ease;
+        z-index: 3;
+    }
+    @keyframes overlay{
+            0% {
+                opacity: 1;
+            }
+            100% {
+                opacity:0;
+            }
+        }
     @keyframes dissolvenza{
             0% {
                 opacity: 0;
@@ -57,7 +76,7 @@
 </head>
 <body>
 
-    
+    <div id= "overlay1">
     <div id= "scatola1">
         <div id="scatola3" >
             <img src="strada.webp" alt="" width="2050" height="1100" style="z-index:-2;" >
@@ -75,8 +94,10 @@
         <script>
             const nome = localStorage.getItem('scritta');
             document.getElementById('nome').textContent = nome;
-
             console.log(nome);
+            const overlay1 = document.querySelector('.overlay1');
+            if(overlay1.style.opacity===0){
+                
         </script>
             <audio id="doki_theme" controls autoplay loop style="margin-left: -500px";>
                 <source src="1-02. Ohayou Sayori!.mp3" type="audio/mpeg">
