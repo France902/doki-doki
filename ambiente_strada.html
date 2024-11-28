@@ -22,8 +22,6 @@
         position:absolute;
         z-index:1;
         opacity:0;
-        animation: dissolvenza 2s forwards;
-        animation-delay: 0.5s;
     }
     #scatola4{
         width: 600px;
@@ -62,6 +60,10 @@
                 opacity:0;
             }
         }
+    .animazione{
+        animation: dissolvenza 2s forwards;
+        animation-delay: 0.5s;
+    }
     @keyframes dissolvenza{
             0% {
                 opacity: 0;
@@ -96,7 +98,8 @@
             document.getElementById('nome').textContent = nome;
             console.log(nome);
             const overlay1 = document.querySelector('.overlay1');
-            if(overlay1.style.opacity===0){
+            const textbox = document.getElementById('scatola2')
+            if(overlay1.style.opacity == 0){
                 
         </script>
             <audio id="doki_theme" controls autoplay loop style="margin-left: -500px";>
