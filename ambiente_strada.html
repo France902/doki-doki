@@ -41,10 +41,10 @@
         z-index:-2;
     
     }
-    #overlay1{
+    .overlay1{
         position: relative;
         top: 0px;
-        left: 0;
+        left: 10000px;
         width: 2000px;
         height: 225%;
         background-color: black; 
@@ -99,7 +99,7 @@
             const nome = localStorage.getItem('scritta');
             document.getElementById('nome').textContent = nome;
             console.log(nome);
-            const overlay1 = document.getElementById('overlay1');
+            const overlay1 = document.querySelector('.overlay1');
             const textbox = document.getElementById('scatola2')
             if(overlay1.style.opacity == 0){
                 textbox.classList.add("animazione");
