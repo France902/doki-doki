@@ -49,7 +49,7 @@
         height: 225%;
         background-color: black; 
         opacity: 100; 
-        
+        transition: overlay 2s forwards;
         z-index: 3;
     }
   
@@ -99,11 +99,9 @@
             const nome = localStorage.getItem('scritta');
             document.getElementById('nome').textContent = nome;
             console.log(nome);
-            const overlay1 = document.querySelector('.overlay1');
-            const textbox = document.getElementById('scatola2')
-            if(overlay1.style.opacity == 0){
-                textbox.classList.add("animazione");
-            }
+                const overlay1 = document.querySelector('.overlay1');
+                const textbox = document.getElementById('scatola2')
+
         </script>
             <audio id="doki_theme" controls autoplay loop style="margin-left: -500px";>
                 <source src="1-02. Ohayou Sayori!.mp3" type="audio/mpeg">
