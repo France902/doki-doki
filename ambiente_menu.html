@@ -47,7 +47,7 @@
         background-color: black; 
         opacity: 0; 
         transition: overlay 1.5s ease;
-        z-index: 3;
+        z-index: -3;
     }
     .overlay{
         animation: overlay 2s ease-in-out;
@@ -252,7 +252,7 @@
         padding:0%;
         opacity: 0;
     }
-        /*
+        
         @keyframes  overlay{
             from {
                 opacity: 0;
@@ -261,7 +261,7 @@
                 opacity: 1;
     
             }
-            */
+            
         @keyframes  cerchio1{
             from {
                 transform: translate(0, -100px);
@@ -490,7 +490,7 @@
             
             const overlay = document.querySelector(".overlay1");
             overlay.classList.add("overlay");
-            
+            overlay.style.zIndex = '3';
             let nome = document.getElementById('scritta').value;
             localStorage.setItem('scritta', nome);
             window.location.href = 'ambiente_strada.html';
