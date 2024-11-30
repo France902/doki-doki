@@ -159,7 +159,7 @@
         height: 20px;
         z-index: -1;
         opacity: 0;
-        z-index:2;
+        display: none;
     }
     .buttone7{
         border: 0px;
@@ -172,7 +172,7 @@
         height: 20px;
         z-index: -1;
         opacity: 0;
-        z-index:2;
+        display: none;
     }
     .buttone1:hover{
         opacity: 0.5;
@@ -507,9 +507,11 @@
             const buttone6 = document.querySelector('.buttone6');
             buttone6.style.opacity = '1'; 
             buttone6.style.zIndex = '2';
+            buttone6.style.display = 'block';
             const buttone7 = document.querySelector('.buttone7');
             buttone7.style.opacity = '1'; 
             buttone7.style.zIndex = '2';
+            buttone7.style.display = 'block';
             document.getElementById('scatola5').style.opacity = 1;
             document.getElementById('scatola5').style.zIndex = 2;
             document.querySelector('#scatola5 p').style.opacity = 1;
