@@ -485,8 +485,9 @@
             overlay.classList.add("overlay");
             let nome = document.getElementById('scritta').value;
             localStorage.setItem('scritta', nome);
-            window.location.href = 'ambiente_strada.html';
-            
+            setTimeout(function() {
+                window.location.href = 'ambiente_strada.html';
+            }, 3000);
         }
         function tasto2() {
             const buttone6 = document.querySelector('.buttone6');
