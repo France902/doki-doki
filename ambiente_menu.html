@@ -38,7 +38,7 @@
         animation-delay: 1.5s;
     }
     
-    #overlay1{
+    .overlay1{
         position: fixed;
         top: -1000px;
         left: 0;
@@ -47,9 +47,11 @@
         background-color: black; 
         opacity: 0; 
         z-index: -3;
+        transition: opacity 1s ease-out;
     }
     .overlay{
-        animation: overlay 2s ease-in-out;
+        opacity:1;
+        z-index:3;
     }
         
     #scatola4{
@@ -251,15 +253,6 @@
         padding:0%;
         opacity: 0;
     }
-        
-        @keyframes  overlay{
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-    
-            }
             
         @keyframes  cerchio1{
             from {
@@ -381,7 +374,7 @@
 
     
     <div id= "scatola1">
-        <div id="overlay1"></div>  
+        <div class="overlay1"></div>  
         <div id="scatola3" >
             <img src="menù.png" alt="" width="1700" height="1065" >
         </div>
@@ -490,7 +483,6 @@
             
             const overlay = document.querySelector(".overlay1");
             overlay.classList.add("overlay");
-            overlay.style.zIndex = '3';
             let nome = document.getElementById('scritta').value;
             localStorage.setItem('scritta', nome);
             window.location.href = 'ambiente_strada.html';
