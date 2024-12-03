@@ -3,161 +3,173 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>DDLC</title>
     <style>
         .video-background {
-        position: relative;
-        width:2970px;
-        height:1500px;
-        margin-left: -6px;
-        z-index:-2;
-        
-    }
-    #sfondo_nero{
-        position:relative;
-    }
-
-    </style>
-    <style>
-    #scatola1{
-        width: 1350px;
-        height: 600px;
-        padding: 0%;
-    }
-
-    #scatola3{
-        width: 1000px;
-        height: 600px;
-        padding: 0%;
-        margin-top: -30px;
-        margin-left: -400px;
-        animation: menu1 0.5s forwards 0.3s;
-        animation-delay: 1.5s;
-    }
-    .overlay1{
-        position: relative;
-        top: -1000px;
-        left: 0;
-        width: 2000px;
-        height: 225%;
-        background-color: rgba(0, 0, 0, 0.5); 
-        opacity: 0; 
-        transition: opacity 0.1s ease; 
-        z-index: 0;
-    }
-    #scatola4{
-        width: 2000px;
-        height: 970px;
-        padding: 0%;
-        z-index: 1;
-    }
-    #scatola2{
-        width: 2000px;
-        height: 450px;
-        padding: 0%;
-        margin-top: -1050px;
-        margin-left: -60px;
-        animation: cerchio1 1.5s forwards ease-in-out 1.5s, cerchio2 1.3s forwards 3s,cerchio3 1.3s forwards ease-in-out 4.4s,cerchio4 1.3s forwards 5.7s,cerchio5 1s forwards 7.1s;
-    }
-    #scatola5{
+            position: fixed;
+            margin-top: -2000px;
+            margin-left:-2000px;
+            width: 5940px;
+            height: 3000px;
+            z-index: -3;   
+        }
+        #boxSalvataggio1 { 
+            position: fixed;
+            width: 800px;
+            height: 500px;
+            background-color: violet;
+            opacity: 0;
+            z-index: -2; 
+        }
+        #scatola1 {
+            position: fixed;
+            width: 2700px;
+            height: 1200px;
+            padding: 0%;
+        }
+        #scatola3 {
+            position: fixed;
+            width: 2000px;
+            height: 1200px;
+            padding: 0%;
+            margin-left: -800px;
+            animation: menu1 0.5s forwards 0.3s;
+            animation-delay: 1.5s;
+        }
+        .overlay1 {
+            position: fixed;
+            top: -2000px;
+            left: 0;
+            width: 4000px;
+            height: 450%;
+            background-color: black; 
+            opacity: 0; 
+            z-index: -3;
+            transition: opacity 2s ease-out;
+        }
+        .overlay {
+            position: fixed;
+            opacity: 1;
+            z-index: 3;
+        }
+        #scatola4 {
+            position: fixed;
+            width: 4000px;
+            height: 1940px;
+            padding: 0%;
+            z-index: 1;
+        }
+        #scatola2 {
+            position: fixed;
+            width: 4000px;
+            height: 900px;
+            padding: 0%;
+            margin-top: -950px;
+            animation: cerchio1 1.5s forwards ease-in-out 1.5s, cerchio2 1.3s forwards 3s, cerchio3 1.3s forwards ease-in-out 4.4s, cerchio4 1.3s forwards 5.7s, cerchio5 1s forwards 7.1s;
+        }
+        #scatola5 {
+            position: fixed;
             opacity: 100%;
             padding: 0%;
-            margin-top: 350px;
-            margin-left: 670px;
-            position: relative;
+            margin-left: 1500px;
+            margin-top: 700px;
             z-index: -2;
-            width: 500px; 
-            height: 370px;  
-            border: 5.5px solid rgb(247, 135, 178); 
+            width: 1000px; 
+            height: 740px;  
+            border: 11px solid rgb(247, 135, 178); 
             opacity: 0;
             background-color: rgb(248, 210, 216);
-
         }
-
-
-    .buttone1{
-        margin-left: 35px;
-        border: 0px;
-        width: 200px;
-        margin-top: -2010px;
-        cursor: pointer;
-        transition: opacity 0.3s ease;
-        position:absolute;
-        height:0px;
-        padding: 0%;
-    }
-    .buttone2{
-        margin-left: 100px;
-        border: 0px;
-        width: 200px;
-        margin-left: 30px;
-        margin-top: -1955px;
-        cursor: pointer;
-        transition: opacity 0.3s ease;
-        position:absolute;
-        height:0px;
-        padding: 0%;
-    }
-    .buttone3{
-        margin-left: 100px;
-        border: 0px;
-        width: 200px;
-        margin-left: 60px;
-        margin-top: -1890px;
-        cursor: pointer;
-        transition: opacity 0.3s ease;
-        position:absolute;
-        height:0px;
-        padding: 0%;
-    }
-    .buttone4{
-        margin-left: 150px;
-        border: 0px;
-        width: 200px;
-        margin-left: 30px;
-        margin-top: -1830px;
-        cursor: pointer;
-        transition: opacity 0.3s ease;
-        position:absolute;
-        height:0px;
-        padding: 0%;
-    }
-    .buttone5{
-        margin-left: 100px;
-        border: 0px;
-        width: 200px;
-        margin-left: 30px;
-        margin-top: -1770px;
-        cursor: pointer;
-        transition: opacity 0.3s ease;
-        position:absolute;
-        height:0px;
-        padding: 0%;
-    }
-    .buttone6{
-        border: 0px;
-        width: 60px;
-        margin-left: 90px;
-        margin-top: -1690px;
-        cursor: pointer;
-        transition: opacity 0.3s ease;
-        position:absolute;
-        height: 20px;
-        z-index: -1;
-        opacity: 0;
-    }
-    .buttone7{
-        border: 0px;
-        width: 60px;
-        margin-left: 935px;
-        margin-top: -1970px;
-        cursor: pointer;
-        transition: opacity 0.3s ease;
-        position: absolute;
-        height: 20px;
-        z-index: -1;
-        opacity: 0;
-    }
+        .buttone1 {
+            position: fixed;
+            border: 0px;
+            width: 400px;
+            cursor: pointer;
+            transition: opacity 0.3s ease;
+            height: 0px; 
+            padding: 0%;
+            z-index: 2;
+            margin-top: 900px;
+        }
+        
+        .buttone2 {
+            position: fixed;
+            border: 0px;
+            width: 400px;
+            cursor: pointer;
+            transition: opacity 0.3s ease;
+            height: 0px; 
+            padding: 0%;
+            z-index: 2;
+            margin-top: 1050px;
+        }
+        
+        .buttone3 {
+            position: fixed;
+            border: 0px;
+            width: 400px; 
+            cursor: pointer;
+            transition: opacity 0.3s ease;
+            height: 0px; 
+            padding: 0%;
+            z-index: 2;
+            margin-top: 1200px;
+            margin-left: 80px;
+        }
+        
+        .buttone4 {
+            position: fixed;
+            border: 0px;
+            width: 400px; 
+            cursor: pointer;
+            transition: opacity 0.3s ease;
+            height: 0px; 
+            padding: 0%;
+            z-index: 2;
+            margin-top: 1350px;
+            margin-left: 215px;
+        }
+        
+        .buttone5 {
+            position: fixed;
+            border: 0px;
+            width: 400px; 
+            cursor: pointer;
+            transition: opacity 0.3s ease;
+            height: 0px; 
+            padding: 0%;
+            z-index: 2;
+            margin-top: 1500px;
+            margin-left: 30px;
+        }
+        
+        .buttone6 {
+            position: fixed;
+            border: 0px;
+            width: 120px; 
+            margin-top: 1750px;
+            margin-left: 120px;
+            cursor: pointer;
+            transition: opacity 0.3s ease;
+            height: 40px; 
+            z-index: -1;
+            opacity: 0;
+            display: none;
+        }
+        
+        .buttone7 {
+            position: fixed;
+            border: 0px;
+            width: 120px; 
+            margin-top: 1100px;
+            margin-left:1940px;
+            cursor: pointer;
+            transition: opacity 0.3s ease;
+            height: 40px; 
+            z-index: -1;
+            opacity: 0;
+            display: none;
+        }
     .buttone1:hover{
         opacity: 0.5;
     }
@@ -180,173 +192,153 @@
         opacity: 0.5;
     }
     #doki_main_theme{
-            margin-top: 300px;
             opacity: 0;
             position: absolute; 
         }
-        #scatola6{
-        width: 2000px;
-        height: 970px;
-        padding: 0%;
-        margin-top: 1190px;
-        margin-left: 1470px;
-        position: absolute;;
-        z-index: 0;
-        transform-origin: center;
-        animation: krilin1 3s forwards ease-in-out;
-        display: inline-block;
-        
-    }
-    #scatola8{
-        width: 2000px;
-        height: 970px;
-        padding: 0%;
-        margin-top: 1150px;
-        margin-left: 400px;
-        position: absolute;
-        z-index: 0;
-        animation: yajirobe1 3s forwards ease-in-out;
-        display: inline-block;
-    }
-    #scatola7{
-        width: 2000px;
-        height: 970px;
-        padding: 0%;
-        margin-top: 950px;
-        margin-left: 800px;
-        position: absolute;
-        z-index: -1;
-        animation: nezuko1 3s forwards ease-in-out;
-    }
-    #scatola9{
-        width: 2000px;
-        height: 2000px;
-        padding: 0%;
-        margin-top: 1010px;
-        margin-left: 1000px;
-        position: absolute;
-        z-index: -1;
-        animation: hulk1 3s forwards ease-in-out;
-    }
-    #scatola10{
-        width: 1300px;
-        height: 930px;
-        position: relative;
-        margin-top:-500px;
-        margin-left: 290px;
-        padding:0%;
-        opacity: 0;
-    }
-        @keyframes  cerchio1{
+        #scatola6 {
+            width: 4000px;
+            height: 1940px;
+            padding: 0%;
+            position: fixed;
+            z-index: 0;
+            transform-origin: center;
+            animation: krilin1 3s forwards ease-in-out;
+            display: inline-block;
+            margin-top: 3800px;
+            margin-left:2800px;
+        }
+        #scatola7 {
+            width: 4000px;
+            height: 1940px;
+            padding: 0%;
+            margin-top: 3300px;
+            margin-left:1300px;
+            position: fixed;
+            z-index: -1;
+            animation: nezuko1 3s forwards ease-in-out;
+        }
+        #scatola9 {
+            width: 4000px;
+            height: 4000px;
+            padding: 0%;
+            margin-top: 3300px;
+            margin-left:1900px;
+            position: fixed;
+            z-index: -1;
+            animation: hulk1 3s forwards ease-in-out;
+        }
+        #scatola10 {
+            width: 2600px;
+            height: 1860px;
+            position: fixed;
+            margin-top: 3400px;
+            margin-left:1000px;
+            padding: 0%;
+            opacity: 0;
+        }
+        #scatola8 {
+            width: 4000px; 
+            height: 1940px; 
+            padding: 0%;
+            margin-top: 3600px;
+            margin-left:1300px;
+            position: fixed;
+            z-index: 0;
+            animation: yajirobe1 3s forwards ease-in-out;
+            display: inline-block;
+        }
+     @keyframes cerchio1 {
             from {
-                transform: translate(0, -100px);
+                transform: translate(0, -200px);
             }
             to {
-                transform: translatey(400px); 
-    
+                transform: translatey(800px); 
             }
-        
         }
-        @keyframes  cerchio2{
+        @keyframes cerchio2 {
             from {
-                transform: translatey(400px);
+                transform: translatey(800px);
             }
             to {
-                transform: translatey(300px); 
-    
+                transform: translatey(600px); 
             }
-        
         }
-        @keyframes  cerchio3{
+        @keyframes cerchio3 {
             from {
-                transform: translatey(300px);
+                transform: translatey(600px);
             }
             to {
-                transform: translatey(400px); 
-    
+                transform: translatey(800px); 
             }
-        
         }
-        @keyframes  cerchio4{
+        @keyframes cerchio4 {
             from {
-                transform: translatey(400px);
+                transform: translatey(800px);
             }
             to {
-                transform: translatey(385px); 
-    
+                transform: translatey(770px); 
             }
-        
         }
-        @keyframes  cerchio5{
+        @keyframes cerchio5 {
             from {
-                transform: translatey(385px);
+                transform: translatey(770px);
             }
             to {
-                transform: translatey(400px); 
-    
+                transform: translatey(800px); 
             }
-        
         }
-        @keyframes  menu1{
+        @keyframes menu1 {
             from {
                 transform: translate(0, 0);
             }
             to {
-                transform: translatex(400px); 
-    
+                transform: translatex(800px); 
             }
-        
         }
-        @keyframes  krilin1{
+        @keyframes krilin1 {
             0% {
                 transform: translate(0, 0) scale(1);
             }
             50% {
-                transform: translate(0, -1600px) scale(0.9); 
-    
+                transform: translate(0, -3200px) scale(0.9); 
             }
             100% {
-                transform: translate(0, -1600px) scale(1);
+                transform: translate(0, -3200px) scale(1);
             }
         }
-        @keyframes  yajirobe1{
+        @keyframes nezuko1 {
             0% {
                 transform: translate(0, 0) scale(1);
             }
             50% {
-                transform: translate(0, -1600px) scale(0.9); 
-    
+                transform: translate(0, -3200px) scale(0.9); 
             }
             100% {
-                transform: translate(0, -1600px) scale(1);
+                transform: translate(0, -3200px) scale(1);
             }
         }
-    @keyframes nezuko1{
+        @keyframes hulk1 {
             0% {
                 transform: translate(0, 0) scale(1);
             }
             50% {
-                transform: translate(0, -1600px) scale(0.9); 
-    
+                transform: translate(0, -3200px) scale(0.9); 
             }
             100% {
-                transform: translate(0, -1600px) scale(1);
+                transform: translate(0, -3200px) scale(1);
             }
         }
-
-        @keyframes hulk1{
+        @keyframes yajirobe1 {
             0% {
                 transform: translate(0, 0) scale(1);
             }
             50% {
-                transform: translate(0, -1600px) scale(0.9); 
-    
+                transform: translate(0, -3200px) scale(0.9);
             }
             100% {
-                transform: translate(0, -1600px) scale(1);
+                transform: translate(0, -3200px) scale(1);
             }
         }
-
 
 
     </style>
@@ -354,134 +346,111 @@
     
 </head>
 <body>
-
-    
-    <div id= "scatola1">
-        <div id="scatola3" >
-            <img src="menù.png" alt="" width="1700" height="1065" >
+    <div id="scatola1">
+        <div class="overlay1"></div>  
+        <div id="scatola3">
+            <img src="menù.png" alt="" width="3400" height="2130">
         </div>
-        <div id="scatola2" >
-            <img src="doki doki cerchio.png" alt="" width="800" height="450" >
+        <div id="scatola2">
+            <img src="doki doki cerchio.png" alt="" width="1600" height="900">
         </div>
         <div id="scatola5">
-            <p style="margin-top: 30px; font-size:35px; font-weight: bold; margin-left: 80px;width: 450px; height: 370px; opacity: 0; position: relative; z-index: -2; ">Please enter your name</p>
+            <p style="font-size:70px; font-weight: bold;  width: 1050px; height: 740px; opacity: 0; position: fixed; z-index: -2; text-align:center;">
+                Please enter your name
+            </p>
         </div>
         <div id="scatola6">
-            <img src="krilin.png" alt="Character" width="350" height="700">
+            <img src="krilin.png" alt="Character" width="700" height="1400">
         </div>
         <div id="scatola7">
-            <img src="Nezuko.png" alt="Character" width="375" height="850">
+            <img src="Nezuko.png" alt="Character" width="750" height="1760">
         </div>
         <div id="scatola8">
-            <img src="Yajirobe2.png" alt="Character" width="700" height="700">
+            <img src="Yajirobe2.png" alt="Character" width="1400" height="1400">
         </div>
         <div id="scatola9">
-            <img src="hulk.png" alt="Character" width="650" height="850">
-        
+            <img src="hulk.png" alt="Character" width="1300" height="1700">
         </div>
-        <div class="overlay1"></div>
     </div> 
     <div id="scatola10">
-            <p style="line-height:2; margin-left: 290px; color: black;width:1300px;height: 1000px;font-size: 38px; font-family: 'Arial Black', Arial, sans-serif; "> Questa ricreazione del già famoso DOKI DOKI Literature club nasce da una nostra idea dopo averlo giocato.
-                <br> Non vogliamo nessun diritto, solo portare una versione Html di esso!
-                <br> Come si gioca? 
-                <br> Questo è un gioco sia a scelte, che narrativo; infatti La storia è importante, poiché se non la segui rischi di non capire niente! 
-                <br> Dovrete creare poesie scegliendo le parole giuste e magari dichiarare il vostro amore per qualcuno! 
-                <br> Buona fortuna per quello che vi aspetterà!</p>
-        </div>
-     <div class="video-background" >
-        <video autoplay muted loop style="width: 2870px; height: 1060px; position: absolute; top: -1060px; left: -500px; z-index: -1;">
-            <source src="video_sfondo4.mp4" type="video/mp4">
-            Il tuo browser non supporta il tag video.
+        <p style="line-height:4;  color: black; width:2600px; height: 2000px; font-size: 76px; font-family: 'Arial Black', Arial, sans-serif;">
+            Questa ricreazione del già famoso DOKI DOKI Literature club nasce da una nostra idea dopo averlo giocato.
+            <br> Non vogliamo nessun diritto, solo portare una versione Html di esso!
+            <br> Come si gioca? 
+            <br> Questo è un gioco sia a scelte, che narrativo; infatti La storia è importante, poiché se non la segui rischi di non capire niente! 
+            <br> Dovrete creare poesie scegliendo le parole giuste e magari dichiarare il vostro amore per qualcuno! 
+            <br> Buona fortuna per quello che vi aspetterà!
+        </p>
+    </div>
+    <div class="video-background">
+        <video autoplay muted loop style="width: 5740px; height: 2120px; position: relative; z-index: -1; margin-top:2000px; margin-left: 1000px;">
+            <source src="video_sfondo2.mp4" type="video/mp4">
         </video>
     </div>
-    <img id="nuovaImmagine" src="https://i.pinimg.com/originals/c5/ac/d8/c5acd8084aa5f96eac759a10b92e04d9.jpg" alt="" width="2000" height="1040" >
+    <div id="boxSalvataggio1" style="z-index: -2;"></div>
+    <div id="boxSalvataggio2"></div>
+    <div id="boxSalvataggio3"></div>
+    <div id="boxSalvataggio4"></div>
+    <div id="boxSalvataggio5"></div>
+    <div id="boxSalvataggio6"></div>
     <div class="buttone1">
-        <button 
-        style="width: 30px; height: 0px;background: none; cursor: pointer;transition: box-shadow 0.3s; padding:0%; border:1px;"    
-        onclick="tasto1()">
-        <p style="color: white;width:300px;font-size: 40px; -webkit-text-stroke: 3px rgb(179, 77, 179); font-family: 'Arial Black', Arial, sans-serif; letter-spacing: -3px; border:1px;"> Nuova Partita</p>
-    </button> 
+        <button style="width: 60px; height: 0px; background: none; cursor: pointer; transition: box-shadow 0.3s; padding: 0%; border: 2px; z-index: 2;" onclick="tasto1()">
+            <p style="color: white; width: 700px; font-size: 90px; -webkit-text-stroke: 4px rgb(179, 77, 179); font-family: 'Arial Black', Arial, sans-serif; letter-spacing: -6px; border: 2px; z-index: 2;">Nuova Partita</p>
+        </button>
     </div>
     <div class="buttone2">
-        <button 
-        style="width: 30px; height: 0px;background: none;cursor: pointer; padding:0%; border:1px;"
-        onclick="nascondiScatole()">
-        <p style="color: white;width:300px;font-size: 40px; -webkit-text-stroke: 3px rgb(179, 77, 179); font-family: 'Arial Black', Arial, sans-serif; letter-spacing: -3px; border:1px;"> Carica Partita</p>
-    </button> 
+        <button style="width: 60px; height: 0px; background: none; cursor: pointer; padding: 0%; border: 2px; z-index: 2;" onclick="CaricaPartita()">
+            <p style="color: white; width: 700px; font-size: 90px; -webkit-text-stroke: 4px rgb(179, 77, 179); font-family: 'Arial Black', Arial, sans-serif; letter-spacing: -6px; border: 2px; z-index: 2;">Carica Partita</p>
+        </button>
     </div>
     <div class="buttone3">
-        <button 
-        style="width: 30px; height: 0px;background: none;cursor: pointer; padding:0%; border:1px;"
-        onclick="tasto3()">
-        <p style="color: white;width:100px;font-size: 40px; -webkit-text-stroke: 3px rgb(179, 77, 179); font-family: 'Arial Black', Arial, sans-serif; letter-spacing: -3px; border:1px;"> Impostazioni</p>
-    </button> 
+        <button style="width: 60px; height: 0px; background: none; cursor: pointer; padding: 0%; border: 2px; z-index: 2;" onclick="tasto3()">
+            <p style="color: white; width: 200px; font-size: 90px; -webkit-text-stroke: 4px rgb(179, 77, 179); font-family: 'Arial Black', Arial, sans-serif; letter-spacing: -6px; border: 2px; z-index: 2;">Impostazioni</p>
+        </button>
     </div>
     <div class="buttone4">
-        <button 
-        style="width: 30px; height: 0px;background: none;cursor: pointer; padding:0%; border:1px;"
-        onclick="location.href='https://ddlc.plus/'">
-        <p style="color: white;width:30px;font-size: 40px; margin-left:100px; -webkit-text-stroke: 3px rgb(179, 77, 179); font-family: 'Arial Black', Arial, sans-serif; letter-spacing: -3px; border:1px;"> Aiuto</p>
-    </button> 
+        <button style="width: 60px; height: 0px; background: none; cursor: pointer; padding: 0%; border: 2px; z-index: 2;" onclick="location.href='https://ddlc.plus/'">
+            <p style="color: white; width: 60px; font-size: 90px;  -webkit-text-stroke: 4px rgb(179, 77, 179); font-family: 'Arial Black', Arial, sans-serif; letter-spacing: -6px; border: 2px; z-index: 2;">Aiuto</p>
+        </button>
     </div>
     <div class="buttone5">
-        <button 
-        style="width: 30px; height: 0px;background: none;cursor: pointer; padding:0%; border:1px;"
-        onclick="location.href='index.html'">
-        <p style="color: white;width:300px;font-size: 40px; -webkit-text-stroke: 3px rgb(179, 77, 179); font-family: 'Arial Black', Arial, sans-serif; letter-spacing: -3px; border:1px;"> Esci</p>
-    </button> 
+        <button style="width: 60px; height: 0px; background: none; cursor: pointer; padding: 0%; border: 2px; z-index: 2;" onclick="location.href='index.html'">
+            <p style="color: white; width: 600px; font-size: 90px; -webkit-text-stroke: 4px rgb(179, 77, 179); font-family: 'Arial Black', Arial, sans-serif; letter-spacing: -6px; border: 2px; z-index: 2;">Esci</p>
+        </button>
     </div>
     <div class="buttone6">
-        <button 
-        style="width: 60px; height: 20px;background: none;border: none white;cursor: pointer;transition: opacity 0.3s ease; "
-        onclick="tasto2()">
-        <p style="color: white;width:60px;height: 20px;font-size: 43px; -webkit-text-stroke: 3px rgb(179, 77, 179); font-family: 'Arial Black', Arial, sans-serif; letter-spacing: -3px;"> Indietro</p>
-    </button> 
+        <button style="width: 120px; height: 40px; background: none; border: none; cursor: pointer; transition: opacity 0.3s ease; z-index: 2;" onclick="tasto2()">
+            <p style="color: white; width: 120px; height: 40px; font-size: 96px; -webkit-text-stroke: 4px rgb(179, 77, 179); font-family: 'Arial Black', Arial, sans-serif; letter-spacing: -6px; z-index: 2;">Indietro</p>
+        </button>
     </div>
     <div class="buttone7">
-        <button 
-        style="width: 60px; height: 20px;background: none;border: none;cursor: pointer;transition: opacity 0.3s ease; margin-left:-60px"
-        onclick="salva_nome()">
-        <p style="color: white;width:60px;height: 20px;font-size: 45px; -webkit-text-stroke: 3px rgb(179, 77, 179); font-family: 'Arial Black', Arial, sans-serif; letter-spacing: -3px;"> OK</p>
-    </button> 
+        <button style="width: 120px; height: 40px; background: none; border: none; cursor: pointer; transition: opacity 0.3s ease;   z-index: 2;" onclick="salva_nome()">
+            <p style="color: white; width: 120px; height: 40px; font-size: 90px; -webkit-text-stroke: 4px rgb(179, 77, 179); font-family: 'Arial Black', Arial, sans-serif; letter-spacing: -6px; z-index: 2;">OK</p>
+        </button>
     </div>
     <form id="salva_nome">
-    <input type="text" name="scritta" id="scritta" style="color:black;margin-top: -2050px; margin-left: 720px;position: absolute; background: none; width: 400px; height:80px;  font-size: 25px;  opacity: 100; display: none; " >
+        <input type="text" name="scritta" id="scritta" style="color: black;   position: absolute; background: none; width: 800px; height: 160px; font-size: 50px; opacity: 100; display: none; z-index: 2; margin-top: 950px;margin-left:1600px;">
     </form>
 
 
-    <script>
-        window.onload = function() {
-            var immagine = document.getElementById("nuovaImmagine");
-            immagine.style.display = "none"; 
-        };
-
-    </script>
     
     <script>
-
-        
         function nascondiScatole() {
             const scatola2 = document.getElementById("scatola2");
-            const scatola1 = document.getElementById("scatola1");
-            const Misa = document.getElementById("nuovaImmagine");
-            if(Misa.style.display == 'none'){
-                Misa.style.display = 'block';
-            }else{
-                Misa.style.display = 'none';
-            }
-            
+            const scatola1 = document.getElementById("scatola1");  
         }
 
         function salva_nome() {
+            
+            const overlay = document.querySelector(".overlay1");
+            overlay.classList.add("overlay");
             let nome = document.getElementById('scritta').value;
             localStorage.setItem('scritta', nome);
-            window.location.href = 'ambiente_strada.html';
+            setTimeout(function() {
+                window.location.href = 'ambiente_strada.html';
+            }, 3000);
         }
         function tasto2() {
-            const overlay1 = document.querySelector('.overlay1');
-            overlay1.style.opacity = '0'; 
-            overlay1.style.zIndex = '0';
             const buttone6 = document.querySelector('.buttone6');
             buttone6.style.opacity = '0'; 
             buttone6.style.zIndex = '-1';
@@ -498,16 +467,18 @@
             function tasto1() {
             const buttone6 = document.querySelector('.buttone6');
             buttone6.style.opacity = '1'; 
-            buttone6.style.zIndex = '3';
+            buttone6.style.zIndex = '2';
+            buttone6.style.display = 'block';
             const buttone7 = document.querySelector('.buttone7');
             buttone7.style.opacity = '1'; 
-            buttone7.style.zIndex = '3';
+            buttone7.style.zIndex = '2';
+            buttone7.style.display = 'block';
             document.getElementById('scatola5').style.opacity = 1;
-            document.getElementById('scatola5').style.zIndex = 3;
+            document.getElementById('scatola5').style.zIndex = 2;
             document.querySelector('#scatola5 p').style.opacity = 1;
             document.querySelector('#scritta').style.display = 'block';
-            document.querySelector('#scritta').style.zIndex = 3;
-            document.querySelector('#buttone6 p').style.zIndex = 4;
+            document.querySelector('#scritta').style.zIndex = 2;
+            document.querySelector('#buttone6 p').style.zIndex = 2;
         }
         function tasto3() {
             const scatola6 = document.getElementById("scatola6");
@@ -530,7 +501,20 @@
             document.getElementById('scatola9').style.opacity = 0;
             document.getElementById('scatola10').style.opacity = 1; 
         }
-        
+        function Inizio(){
+            const scatola7 = document.getElementById('scatola7');
+            scatola7.classList.remove("ferma");
+        }
+        function CaricaPartita(){
+            const buttone6 = document.querySelector('.boxSalvataggio1');
+            boxSalvataggio1.style.opacity = '1';
+            const buttone7 = document.querySelector('.boxSalvataggio2');
+            boxSalvataggio2.style.opacity = '1';
+            document.getElementById('scatola6').style.opacity = 0;
+            document.getElementById('scatola7').style.opacity = 0;
+            document.getElementById('scatola8').style.opacity = 0;
+            document.getElementById('scatola9').style.opacity = 0;
+        }
     
         
         
