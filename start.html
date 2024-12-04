@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    .overlay1 {
+        position: fixed;
+        top: -2000px;
+        left: 0;
+        width: 4000px;
+        height: 450%;
+        background-color: black; 
+        opacity: 1; 
+        z-index: -3;
+        transition: opacity 2s ease-out;
+    }
+    .overlay {
+        position: fixed;
+        opacity: 0;
+        z-index: -3;
+    }
+    .video{
+        position: fixed;
+        width: 3000px;
+        height: 1500px;
+    }
+    #immagine{
+        position: fixed;
+        width: 7000px;
+        height: 3500px;
+        z-index: -2;
+    }
+</style>
+</head>
+<body>
+    <div class="overlay1"> </div>
+    <div class="video"><video id="video1" autoplay muted ><source src="start.mp4" type="video/mp4"></video></div>
+    <div id="immagine"> <img src="login.png" alt="" style="width: 1920px; height: 1070px; "> </div>
+
+    <script>
+        
+        const video = document.getElementById("video1");
+
+        
+        video.addEventListener("ended", function() {
+            
+            video.style.opacity = 0;
+        });
+    </script>
+</body>
+</html>
