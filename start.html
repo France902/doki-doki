@@ -23,14 +23,14 @@
     }
     .video{
         position: fixed;
-        width: 3000px;
-        height: 1500px;
+        width: 9000px;
+        height: 4500px;
         z-index: -1;
     }
     .video2{
         position: fixed;
-        width: 3000px;
-        height: 1500px;
+        width: 9000px;
+        height: 4500px;
         visibility: hidden;
         z-index: 1;
     }
@@ -40,12 +40,18 @@
         height: 3500px;
         z-index: -2;
     }
+    #immagine2{
+        position: fixed;
+        width: 7000px;
+        height: 3500px;
+        z-index: -4;
+    }
     .button1{
         position: fixed;
-        width: 150px;
-        height: 60px;
-        margin-left: 870px;
-        margin-top: 740px;
+        width: 280px;
+        height: 112px;
+        margin-left: 2336px;
+        margin-top: 2020px;
         opacity: 0;
         display: none;
     }
@@ -53,17 +59,18 @@
 </head>
 <body>
     <div class="overlay1"> </div>
-     <div class="video"><video id="video1" autoplay muted ><source src="start.mp4" type="video/mp4"></video></div> 
-    <div id="immagine"> <img src="login.png" alt="" style="width: 1920px; height: 1070px; "> </div>
+     <div class="video"><video id="video1" autoplay muted style="width: 5390px; height: 2896px; margin-left: -196px; " ><source src="start.mp4" type="video/mp4"></video></div> 
+    <div id="immagine"> <img src="login.png" alt="" style="width: 5026px; height: 2896px; "> </div>
+    <div id="immagine2"> <img src="desktop.jpg" alt="" style="width: 5026px; height: 2896px; "> </div>
     <div > <button class="button1" onclick="Desktop()" style="cursor: pointer;"> </button></div>
-    <div class="video2"> <video id="video3" autoplay muted  style="width: 2050px; height: 1070px; margin-left: -70px; " > <source src="cerchietto.mp4" > </video>   </div>
+    <div class="video2"> <video id="video3" autoplay muted  style="width: 5390px; height: 2856px; margin-left: -186px; " > <source src="cerchietto.mp4" > </video>   </div>
     <script>
         
         const video = document.getElementById("video1");
         const button1 = document.querySelector(".button1");
         const video2 = document.getElementById("video3");
         const immagine = document.getElementById("immagine");
-
+        const immagine2 = document.getElementById("immagine2");
 
         window.onload = function(){
             video2.pause();
@@ -82,6 +89,10 @@
             video2.style.visibility = 'visible';
             video2.play();
         }
+        video2.addEventListener("ended", function() {
+            immagine2.style.zIndex = '3';
+            video2.style.visibility = 'hidden';
+        });
 
 
 
