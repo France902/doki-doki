@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Particelle in Caduta</title>
+  <style>
+    body {
+      margin: 0;
+      overflow: hidden;
+      background-color: black;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .particle {
+      position: absolute;
+      width: 5px;
+      height: 5px;
+      background-color: white;
+      border-radius: 50%;
+      animation: fall 2s ease-out forwards;
+    }
+
+    @keyframes fall {
+      0% {
+        transform: translate(0, 0);
+        opacity: 1;
+      }
+      100% {
+        transform: translate(var(--dx), var(--dy));
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <script>
+    const particles = 30; // Numero di particelle
+    const centerX = window.innerWidth / 2;
+    const centerY = window.innerHeight / 2;
+
+    for (let i = 0; i < particles; i++) {
+      const particle = document.createElement('div');
+      particle.classList.add('particle');
+
+      // Traiettoria casuale
+      const angle = Math.random() * Math.PI - Math.PI / 2; // Traiettoria in arco
+      const radius = Math.random() * 100 + 50; // Distanza casuale
+      const dx = Math.cos(angle) * radius;
+      const dy = Math.sin(angle) * radius + Math.random() * 200 + 100;
+
+      particle.style.setProperty('--dx', `${dx}px`);
+      particle.style.setProperty('--dy', `${dy}px`);
+      particle.style.left = `${centerX}px`;
+      particle.style.top = `${centerY}px`;
+
+      document.body.appendChild(particle);
+
+      // Rimuove le particelle una volta terminata l'animazione
+      particle.addEventListener('animationend', () => particle.remove());
+    }
+  </script>
+</body>
+</html>
