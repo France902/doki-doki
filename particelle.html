@@ -21,6 +21,7 @@
       height: 8px; /* Dimensione aumentata */
       background-color: white;
       border-radius: 50%;
+      opacity: 0; /* Inizialmente nascosta */
       animation: fall 2.5s ease-out forwards;
     }
 
@@ -49,18 +50,23 @@
       // Traiettoria casuale
       const angle = Math.random() * Math.PI * 2; // Angolo casuale (360°)
       const radius = Math.random() * 200 + 50; // Distanza casuale
-      const dx = Math.cos(angle) * radius; // Movimento orizzontale (include sinistra)
-      const dy = Math.abs(Math.sin(angle) * radius) + Math.random() * 200 + 100; // Movimento verticale verso il basso
+      const dx = Math.cos(angle) * radius; // Movimento orizzontale
+      const dy = Math.abs(Math.sin(angle) * radius) + Math.random() * 200 + 100; // Movimento verticale
 
       particle.style.setProperty('--dx', `${dx}px`);
       particle.style.setProperty('--dy', `${dy}px`);
       particle.style.left = `${centerX}px`;
       particle.style.top = `${centerY}px`;
 
-      document.body.appendChild(particle);
+      // Ritardo fisso in secondi
+      const delayInSeconds = 0.5; // Ritardo in secondi
+      setTimeout(() => {
+        particle.style.opacity = 1; // Rendi la particella visibile
+        document.body.appendChild(particle);
 
-      // Rimuove le particelle una volta terminata l'animazione
-      particle.addEventListener('animationend', () => particle.remove());
+        // Rimuovi le particelle dopo la fine dell'animazione
+        particle.addEventListener('animationend', () => particle.remove());
+      }, delayInSeconds * 1000); // Converti secondi in millisecondi
     }
   </script>
 </body>
