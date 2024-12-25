@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    .text-container2 {
+        overflow: hidden; 
+        display: inline-block;
+        background-color: white;
+        position: fixed;
+        z-index: 4;
+    }
+    
+    .animated-text2 {
+        display: inline-block;
+        white-space: nowrap; 
+        clip-path: inset(0 100% 0 0); 
+        opacity:0;
+        animation: reveal-text 1.5s linear forwards ;  
+    }
+    
+    @keyframes reveal-text {
+        0% {
+            clip-path: inset(0 100% 0 0); 
+        }
+        100% {
+            clip-path: inset(0 0 0 0); 
+        }
+    }
+    </style>
+</head>
+<body>
+    <div id="area" style="width: 100%; height: 100vh; position: fixed;"> </div>
+    <div class="text-container2">
+        <span class="animated-text2" style="z-index: 4;color: white; -webkit-text-stroke: 1.8px black; font-family: 'Bebas Neue', sans-serif; font-size: 200%; font-weight: bolder; position: fixed; margin-left: 18%; margin-top: 42%;">This game is not suitable for children or who are easily disturbed.</span>
+    </div>
+    
+
+<script>
+    function handleClick(event) {
+    if (event.button === 0) {  
+        const animatedText = document.querySelector('.animated-text2');
+        animatedText.innerHTML = "Ciao";
+        
+        animatedText.classList.remove('animated-text2');
+        
+        
+        void animatedText.offsetWidth; 
+
+        animatedText.classList.add('animated-text2');
+    }
+}
+window.onload = function(){
+    setTimeout(function() {
+        document.getElementById('area').addEventListener('click', handleClick);
+        const animatedText = document.querySelector('.animated-text2');
+        animatedText.style.opacity = '1';
+        animatedText.classList.remove('animated-text2');
+        
+        
+        void animatedText.offsetWidth; 
+
+        animatedText.classList.add('animated-text2');
+    }, 5000);
+}
+</script>
+
+</body>
+</html>

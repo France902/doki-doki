@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body{
+            background-color: black;
+        }
+        .circle{
+            position: fixed;
+            animation: 2.5s circle1 forwards ;
+        }
+        .particle {
+      position: fixed;
+      width: 2vw; 
+      height: 2vh; 
+      background-color: white;
+      border-radius: 50%;
+      opacity: 0; 
+      animation: fall 2.5s ease-out forwards;
+      margin-top: -40vh;
+      margin-left: -53vh;
+    }
+    @keyframes fall {
+      0% {
+        transform: translate(0, 0);
+        opacity: 1;
+      }
+      100% {
+        transform: translate(var(--dx), var(--dy));
+        opacity: 0;
+      }
+    }
+        @keyframes circle1 {
+            0% {
+                transform: translate(0, 0);
+            }
+            20% {
+                transform: translatey(33vh);
+            }
+            40% {
+                transform: translatey(28vh);
+            }
+            60% {
+                transform: translatey(33vh);
+            }
+            80% {
+                transform: translatey(32vh);
+            }
+            100%{
+                transform: translatey(33vh);
+            }
+            
+        }
+
+
+    </style>
+</head>
+<body>
+    
+<div class="circle"> <img src="doki doki cerchio.png" alt="" style="height: 40vh; width: 40vw; margin-top: -60vh;"> </div>
+<script>
+    const particles = 200; 
+    const centerX = window.innerWidth / 2;
+    const centerY = window.innerHeight / 2;
+
+    for (let i = 0; i < particles; i++) {
+      const particle = document.createElement('div');
+      particle.classList.add('particle');
+
+      
+      const angle = Math.random() * Math.PI * 2; 
+      const radius = Math.random() * 200 + 50; 
+      const dx = Math.cos(angle) * radius; 
+      const dy = Math.abs(Math.sin(angle) * radius) + Math.random() * 200 + 100; 
+
+      particle.style.setProperty('--dx', `${dx}px`);
+      particle.style.setProperty('--dy', `${dy}px`);
+      particle.style.left = `${centerX}px`;
+      particle.style.top = `${centerY}px`;
+
+     
+      const delayInSeconds = 0.5; 
+      setTimeout(() => {
+        particle.style.opacity = 1; 
+        document.body.appendChild(particle);
+
+        
+        particle.addEventListener('animationend', () => particle.remove());
+      }, 0); 
+    }
+  </script>
+</body>
+</html>

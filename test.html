@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oggetto adattabile</title>
+    <style>
+    #avvertenza1{
+        position:fixed;
+        width: 100%;
+        height: 100vh;
+        z-index: 2;
+    }
+    .overlay1 {
+        position: fixed;
+        top: -2000px;
+        left: 0;
+        width: 40000px;
+        height: 450%;
+        background-color: black; 
+        opacity: 1; 
+        z-index: 3;
+        transition: opacity 2s ease-out;
+    }
+    .overlay{
+        opacity:0;
+    }
+    #avvertenza2{
+        position:fixed;
+        width: 100%;
+        height: 100vh;
+        opacity: 0;
+    }
+    .overlay2 {
+        position: fixed;
+        top: -2000px;
+        left: 0;
+        width: 40000px;
+        height: 450%;
+        background-color: white; 
+        opacity: 1; 
+        z-index: 1;
+        transition: opacity 2s ease-out;
+    }
+    .overlay_white{
+        opacity:0;
+    }
+    .rettangolo{
+        z-index: 3;
+        position: fixed;
+        opacity: 0;
+        transition: opacity 0.1s ease-out;
+    }
+    .rettangolo_animation{
+        opacity: 1;
+    }
+    .text-container {
+        overflow: hidden; 
+        display: inline-block;
+        background-color: white;
+        position: fixed;
+        z-index: 4;
+    }
+    .animated-text {
+        display: inline-block;
+        white-space: nowrap; 
+        clip-path: inset(0 100% 0 0); 
+        animation: reveal-text 1.5s linear forwards ; 
+        opacity: 0;
+    }
+    @keyframes reveal-text {
+        0% {
+            clip-path: inset(0 100% 0 0); 
+        }
+        100% {
+            clip-path: inset(0 0 0 0); 
+        }
+        }
+    #area{
+        width: 100%;
+        height: 100vh;
+        position:fixed;
+        opacity: 0;
+        z-index: 4;
+    }
+    </style>
+</head>
+<body>
+    <div id="area" style="width: 110%; height: 110vh; position: fixed; background-color: white;"></div>
+    <div class="text-container">
+        <span class="animated-text" style="z-index: 4;color: white; -webkit-text-stroke: 1.3px black;  font-family: 'Bebas Neue', sans-serif; font-weight: bolder; position: fixed; font-size: 140%; margin-left: 18%; margin-top: 42%;">This game is not suitable for children or who are easily disturbed.</span>
+      </div>
+    <div class="overlay1"></div>
+    <div class="overlay2"></div>
+    <div id="avvertenza1">
+        <img src="avvertenze.png" alt="" style="width: 110%; height: 110vh; position: fixed; margin-left: -90px; margin-top: -50px;">
+    </div>
+    <div id="avvertenza2">
+        <img src="schermata_gialla.png" alt="" style="width: 100%; height: 100vh; position: fixed; ">
+    </div>
+    <div class="rettangolo">
+        <img  src="textbox_DDLC (1).jpg" alt="" style="width: 68%; height: 21vh; position: fixed; margin-left: 16%; margin-top: 40%;" >
+    </div>
+
+
+
+
+
+    <script>
+        function handleClick(event) {
+        if (event.button === 0) {  
+            const animatedText = document.querySelector('.animated-text');
+            animatedText.innerHTML = "Ciao";
+            animatedText.classList.remove('animated-text');
+            void animatedText.offsetWidth; 
+            animatedText.classList.add('animated-text');
+            
+        }
+            
+        }
+        window.onload = function(){
+            
+            const avvertenza1 = document.getElementById("avvertenza1");
+            const overlay = document.querySelector(".overlay1");
+            const avvertenza2 = document.getElementById("avvertenza2");
+            const overlay2 = document.querySelector(".overlay2");
+            const rettangolo = document.querySelector(".rettangolo");
+            overlay.classList.add("overlay");
+            setTimeout(function() {
+                avvertenza1.style.display = 'none';
+                avvertenza2.style.opacity = '1';
+                overlay.style.display = 'none';
+                
+            }, 3000);
+            setTimeout(function() {
+                overlay2.classList.add("overlay_white");
+            }, 4000);
+            setTimeout(function() {
+                rettangolo.classList.add("rettangolo_animation");
+                document.getElementById('area').addEventListener('click', handleClick);
+
+                const animatedText = document.querySelector('.animated-text');
+                animatedText.style.opacity = '1';
+                animatedText.style.opacity = '1';
+                animatedText.classList.remove('animated-text');
+                void animatedText.offsetWidth;
+                animatedText.classList.add('animated-text');
+            }, 7000);
+        }
+
+    
+        
+
+
+
+    </script>
+</body>
+</html>

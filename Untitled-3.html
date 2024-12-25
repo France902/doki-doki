@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    .body {
+        background-color: black;
+    }
+
+
+    .particle {
+      position: absolute;
+      width: 8px; /* Dimensione aumentata */
+      height: 8px; /* Dimensione aumentata */
+      background-color: white;
+      border-radius: 50%;
+      opacity: 0; /* Inizialmente nascosta */
+      animation: fall 2.5s ease-out forwards;
+    }
+    @keyframes fall {
+      0% {
+        transform: translate(0, 0);
+        opacity: 1;
+      }
+      100% {
+        transform: translate(var(--dx), var(--dy));
+        opacity: 0;
+      }
+    }
+    </style>
+</head>
+<body>
+    <div class="body" style="width: 100vw; height: 100vh;"></div>
+    <script>
+        const particles = 100; // Numero di particelle
+        const centerX = window.innerWidth / 2;
+        const centerY = window.innerHeight / 2;
+    
+        for (let i = 0; i < particles; i++) {
+          const particle = document.createElement('div');
+          particle.classList.add('particle');
+    
+          // Traiettoria casuale
+          const angle = Math.random() * Math.PI * 2; // Angolo casuale (360°)
+          const radius = Math.random() * 200 + 50; // Distanza casuale
+          const dx = Math.cos(angle) * radius; // Movimento orizzontale
+          const dy = Math.abs(Math.sin(angle) * radius) + Math.random() * 200 + 100; // Movimento verticale
+    
+          particle.style.setProperty('--dx', `${dx}px`);
+          particle.style.setProperty('--dy', `${dy}px`);
+          particle.style.left = `${centerX}px`;
+          particle.style.top = `${centerY}px`;
+    
+          // Ritardo fisso in secondi
+          const delayInSeconds = 0.5; // Ritardo in secondi
+          setTimeout(() => {
+            particle.style.opacity = 1; // Rendi la particella visibile
+            document.body.appendChild(particle);
+    
+            // Rimuovi le particelle dopo la fine dell'animazione
+            particle.addEventListener('animationend', () => particle.remove());
+          }, delayInSeconds * 1000); // Converti secondi in millisecondi
+        }
+      </script>
+</body>
+</html>

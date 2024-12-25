@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+
+function isPopup() {
+    // Controlla le dimensioni della finestra
+    const width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+    const height = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+
+    // Finestra principale (ipotetica dimensione della finestra principale)
+    const mainWindowWidth = screen.width;
+    const mainWindowHeight = screen.height;
+
+    // Se la finestra è significativamente più piccola della finestra principale, è probabilmente un pop-up
+    if (width < mainWindowWidth * 0.99 && height < mainWindowHeight * 0.99) {
+        return true; // Probabilmente è una finestra pop-up
+    }
+    return false; // La finestra non è un pop-up
+}
+
+// Esegui il controllo
+setInterval(() => {
+    if (isPopup()) {
+        alert("Mettere la pagina a schermo intero per evitare problemi di layout");
+    } else {
+    }
+}, 5000);
+    </script>
+</body>
+</html>

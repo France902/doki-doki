@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animazione Arco</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f0f0f0;
+        }
+
+        .monika {
+            position: fixed;
+            animation: arco1 0.7s  ease-in forwards, arco2 1s ease-in-out forwards 0.7s;
+        }
+        @keyframes arco1{
+            0%{
+                transform: translateX(10vw) translateY(0) ;
+            }
+            100%{
+                transform: translateX(20vw) translateY(-100px)
+            }
+        }
+        @keyframes arco2 {
+            0% {
+                transform: translateX(20vw) translateY(-100px);
+            }
+            100%{
+                transform: translateX(10vw) translateY(-200px);
+            }
+
+        }
+    </style>
+</head>
+<body>
+    <div class="monika"> <img src="Monika4.png" alt="" style="width: 41.5vw; height: 130vh;position: fixed; "> </div>
+</body>
+</html>

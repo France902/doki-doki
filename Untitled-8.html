@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Input con linea nera e testo bianco</title>
+    <style>
+        /* Stile di base per l'input */
+        input {
+            padding: 10px;
+            border: 2px solid #ccc; /* Bordo grigio di default */
+            background-color: #333; /* Sfondo scuro per contrastare il testo bianco */
+            color: white; /* Colore del testo bianco */
+            border-radius: 4px;
+            transition: border-color 0.3s ease; /* Transizione morbida per il cambiamento di bordo */
+        }
+
+        /* Quando l'input è in focus, cambia la linea a nera */
+        input:focus {
+            border-color: black; /* Linea nera quando è in focus */
+            outline: none; /* Rimuove l'outline predefinito */
+        }
+    </style>
+</head>
+<body>
+
+    <label for="example">Inserisci qualcosa:</label>
+    <input type="text" id="example" name="example">
+
+</body>
+</html>

@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pulsanti senza scritte e fissi</title>
+    <style>
+        body {
+            margin: 0;
+        }
+
+        .button8 {
+            width: 2.4vw;  
+            height: 5vh; 
+            background: none;
+            margin: 0;
+            opacity: 0;
+            cursor: pointer;
+            position: fixed;  
+            top: 15vh; 
+            left: 4vw;
+            z-index: 6;
+            display: none;
+        }
+        .button9 {
+            width: 2.4vw;  
+            height: 5vh; 
+            background: none;
+            margin: 0;
+            opacity: 0;
+            cursor: pointer;
+            position: fixed;  
+            top: 15vh; 
+            left: 6.4vw;
+            z-index: 6;
+            display: none;
+        }
+        .button10 {
+            width: 2.4vw;  
+            height: 5vh; 
+            background: none;
+            margin: 0;
+            opacity: 0;
+            cursor: pointer;
+            position: fixed;  
+            top: 15vh; 
+            left: 8.8vw;
+            z-index: 6;
+            display: none;
+        }
+        .button11 {
+            width: 2.4vw;  
+            height: 5vh; 
+            background: none;
+            margin: 0;
+            opacity: 0;
+            cursor: pointer;
+            position: fixed;  
+            top: 15vh; 
+            left: 11.2vw;
+            z-index: 6;
+            display: none;
+        }
+        .button12 {
+            width: 2.4vw;  
+            height: 5vh; 
+            background: none;
+            margin: 0;
+            opacity: 0;
+            cursor: pointer;
+            position: fixed;   
+            top: 15vh; 
+            left: 13.6vw;
+            z-index: 6;
+            display: none;
+        }
+        .button13 {
+            width: 2.4vw;  
+            height: 5vh; 
+            background: none;
+            margin: 0;
+            opacity: 0;
+            cursor: pointer;
+            position: fixed;   
+            top: 15vh; 
+            left: 16vw;
+            z-index: 6;
+            display: none;
+        }
+        .button14 {
+            width: 2.4vw;  
+            height: 5vh; 
+            background: none;
+            margin: 0;
+            opacity: 0;
+            cursor: pointer;
+            position: fixed;   
+            top: 15vh; 
+            left: 18.4vw;
+            z-index: 6;
+            display: none;
+        }
+        .button15 {
+            width: 2.4vw;  
+            height: 5vh; 
+            background: none;
+            margin: 0;
+            opacity: 0;
+            cursor: pointer;
+            position: fixed;  
+            top: 15vh; 
+            left: 20.8vw;
+            z-index: 6;
+            display: none;
+        }
+        .button16 {
+            width: 2.4vw;  
+            height: 5vh; 
+            background: none;
+            margin: 0;
+            opacity: 0;
+            cursor: pointer;
+            position: fixed;  
+            top: 15vh; 
+            left: 23.2vw;
+            z-index: 6;
+            display: none;
+            
+        }
+        .button17 {
+            width: 2.4vw;  
+            height: 5vh; 
+            background: none;
+            margin: 0;
+            opacity: 0;
+            cursor: pointer;
+            position: fixed;  
+            top: 15vh; 
+            left: 25.6vw;
+            z-index: 6;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <button class="button8" onclick="barra1()" ></button>
+    <button class="button9"  onclick="barra2()"></button>
+    <button class="button10"  onclick="barra3()"></button>
+    <button class="button11"  onclick="barra4()"></button>
+    <button class="button12"  onclick="barra5()"></button>
+    <button class="button13"  onclick="barra6()"></button>
+    <button class="button14"  onclick="barra7()"></button>
+    <button class="button15"  onclick="barra8()"></button>
+    <button class="button16" onclick="barra9()"></button>
+    <button class="button17" onclick="barra10()"></button>
+
+    <img id="barra1" src="barra1.png" alt="" style="position: fixed; width: 31vw; height: 60vh; opacity: 0;">
+    <img id="barra2" src="barra2.png" alt="" style="position: fixed;width: 31vw; height: 60vh; opacity: 0; margin-top: -4vh; margin-left: 0vw;">
+    <img id="barra3" src="barra3.png" alt="" style="position: fixed;width: 31vw; height: 60vh; opacity: 0; margin-top: -10vh;">
+    <img id="barra4" src="barra4.png" alt="" style="position: fixed;width: 31vw; height: 60vh; opacity: 0; margin-top: -13vh;">
+    <img id="barra5" src="barra5.png" alt="" style="position: fixed;width: 31vw; height: 60vh; opacity: 0; margin-top: -8vh;">
+    <img id="barra6" src="barra6.png" alt="" style="position: fixed;width: 31vw; height: 60vh; opacity: 0; margin-top: -14vh;">
+    <img id="barra7" src="barra7.png" alt="" style="position: fixed;width: 31vw; height: 60vh; opacity: 0; margin-top: -15vh;">
+    <img id="barra8" src="barra8.png" alt="" style="position: fixed;width: 31vw; height: 60vh; opacity: 0; margin-top: -10.8vh;">
+    <img id="barra9" src="barra9.png" alt="" style="position: fixed;width: 31vw; height: 60vh; opacity: 0; margin-top: -17.2vh;">
+    <img id="barra10" src="barra10.png" alt="" style="position: fixed;width: 31vw; height: 60vh; opacity: 0; margin-top: -12vh;">
+
+
+    <script>
+        const bara1 = document.getElementById("barra1");
+        const bara2 = document.getElementById("barra2");
+        const bara3 = document.getElementById("barra3");
+        const bara4 = document.getElementById("barra4");
+        const bara5 = document.getElementById("barra5");
+        const bara6 = document.getElementById("barra6");
+        const bara7 = document.getElementById("barra7");
+        const bara8 = document.getElementById("barra8");
+        const bara9 = document.getElementById("barra9");
+        const bara10 = document.getElementById("barra10");
+        bara10.style.opacity = '1';
+        function barra1(){
+            bara1.style.opacity = '1';
+            bara2.style.opacity = '0';
+            bara3.style.opacity = '0';
+            bara4.style.opacity = '0';
+            bara5.style.opacity = '0';
+            bara6.style.opacity = '0';
+            bara7.style.opacity = '0';
+            bara8.style.opacity = '0';
+            bara9.style.opacity = '0';
+            bara10.style.opacity = '0';
+        }
+        function barra2(){
+            bara1.style.opacity = '0';
+            bara2.style.opacity = '1';
+            bara3.style.opacity = '0';
+            bara4.style.opacity = '0';
+            bara5.style.opacity = '0';
+            bara6.style.opacity = '0';
+            bara7.style.opacity = '0';
+            bara8.style.opacity = '0';
+            bara9.style.opacity = '0';
+            bara10.style.opacity = '0';
+        }
+        function barra3(){
+            bara1.style.opacity = '0';
+            bara2.style.opacity = '0';
+            bara3.style.opacity = '1';
+            bara4.style.opacity = '0';
+            bara5.style.opacity = '0';
+            bara6.style.opacity = '0';
+            bara7.style.opacity = '0';
+            bara8.style.opacity = '0';
+            bara9.style.opacity = '0';
+            bara10.style.opacity = '0';
+        }
+        function barra4(){
+            bara1.style.opacity = '0';
+            bara2.style.opacity = '0';
+            bara3.style.opacity = '0';
+            bara4.style.opacity = '1';
+            bara5.style.opacity = '0';
+            bara6.style.opacity = '0';
+            bara7.style.opacity = '0';
+            bara8.style.opacity = '0';
+            bara9.style.opacity = '0';
+            bara10.style.opacity = '0';
+        }
+        function barra5(){
+            bara1.style.opacity = '0';
+            bara2.style.opacity = '0';
+            bara3.style.opacity = '0';
+            bara4.style.opacity = '0';
+            bara5.style.opacity = '1';
+            bara6.style.opacity = '0';
+            bara7.style.opacity = '0';
+            bara8.style.opacity = '0';
+            bara9.style.opacity = '0';
+            bara10.style.opacity = '0';
+        }
+        function barra6(){
+            bara1.style.opacity = '0';
+            bara2.style.opacity = '0';
+            bara3.style.opacity = '0';
+            bara4.style.opacity = '0';
+            bara5.style.opacity = '0';
+            bara6.style.opacity = '1';
+            bara7.style.opacity = '0';
+            bara8.style.opacity = '0';
+            bara9.style.opacity = '0';
+            bara10.style.opacity = '0';
+        }
+        function barra7(){
+            bara1.style.opacity = '0';
+            bara2.style.opacity = '0';
+            bara3.style.opacity = '0';
+            bara4.style.opacity = '0';
+            bara5.style.opacity = '0';
+            bara6.style.opacity = '0';
+            bara7.style.opacity = '1';
+            bara8.style.opacity = '0';
+            bara9.style.opacity = '0';
+            bara10.style.opacity = '0';
+        }
+        function barra8(){
+            bara1.style.opacity = '0';
+            bara2.style.opacity = '0';
+            bara3.style.opacity = '0';
+            bara4.style.opacity = '0';
+            bara5.style.opacity = '0';
+            bara6.style.opacity = '0';
+            bara7.style.opacity = '0';
+            bara8.style.opacity = '1';
+            bara9.style.opacity = '0';
+            bara10.style.opacity = '0';
+        }
+        function barra9(){
+            bara1.style.opacity = '0';
+            bara2.style.opacity = '0';
+            bara3.style.opacity = '0';
+            bara4.style.opacity = '0';
+            bara5.style.opacity = '0';
+            bara6.style.opacity = '0';
+            bara7.style.opacity = '0';
+            bara8.style.opacity = '0';
+            bara9.style.opacity = '1';
+            bara10.style.opacity = '0';
+        }
+        function barra10(){
+            bara1.style.opacity = '0';
+            bara2.style.opacity = '0';
+            bara3.style.opacity = '0';
+            bara4.style.opacity = '0';
+            bara5.style.opacity = '0';
+            bara6.style.opacity = '0';
+            bara7.style.opacity = '0';
+            bara8.style.opacity = '0';
+            bara9.style.opacity = '0';
+            bara10.style.opacity = '1';
+        }
+
+
+    </script>
+</body>
+</html>
