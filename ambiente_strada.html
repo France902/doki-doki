@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DDLC</title>
+    <style>
+    .scatola1{
+        background-color: palevioletred;
+        width: 4100px;
+        height: 1800px;
+        padding: 0%;
+    }
+    #scatola2{
+        width: 1200px;
+        height: 450px;
+        padding: 0%;
+        margin-top: 700px;
+        margin-left: 750px;
+        opacity: 83%;
+        position:relative;
+        z-index:1;
+        opacity:0;
+        animation: dissolvenza 2s forwards;
+        animation-delay: 2s;
+    }
+    #scatola4{
+        width: 1200px;
+        height: 450px;
+        padding: 0%;
+        margin-top: -200px;
+        margin-left: -300px;
+        text-align: center;
+        position: relative;
+        z-index:0;
+    }
+    #scatola3{
+        width: 2700px;
+        height: 1050px;
+        padding: 0%;
+        z-index:-2;
+    }
+    .overlay1{
+        position: fixed;
+        top: 0px;
+        left: 0px;
+        width: 4400px;
+        height: 100%;
+        background-color: black; 
+        opacity: 1; 
+        animation: overlay 3.5s forwards;
+        z-index: 3;
+    }
+  
+    @keyframes overlay{
+            0% {
+                opacity: 1;
+            }
+            100% {
+                opacity:0;
+            }
+        }
+    
+    .animazione{
+        animation: dissolvenza 2s forwards;
+        animation-delay: 0.5s;
+    }
+    @keyframes dissolvenza{
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity:1;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div class= "scatola1">
+        <div class= "overlay1"> </div>
+        <div id="scatola3">
+            <img src="strada.webp" alt="" width="4100" height="2200" style="z-index:-2;" >
+        </div>
+        
+        <div id="scatola2">
+            <img src="textbox_DDLC.jpg" alt="" width="2550" height="420" style="z-index:1;position: fixed;">
+            <h1 style="margin-top: -400px; margin-left: 40px; -webkit-text-stroke: 3.6px black; color:white; z-index:1; font-size:80px;">Hmph</h1>
+            <div id="scatola4">
+                <img src="quadrato_bianco.jpg" alt="" width="360" height="104" style="border: 2px solid white; margin-top: -1060px; border-radius: 10px; z-index:0; position: fixed;">
+                <h1 id="nome" style="margin-top:-120px; margin-left: 0px; z-index:0; font-size:70px;">testo</h1>
+            </div>
+        </div>
+    </div> 
+    <script>
+        const nome = localStorage.getItem('salva_nome');
+        const x = localStorage.getItem('salva_volume');
+        document.getElementById('nome').textContent = nome;
+        alert(nome);
+        alert(x);
+        const overlay1 = document.querySelector('.overlay1');
+        const textbox = document.getElementById('scatola2')
+    </script>
+    <audio id="doki_theme" controls autoplay loop style="margin-left: -1000px";>
+        <source src="1-02. Ohayou Sayori!.mp3" type="audio/mpeg">
+    </audio>
+    <script>
+        const audio = document.getElementById('doki_theme');
+        audio.addEventListener('play', () => {
+            messaggio.style.display = 'block'
+        });
+    </script>
+</body>
+</html>

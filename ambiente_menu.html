@@ -1,0 +1,1559 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DDLC</title>
+    <style>
+    #salva_nome{
+        position: fixed;
+        z-index: 10;
+        margin-top: 47vh;
+        margin-left: 39.8vw;
+        background: transparent;
+        border: none;
+        outline: none;
+        display: none;
+    }
+    .overlay2 {
+        position: fixed;
+        top: -2000px;
+        left: 0;
+        width: 40000px;
+        height: 450%;
+        background-color: white; 
+        opacity: 0; 
+        pointer-events: none;
+        z-index: 8;
+        transition: opacity 0s ease-out;
+    }
+    .overlay2_animation{
+        opacity: 0.5;
+    }
+    .overlay {
+        position: fixed;
+        top: -2000px;
+        left: 0;
+        width: 40000px;
+        height: 450%;
+        background-color: black; 
+        opacity: 0; 
+        pointer-events: none;
+        z-index: 3;
+        transition: opacity 2s ease-out;
+    }
+    .overlay_animation{
+        opacity: 1;
+    }
+    #schermata_nome{
+        position: fixed;
+        width: 30vw;
+        height: 35vh;
+        border: 0.3vw solid rgb(253, 192, 221);
+        background-color: rgb(250, 219, 232);
+        z-index: 7;
+        opacity: 1;
+        margin-top: 30vh;
+        margin-left: 35vw;
+        display: none;
+    }
+        .video1{
+            position: fixed;
+            width: 110vw;
+            height: 110vh;
+            opacity: 0;
+            transition: opacity 1s ease-out;  
+            z-index: 5; 
+            pointer-events: none;
+            margin-left: 0vw; 
+            margin-top: 0vh;
+        }
+        .video_animation{
+            opacity: 1;
+        }
+        #boxSalvataggio1 { 
+            position: fixed;
+            width: 800px;
+            height: 500px;
+            background-color: violet;
+            opacity: 0;
+            z-index: -2; 
+        }
+        .menu {
+            opacity: 0;
+            position: fixed;
+            z-index: 6;
+            animation: menu1 0.5s forwards ;
+            animation-delay: 1.5s;
+        }
+        .buttone1 {
+            opacity:0;
+            position: fixed;
+            z-index: 6;
+            cursor: pointer;
+            -webkit-text-stroke: 0.1vw rgb(179, 77, 179);
+            transition: opacity 1s ease-out;
+            display: none;
+        }
+        .buttone1_animation{
+            opacity: 1;
+        }
+        .buttone2 {
+            opacity:0;
+            position: fixed;
+            z-index: 6;
+            cursor: pointer;
+            -webkit-text-stroke: 0.1vw rgb(179, 77, 179);
+            transition: opacity 1s ease-out;
+            display: none;
+        }
+        .buttone2_animation{
+            opacity: 1;
+        }
+        .buttone3 {
+            opacity:0;
+            position: fixed;
+            z-index: 6;
+            cursor: pointer;
+            -webkit-text-stroke: 0.1vw rgb(179, 77, 179);
+            transition: opacity 1s ease-out;
+            display: none;
+        }
+        .buttone3_animation{
+            opacity: 1;
+        }
+        .buttone4 {
+            opacity:0;
+            position: fixed;
+            z-index: 6;
+            cursor: pointer;
+            -webkit-text-stroke: 0.1vw rgb(179, 77, 179);
+            transition: opacity 1s ease-out;
+            display: none;
+        }
+        .buttone4_animation{
+            opacity: 1;
+        }
+        .buttone5 {
+            opacity:0;
+            position: fixed;
+            z-index: 6;
+            cursor: pointer;
+            -webkit-text-stroke: 0.1vw rgb(179, 77, 179);
+            transition: opacity 1s ease-out;
+            display: none;
+        }
+        .buttone5_animation{
+            opacity: 1;
+        }
+        .buttone6 {
+            opacity:1;
+            position: fixed;
+            z-index: 6;
+            cursor: pointer;
+            -webkit-text-stroke: 0.1vw rgb(179, 77, 179);
+            display: none;
+        }
+        .buttone7 {
+            opacity:1;
+            position: fixed;
+            z-index: 9;
+            cursor: pointer;
+            -webkit-text-stroke: 0.1vw rgb(179, 77, 179);
+            display: none;
+        }
+        #music_volume {
+            opacity:1;
+            position: fixed;
+            z-index: 10;
+            -webkit-text-stroke: 0.1vw rgb(179, 77, 179);
+        }
+        #sound_volume {
+            opacity:1;
+            position: fixed;
+            z-index: 10;
+            -webkit-text-stroke: 0.1vw rgb(179, 77, 179);
+        }
+        
+
+    .buttone1:hover{
+        -webkit-text-stroke: 0.1vw rgb(249, 163, 177);
+    }
+    .buttone2:hover{
+        -webkit-text-stroke: 0.1vw rgb(249, 163, 177);
+    }
+    .buttone3:hover{
+        -webkit-text-stroke: 0.1vw rgb(249, 163, 177);
+    }
+    .buttone4:hover{
+        -webkit-text-stroke: 0.1vw rgb(249, 163, 177);
+    }
+    .buttone5:hover{
+        -webkit-text-stroke: 0.1vw rgb(249, 163, 177);
+    }
+    .buttone6:hover{
+        -webkit-text-stroke: 0.1vw rgb(249, 163, 177);
+    }
+    .buttone7:hover{
+        opacity: 0.5;
+    }
+    #doki_main_theme{
+            opacity: 0;
+            position: absolute; 
+        }
+
+    #logo{
+        position:fixed;
+        width: 100%;
+        height: 100vh;
+        z-index: 2;
+        pointer-events: none;
+    }
+    .area{
+        width: 100%;
+        height: 100vh;
+        position:fixed;
+        opacity: 1;
+        z-index: 4;
+        transition: opacity 0.5s ease-out;
+        pointer-events: none;
+    }
+    .area_animation{
+        opacity: 0;
+    }
+    .testo1{
+        opacity: 0;
+        transition: opacity 0.5s ease-out;
+        pointer-events: none;
+    }
+    .testo1_animation{
+        opacity: 1;
+    }
+    .circle{
+            position: fixed;
+            animation: 2.5s circle1 forwards  ;
+            animation-delay: 1.8s;
+            z-index: 6;
+            opacity: 0;
+        }
+        .particle {
+            z-index: 7;
+            position: fixed;
+            width: 3vw; 
+            height: 3vh; 
+            background-color: white;
+            border-radius: 50%;
+            opacity: 0; 
+            animation: fall 2.5s ease-out forwards;
+            margin-top: -40vh;
+            margin-left: -53vh;
+    }
+    .sayori{
+            position: fixed;
+            opacity: 0;
+            z-index: 6;
+            animation: sayori1 0.6s  ease-in forwards, sayori2 0.9s ease-in forwards 0.6s;
+        }
+    .yuri{
+            position: fixed;
+            opacity: 0;
+            z-index: 5;
+            animation: yuri1 1.3s  ease-in forwards;
+
+        }
+    .natsuki{
+            position: fixed;
+            opacity: 0;
+            z-index: 5;
+            animation: natsuki1 1.1s  ease-in forwards;
+        }
+    .monika{
+            position: fixed;
+            opacity: 0;
+            z-index: 6;
+            animation: monika1 0.7s  ease-in forwards, monika2 1s ease-in forwards 0.7s;
+        }
+    @keyframes menu1 {
+            from {
+                transform: translate(0, 0);
+            }
+            to {
+                transform: translatex(33vw); 
+            }
+        }
+    @keyframes fall {
+      0% {
+        transform: translate(0, 0);
+        opacity: 1;
+      }
+      100% {
+        transform: translate(var(--dx), var(--dy));
+        opacity: 0;
+      }
+    }
+        @keyframes circle1 {
+            0% {
+                transform: translate(0, 0);
+            }
+            20% {
+                transform: translatey(33vh);
+            }
+            40% {
+                transform: translatey(28vh);
+            }
+            60% {
+                transform: translatey(33vh);
+            }
+            80% {
+                transform: translatey(32vh);
+            }
+            100%{
+                transform: translatey(33vh);
+            }
+            
+        }
+        @keyframes monika1{
+            0%{
+                transform: translateX(0) translateY(0) ;
+            }
+            100%{
+                transform: translateX(0) translateY(-40vh);
+            }
+        }
+        @keyframes monika2 {
+            0% {
+                transform: translateX(0) translateY(-40vh);
+            }
+            100%{
+                transform: translateX(10vw) translateY(-80vh);
+            }
+
+        }
+        @keyframes yuri1{
+            0%{
+                transform: translateX(0) translateY(0) ;
+
+            }
+            100%{
+                transform: translateX(0) translateY(-80vh);
+            }
+        }
+        @keyframes sayori1{
+            0%{
+                transform: translateX(0) translateY(0) ;
+            }
+            100%{
+                transform: translateX(0) translateY(-40vh);
+            }
+        }
+        @keyframes sayori2 {
+            0% {
+                transform: translateX(0) translateY(-40vh);
+            }
+            100%{
+                transform: translateX(-10vw) translateY(-80vh);
+            }
+
+        }
+        @keyframes natsuki1{
+            0%{
+                transform: translateX(0) translateY(0) ;
+
+            }
+            100%{
+                transform: translateX(0) translateY(-80vh);
+            }
+        }
+        .button8 {
+            width: 2.4vw;  
+            height: 5vh; 
+            background: transparent;
+            margin: 0;
+            border: none;
+            opacity: 1;
+            cursor: pointer;
+            position: fixed;  
+            top: 43.5vh; 
+            left: 64vw;
+            z-index: 7;
+            display: none;
+        }
+        .button9 {
+            width: 2.4vw;  
+            height: 5vh; 
+            background: transparent;
+            margin: 0;
+            border: none;
+            opacity: 1;
+            cursor: pointer;
+            position: fixed;  
+            top: 43.5vh; 
+            left: 66.4vw;
+            z-index: 7;
+            display: none;
+        }
+        .button10 {
+            width: 2.4vw;  
+            height: 5vh; 
+            background: transparent;
+            margin: 0;
+            border: none;
+            opacity: 1;
+            cursor: pointer;
+            position: fixed;  
+            top: 43.5vh; 
+            left: 68.8vw;
+            z-index: 7;
+            display: none;
+        }
+        .button11 {
+            width: 2.4vw;  
+            height: 5vh; 
+            background: transparent;
+            margin: 0;
+            border: none;
+            opacity: 1;
+            cursor: pointer;
+            position: fixed;  
+            top: 43.5vh; 
+            left: 71.2vw;
+            z-index: 7;
+            display: none;
+        }
+        .button12 {
+            width: 2.4vw;  
+            height: 5vh; 
+            background: transparent;
+            margin: 0;
+            border: none;
+            opacity: 1;
+            cursor: pointer;
+            position: fixed;   
+            top: 43.5vh; 
+            left: 73.6vw;
+            z-index: 7;
+            display: none;
+        }
+        .button13 {
+            width: 2.4vw;  
+            height: 5vh; 
+            background: transparent;
+            margin: 0;
+            border: none;
+            opacity: 1;
+            cursor: pointer;
+            position: fixed;   
+            top: 43.5vh; 
+            left: 76vw;
+            z-index: 7;
+            display: none;
+        }
+        .button14 {
+            width: 2.4vw;  
+            height: 5vh; 
+            background: transparent;
+            margin: 0;
+            border: none;
+            opacity: 1;
+            cursor: pointer;
+            position: fixed;   
+            top: 43.5vh; 
+            left: 78.4vw;
+            z-index: 7;
+            display: none;
+        }
+        .button15 {
+            width: 2.4vw;  
+            height: 5vh; 
+            background: transparent;
+            margin: 0;
+            border: none;
+            opacity: 1;
+            cursor: pointer;
+            position: fixed;  
+            top: 43.5vh; 
+            left: 80.8vw;
+            z-index: 7;
+            display: none;
+        }
+        .button16 {
+            width: 2.4vw;  
+            height: 5vh; 
+            background: transparent;
+            margin: 0;
+            border: none;
+            opacity: 1;
+            cursor: pointer;
+            position: fixed;  
+            top: 43.5vh; 
+            left: 83.2vw;
+            z-index: 7;
+            display: none;
+            
+        }
+        .button17 {
+            width: 2.4vw;  
+            height: 5vh; 
+            background: transparent;
+            margin: 0;
+            border: none;
+            opacity: 1;
+            cursor: pointer;
+            position: fixed;  
+            top: 43.5vh; 
+            left: 85.6vw;
+            z-index: 7;
+            display: none;
+        }
+        .button18 {
+            width: 2.4vw;  
+            height: 5vh; 
+            background: transparent;
+            margin: 0;
+            border: none;
+            opacity: 1;
+            cursor: pointer;
+            position: fixed;  
+            top: 43.5vh; 
+            left: 61.6vw;
+            z-index: 7;
+            display: none;
+        }
+
+
+        .button19 {
+            width: 2.4vw;  
+            height: 5vh; 
+            background: transparent;
+            margin: 0;
+            border: none;
+            opacity: 1;
+            cursor: pointer;
+            position: fixed;  
+            top: 58.5vh; 
+            left: 64vw;
+            z-index: 7;
+            display: none;
+        }
+        .button20 {
+            width: 2.4vw;  
+            height: 5vh; 
+            background: transparent;
+            margin: 0;
+            border: none;
+            opacity: 1;
+            cursor: pointer;
+            position: fixed;  
+            top: 58.5vh; 
+            left: 66.4vw;
+            z-index: 7;
+            display: none;
+        }
+        .button21 {
+            width: 2.4vw;  
+            height: 5vh; 
+            background: transparent;
+            margin: 0;
+            border: none;
+            opacity: 1;
+            cursor: pointer;
+            position: fixed;  
+            top: 58.5vh; 
+            left: 68.8vw;
+            z-index: 7;
+            display: none;
+        }
+        .button22 {
+            width: 2.4vw;  
+            height: 5vh; 
+            background: transparent;
+            margin: 0;
+            border: none;
+            opacity: 1;
+            cursor: pointer;
+            position: fixed;  
+            top: 58.5vh; 
+            left: 71.2vw;
+            z-index: 7;
+            display: none;
+        }
+        .button23 {
+            width: 2.4vw;  
+            height: 5vh; 
+            background: transparent;
+            margin: 0;
+            border: none;
+            opacity: 1;
+            cursor: pointer;
+            position: fixed;   
+            top: 58.5vh; 
+            left: 73.6vw;
+            z-index: 7;
+            display: none;
+        }
+        .button24 {
+            width: 2.4vw;  
+            height: 5vh; 
+            background: transparent;
+            margin: 0;
+            border: none;
+            opacity: 1;
+            cursor: pointer;
+            position: fixed;   
+            top: 58.5vh; 
+            left: 76vw;
+            z-index: 7;
+            display: none;
+        }
+        .button25 {
+            width: 2.4vw;  
+            height: 5vh; 
+            background: transparent;
+            margin: 0;
+            border: none;
+            opacity: 1;
+            cursor: pointer;
+            position: fixed;   
+            top: 58.5vh; 
+            left: 78.4vw;
+            z-index: 7;
+            display: none;
+        }
+        .button26 {
+            width: 2.4vw;  
+            height: 5vh; 
+            background: transparent;
+            margin: 0;
+            border: none;
+            opacity: 1;
+            cursor: pointer;
+            position: fixed;  
+            top: 58.5vh; 
+            left: 80.8vw;
+            z-index: 7;
+            display: none;
+        }
+        .button27 {
+            width: 2.4vw;  
+            height: 5vh; 
+            background: transparent;
+            margin: 0;
+            border: none;
+            opacity: 1;
+            cursor: pointer;
+            position: fixed;  
+            top: 58.5vh; 
+            left: 83.2vw;
+            z-index: 7;
+            display: none;
+            
+        }
+        .button28 {
+            width: 2.4vw;  
+            height: 5vh; 
+            background: transparent;
+            margin: 0;
+            border: none;
+            opacity: 1;
+            cursor: pointer;
+            position: fixed;  
+            top: 58.5vh; 
+            left: 85.6vw;
+            z-index: 7;
+            display: none;
+        }
+        .button29 {
+            width: 2.4vw;  
+            height: 5vh; 
+            background: transparent;
+            margin: 0;
+            border: none;
+            opacity: 1;
+            cursor: pointer;
+            position: fixed;  
+            top: 58.5vh; 
+            left: 61.6vw;
+            z-index: 7;
+            display: none;
+        }
+    </style>
+
+    
+</head>
+<body>
+    <!--
+        
+    </div>
+    <div id="boxSalvataggio1" style="z-index: -2;"></div>
+    <div id="boxSalvataggio2"></div>
+    <div id="boxSalvataggio3"></div>
+    <div id="boxSalvataggio4"></div>
+    <div id="boxSalvataggio5"></div>
+    <div id="boxSalvataggio6"></div>
+    
+    
+
+    -->
+    <div class="overlay"></div>  
+    <input  id="salva_nome" autocomplete="off" type="text" name="scritta" style="color: white; -webkit-text-stroke: 0.08vw black;  font-family: 'Bebas Neue', sans-serif; font-weight: bolder; position: fixed; font-size: 1.5vw;  position: fixed; text-align: center; z-index: 10; font-size: 3vh;">
+    <div class="overlay2"></div>
+    <div id="schermata_nome" > <p style="text-align:center; font-size: 4vh; position: fixed; margin-left: 4.5vw;">Please enter your name</p></div>
+    <p id="music_volume" style=" font-size: 4vh;  font-family: 'Arial Black', Arial, sans-serif;  color: white; margin-left: 63.7vw; margin-top: 36vh; height: 4vh ;display: none; " >Music Volume</p>
+    <p id="sound_volume" style=" font-size: 4vh;  font-family: 'Arial Black', Arial, sans-serif;  color: white; margin-left: 63.7vw; margin-top: 51vh; height: 4vh ;display: none; " >Sound Volume</p>
+    <div class="menu">
+        <img src="menù.png" alt="" style="height: 100vh; width: 100vw; margin-left: -33vw;">
+    </div>
+    <div class="buttone1" style="z-index: 7; width: 20vw;margin-left: 0.8vw; margin-top: 30vh; height: 4vh ;  " >
+        <button onclick="tasto1()" style="cursor: pointer; background: none; width: 20vw; margin-left: 0.8vw; margin-top: 30vh; height: 4vh ; border: none;">
+            <p style="font-size: 4vh;  font-family: 'Arial Black', Arial, sans-serif;  color: white; margin-left: 0.8vw; margin-top: -1vh; height: 4vh ;" >New Game</p>
+        </button>
+    </div>
+    <div class="buttone2" style="z-index: 7; width: 20vw;margin-left: 0.9vw; margin-top: 33vh; height: 4vh ;  " >
+        <button onclick="CaricaPartita()" style="cursor: pointer; background: none; width: 20vw; margin-left: 0.9vw; margin-top: 33vh; height: 4vh ; border: none;">
+            <p style="font-size: 4vh;  font-family: 'Arial Black', Arial, sans-serif;  color: white; margin-left: 0.9vw; margin-top: -1vh; height: 4vh ;" >Load Game</p>
+        </button>
+    </div>
+    <div class="buttone3" style="z-index: 7; width: 20vw;margin-left: 0.2vw; margin-top: 36vh; height: 4vh ;  " >
+        <button onclick="tasto3()" style="cursor: pointer; background: none; width: 20vw; margin-left: 0.2vw; margin-top: 36vh; height: 4vh ; border: none;">
+            <p style="font-size: 4vh;  font-family: 'Arial Black', Arial, sans-serif;  color: white; margin-left: 0.2w; margin-top: -1vh; height: 4vh ;" >Settings</p>
+        </button>
+    </div>
+    <div class="buttone4" style="z-index: 7; width: 20vw;margin-left: -0.7vw; margin-top: 39vh; height: 4vh ;  " >
+        <button onclick="location.href='https:ddlc.plus'" style="cursor: pointer; background: none; width: 20vw; margin-left: -0.7vw; margin-top: 39vh; height: 4vh ; border: none;">
+            <p style="font-size: 4vh;  font-family: 'Arial Black', Arial, sans-serif;  color: white; margin-left: -0.7vw; margin-top: -1vh; height: 4vh ;" >Help</p>
+        </button>
+    </div>
+    <div class="buttone5" style="z-index: 7; width: 20vw;margin-left: 0.5vw; margin-top: 42vh; height: 4vh ;  " >
+        <button onclick="location.href='caricamento.html'" style="cursor: pointer; background: none; width: 20vw; margin-left: 0.5vw; margin-top: 42vh; height: 4vh ; border: none;">
+            <p style="font-size: 4vh;  font-family: 'Arial Black', Arial, sans-serif;  color: white; margin-left: 0.5vw; margin-top: -1vh; height: 4vh ;" >Exit DDLC</p>
+        </button>
+    </div>
+    <div class="buttone6" style="z-index: 11; width: 20vw;margin-left: -0.7vw; margin-top: 45vh; height: 4vh ;  " >
+        <button onclick="tasto2()" style="cursor: pointer; background: none; width: 20vw; margin-left: 0.5vw; margin-top: 45vh; height: 4vh ; border: none;">
+            <p style="font-size: 4vh;  font-family: 'Arial Black', Arial, sans-serif;  color: white; margin-left: 0.5vw; margin-top: -1vh; height: 4vh ;" >Return</p>
+        </button>
+    </div>
+    <div class="buttone7" style="width: 20vw;margin-left: 39vw; margin-top: 12vh; height: 4vh ;  " >
+        <button onclick="salva_nome()" style="cursor: pointer; background: none; width: 20vw; margin-left: 0.5vw; margin-top: 45vh; height: 4vh ; border: none;">
+            <p style="font-size: 4vh;  font-family: 'Arial Black', Arial, sans-serif;  color: white; margin-left: 0.5vw; margin-top: -1vh; height: 4vh ;" >OK</p>
+        </button>
+    </div>
+    <button class="button8" onclick="barra_volume1()" ></button>
+    <button class="button9"  onclick="barra_volume2()"></button>
+    <button class="button10"  onclick="barra_volume3()"></button>
+    <button class="button11"  onclick="barra_volume4()"></button>
+    <button class="button12"  onclick="barra_volume5()"></button>
+    <button class="button13"  onclick="barra_volume6()"></button>
+    <button class="button14"  onclick="barra_volume7()"></button>
+    <button class="button15"  onclick="barra_volume8()"></button>
+    <button class="button16" onclick="barra_volume9()"></button>
+    <button class="button17" onclick="barra_volume10()"></button>
+    <button class="button18" onclick="barra_volume0()" ></button>
+    
+    <button class="button19" onclick="barra_suono1()" ></button>
+    <button class="button20"  onclick="barra_suono2()"></button>
+    <button class="button21"  onclick="barra_suono3()"></button>
+    <button class="button22"  onclick="barra_suono4()"></button>
+    <button class="button23"  onclick="barra_suono5()"></button>
+    <button class="button24"  onclick="barra_suono6()"></button>
+    <button class="button25"  onclick="barra_suono7()"></button>
+    <button class="button26"  onclick="barra_suono8()"></button>
+    <button class="button27" onclick="barra_suono9()"></button>
+    <button class="button28" onclick="barra_suono10()"></button>
+    <button class="button29" onclick="barra_suono0()" ></button>
+    <img id="barra_volume0" src="barra0.png" alt="" style="position: fixed; width: 31vw; height: 60vh; opacity: 0; z-index: 6; margin-top: 30.2vh; margin-left: 60vw;">
+    <img id="barra_volume1" src="barra1.png" alt="" style="position: fixed; width: 31vw; height: 60vh; opacity: 0; z-index: 6; margin-top: 30vh; margin-left: 60vw;">
+    <img id="barra_volume2" src="barra2.png" alt="" style="position: fixed;width: 31vw; height: 60vh; opacity: 0; z-index: 6; margin-top: 26vh; margin-left: 0vw; margin-left: 60vw;">
+    <img id="barra_volume3" src="barra3.png" alt="" style="position: fixed;width: 31vw; height: 60vh; opacity: 0; z-index: 6; margin-top: 20vh; margin-left: 60vw;">
+    <img id="barra_volume4" src="barra4.png" alt="" style="position: fixed;width: 31vw; height: 60vh; opacity: 0; z-index: 6; margin-top: 17vh; margin-left: 60vw;">
+    <img id="barra_volume5" src="barra5.png" alt="" style="position: fixed;width: 31vw; height: 60vh; opacity: 0; z-index: 6; margin-top: 22vh;margin-left: 60vw;">
+    <img id="barra_volume6" src="barra6.png" alt="" style="position: fixed;width: 31vw; height: 60vh; opacity: 0; z-index: 6; margin-top: 16vh; margin-left: 60vw;">
+    <img id="barra_volume7" src="barra7.png" alt="" style="position: fixed;width: 31vw; height: 60vh; opacity: 0; z-index: 6; margin-top: 15vh; margin-left: 60vw;">
+    <img id="barra_volume8" src="barra8.png" alt="" style="position: fixed;width: 31vw; height: 60vh; opacity: 0; z-index: 6; margin-top: 19.2vh; margin-left: 60vw;">
+    <img id="barra_volume9" src="barra9.png" alt="" style="position: fixed;width: 31vw; height: 60vh; opacity: 0; z-index: 6; margin-top: 12.8vh; margin-left: 60vw;">
+    <img id="barra_volume10" src="barra10.png" alt="" style="position: fixed;width: 31vw; height: 60vh; opacity: 0; z-index: 6; margin-top: 18.3vh; margin-left: 60vw;">
+    
+    <img id="barra_suono0" src="barra0.png" alt="" style="position: fixed; width: 31vw; height: 60vh; opacity: 0; z-index: 6; margin-top: 45.2vh; margin-left: 60vw;">
+    <img id="barra_suono1" src="barra1.png" alt="" style="position: fixed; width: 31vw; height: 60vh; opacity: 0; z-index: 6; margin-top: 45vh; margin-left: 60vw;">
+    <img id="barra_suono2" src="barra2.png" alt="" style="position: fixed;width: 31vw; height: 60vh; opacity: 0; z-index: 6; margin-top: 41vh; margin-left: 0vw; margin-left: 60vw;">
+    <img id="barra_suono3" src="barra3.png" alt="" style="position: fixed;width: 31vw; height: 60vh; opacity: 0; z-index: 6; margin-top: 35vh; margin-left: 60vw;">
+    <img id="barra_suono4" src="barra4.png" alt="" style="position: fixed;width: 31vw; height: 60vh; opacity: 0; z-index: 6; margin-top: 32vh; margin-left: 60vw;">
+    <img id="barra_suono5" src="barra5.png" alt="" style="position: fixed;width: 31vw; height: 60vh; opacity: 0; z-index: 6; margin-top: 37vh;margin-left: 60vw;">
+    <img id="barra_suono6" src="barra6.png" alt="" style="position: fixed;width: 31vw; height: 60vh; opacity: 0; z-index: 6; margin-top: 31vh; margin-left: 60vw;">
+    <img id="barra_suono7" src="barra7.png" alt="" style="position: fixed;width: 31vw; height: 60vh; opacity: 0; z-index: 6; margin-top: 30vh; margin-left: 60vw;">
+    <img id="barra_suono8" src="barra8.png" alt="" style="position: fixed;width: 31vw; height: 60vh; opacity: 0; z-index: 6; margin-top: 34.2vh; margin-left: 60vw;">
+    <img id="barra_suono9" src="barra9.png" alt="" style="position: fixed;width: 31vw; height: 60vh; opacity: 0; z-index: 6; margin-top: 27.8vh; margin-left: 60vw;">
+    <img id="barra_suono10" src="barra10.png" alt="" style="position: fixed;width: 31vw; height: 60vh; opacity: 0; z-index: 6; margin-top: 33.3vh; margin-left: 60vw;">
+    <video class="video1" disablePictureInPicture muted loop style="width: 100%; height: 100vh; position: fixed;">
+        <source src="video_sfondo.mp4" type="video/mp4">
+    </video>
+    <div id="logo">
+        <img src="logo.png" alt="" style=" z-index: 11; width: 110%; height: 110vh; position: fixed; margin-left: -110px; margin-top: -50px;">
+    </div>
+    <div class="area" style="width: 110%; height: 110vh; position: fixed; background-color: white; z-index: 10;"></div>
+    <div class="circle"> <img src="doki doki cerchio.png" alt="" style="height: 40vh; width: 40vw; margin-top: -60vh;"> </div>
+    <div  > <p class="testo1" style="  text-align: center; font-size: 4vh; font-weight: 500; position: fixed; z-index: 5; margin-top: 46vh; margin-left: 32.8vw;z-index: 11;" >This game is not suitable for children <br> or those who are easily disturbed.</p></div>
+    <div class="sayori"> <img src="Sayori1.png" alt="" style="width: 20vw; height: 100vh; margin-left: 40vw; margin-top: 97vh; position: fixed; " > </div>
+    <div class="yuri"> <img src="Yuri1.png" alt="" style="width: 22vw; height: 85vh; margin-left: 36.3vw; margin-top: 83vh; position: fixed;" > </div>
+    <div class="natsuki"> <img src="Natsuki1.png" alt="" style="width: 16vw; height:85vh; margin-left: 53vw; margin-top: 90vh; position: fixed;"> </div>
+    <div class="monika"> <img src="Monika4.png" alt="" style="width: 41.5vw; height: 130vh;position: fixed; margin-left: 48.4vw; margin-top: 100vh; "> </div>
+    <audio id="doki_main_theme" controls autoplay loop>
+        <source src="1-01. Doki Doki Literature Club!.mp3" type="audio/mpeg">
+    <div id="salva_volume"> </div>
+
+
+
+    <script>
+        function isPopup() {
+    const width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+    const height = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+
+    const mainWindowWidth = screen.width;
+    const mainWindowHeight = screen.height;
+
+
+    if (width < mainWindowWidth * 0.99 && height < mainWindowHeight * 0.99) {
+        return true; 
+    }
+    return false; 
+}
+
+
+setInterval(() => {
+    if (isPopup()) {
+        alert("Mettere la pagina a schermo intero per evitare problemi di layout");
+    } else {
+    }
+}, 5000);
+        const monika = document.querySelector(".monika");
+        const yuri = document.querySelector(".yuri");
+        const natsuki = document.querySelector(".natsuki");
+        const sayori = document.querySelector(".sayori");
+        document.getElementById("doki_main_theme").pause();
+        let volume=10;
+        let suono=10;
+        window.onload = function(){
+            const particles = 200; 
+    const centerX = window.innerWidth / 2;
+    const centerY = window.innerHeight / 2;
+
+    for (let i = 0; i < particles; i++) {
+      const particle = document.createElement('div');
+      particle.classList.add('particle');
+
+      
+      const angle = Math.random() * Math.PI * 2; 
+      const radius = Math.random() * 200 + 50; 
+      const dx = Math.cos(angle) * radius; 
+      const dy = Math.abs(Math.sin(angle) * radius) + Math.random() * 200 + 100; 
+
+      particle.style.setProperty('--dx', `${dx}px`);
+      particle.style.setProperty('--dy', `${dy}px`);
+      particle.style.left = `${centerX}px`;
+      particle.style.top = `${centerY}px`;
+
+     
+      const delayInSeconds = 0.5; 
+      setTimeout(() => {
+        particle.style.opacity = 1; 
+        document.body.appendChild(particle);
+
+        
+        particle.addEventListener('animationend', () => particle.remove());
+      }, 8500); 
+    }
+            document.getElementById("doki_main_theme").play();
+            document.querySelector(".video1").pause();
+            document.querySelector('.area').classList.add('area_animation');
+
+            setTimeout(function() {
+                document.querySelector('.area').classList.remove('area_animation');
+            }, 3000);
+            setTimeout(function() {
+                document.querySelector('.testo1').classList.add('testo1_animation');
+                
+            }, 3500);
+            setTimeout(function() {
+                document.querySelector('.testo1').classList.remove('testo1_animation');
+                document.querySelector('.area').style.zIndex = '4';
+                document.querySelector(".buttone1").style.display = 'block';
+                document.querySelector(".buttone2").style.display = 'block';
+                document.querySelector(".buttone3").style.display = 'block';
+                document.querySelector(".buttone4").style.display = 'block';
+                document.querySelector(".buttone5").style.display = 'block';
+            }, 6000);
+            setTimeout(function() {
+                document.querySelector(".video1").play();
+                document.querySelector(".video1").classList.add("video_animation");
+                document.querySelector(".buttone1").classList.add("buttone1_animation");
+                document.querySelector(".buttone2").classList.add("buttone2_animation");
+                document.querySelector(".buttone3").classList.add("buttone3_animation");
+                document.querySelector(".buttone4").classList.add("buttone4_animation");
+                document.querySelector(".buttone5").classList.add("buttone5_animation");
+                document.querySelector(".menu").style.opacity = '1';
+                
+                const menu = document.querySelector(".menu");
+                menu.classList.remove('menu');
+                void menu.offsetWidth;
+                menu.classList.add('menu');
+                const cerchio = document.querySelector(".circle");
+                cerchio.classList.remove('circle');
+                void cerchio.offsetWidth;
+                cerchio.classList.add('circle');
+            }, 6500);
+            setTimeout(function() {
+                monika.style.opacity = '1';
+                yuri.style.opacity = '1';
+                sayori.style.opacity = '1';
+                natsuki.style.opacity = '1';
+                monika.classList.remove('monika');
+                void monika.offsetWidth;
+                monika.classList.add('monika');
+                yuri.classList.remove('yuri');
+                void yuri.offsetWidth;
+                yuri.classList.add('yuri');
+                natsuki.classList.remove('natsuki');
+                void natsuki.offsetWidth;
+                natsuki.classList.add('natsuki');
+                sayori.classList.remove('sayori');
+                void sayori.offsetWidth;
+                sayori.classList.add('sayori');
+            }, 7500);
+            setTimeout(function() {
+                document.querySelector(".circle").style.opacity = '1';
+                
+            }, 8300);
+        }    
+        function nascondiScatole() {
+            const scatola2 = document.getElementById("scatola2");
+            const scatola1 = document.getElementById("scatola1");  
+        }
+
+        function tasto2() {
+            monika.style.opacity = 1;
+                natsuki.style.opacity = 1;
+                sayori.style.opacity = 1;
+                yuri.style.opacity = 1;
+                document.querySelector(".button8").style.display = 'none';
+                document.querySelector(".button9").style.display = 'none';
+                document.querySelector(".button10").style.display = 'none';
+                document.querySelector(".button11").style.display = 'none';
+                document.querySelector(".button12").style.display = 'none';
+                document.querySelector(".button13").style.display = 'none';
+                document.querySelector(".button14").style.display = 'none';
+                document.querySelector(".button15").style.display = 'none';
+                document.querySelector(".button16").style.display = 'none';
+                document.querySelector(".button17").style.display = 'none';
+                document.getElementById("barra_volume1").style.opacity = '0';
+                document.getElementById("barra_volume2").style.opacity = '0';
+                document.getElementById("barra_volume3").style.opacity = '0';
+                document.getElementById("barra_volume4").style.opacity = '0';
+                document.getElementById("barra_volume5").style.opacity = '0';
+                document.getElementById("barra_volume6").style.opacity = '0';
+                document.getElementById("barra_volume7").style.opacity = '0';
+                document.getElementById("barra_volume8").style.opacity = '0';
+                document.getElementById("barra_volume9").style.opacity = '0';
+                document.getElementById("barra_volume10").style.opacity = '0';
+                document.getElementById("music_volume").style.display = 'none';
+                document.querySelector(".buttone6").style.display = 'none';
+                document.querySelector(".overlay2").classList.remove("overlay2_animation");
+                document.getElementById("schermata_nome").style.display = 'none';
+                document.querySelector(".buttone7").style.display = 'none';
+                document.getElementById("salva_nome").style.display = 'none';
+                document.getElementById("sound_volume").style.display = 'none';
+                document.getElementById("barra_suono0").style.opacity = '0';
+                document.getElementById("barra_suono1").style.opacity = '0';
+                document.getElementById("barra_suono2").style.opacity = '0';
+                document.getElementById("barra_suono3").style.opacity = '0';
+                document.getElementById("barra_suono4").style.opacity = '0';
+                document.getElementById("barra_suono5").style.opacity = '0';
+                document.getElementById("barra_suono6").style.opacity = '0';
+                document.getElementById("barra_suono7").style.opacity = '0';
+                document.getElementById("barra_suono8").style.opacity = '0';
+                document.getElementById("barra_suono9").style.opacity = '0';
+                document.getElementById("barra_suono10").style.opacity = '0';
+        }
+            function tasto1() {
+            document.querySelector(".buttone6").style.display = 'block';
+            document.querySelector(".overlay2").classList.add("overlay2_animation");
+            document.getElementById("schermata_nome").style.display = 'block';
+            document.getElementById("salva_nome").style.display = 'block';
+            document.getElementById("salva_nome").focus();
+            document.querySelector(".buttone7").style.display = 'block';
+            monika.style.opacity = 1;
+                natsuki.style.opacity = 1;
+                sayori.style.opacity = 1;
+                yuri.style.opacity = 1;
+                document.querySelector(".button8").style.display = 'none';
+                document.querySelector(".button9").style.display = 'none';
+                document.querySelector(".button10").style.display = 'none';
+                document.querySelector(".button11").style.display = 'none';
+                document.querySelector(".button12").style.display = 'none';
+                document.querySelector(".button13").style.display = 'none';
+                document.querySelector(".button14").style.display = 'none';
+                document.querySelector(".button15").style.display = 'none';
+                document.querySelector(".button16").style.display = 'none';
+                document.querySelector(".button17").style.display = 'none';
+                document.getElementById("barra_volume1").style.opacity = '0';
+                document.getElementById("barra_volume2").style.opacity = '0';
+                document.getElementById("barra_volume3").style.opacity = '0';
+                document.getElementById("barra_volume4").style.opacity = '0';
+                document.getElementById("barra_volume5").style.opacity = '0';
+                document.getElementById("barra_volume6").style.opacity = '0';
+                document.getElementById("barra_volume7").style.opacity = '0';
+                document.getElementById("barra_volume8").style.opacity = '0';
+                document.getElementById("barra_volume9").style.opacity = '0';
+                document.getElementById("barra_volume10").style.opacity = '0';
+
+                document.getElementById("barra_suono0").style.opacity = '0';
+                document.getElementById("barra_suono1").style.opacity = '0';
+                document.getElementById("barra_suono2").style.opacity = '0';
+                document.getElementById("barra_suono3").style.opacity = '0';
+                document.getElementById("barra_suono4").style.opacity = '0';
+                document.getElementById("barra_suono5").style.opacity = '0';
+                document.getElementById("barra_suono6").style.opacity = '0';
+                document.getElementById("barra_suono7").style.opacity = '0';
+                document.getElementById("barra_suono8").style.opacity = '0';
+                document.getElementById("barra_suono9").style.opacity = '0';
+                document.getElementById("barra_suono10").style.opacity = '0';
+
+                document.getElementById("music_volume").style.display = 'none';
+                document.getElementById("sound_volume").style.display = 'none';
+        }
+        function tasto3() {
+            document.querySelector(".buttone6").style.display = 'none';
+            document.querySelector(".overlay2").classList.remove("overlay2_animation");
+            document.getElementById("schermata_nome").style.display = 'none';
+            document.getElementById("salva_nome").style.display = 'none';
+            document.querySelector(".buttone7").style.display = 'none';
+            if(monika.style.opacity == 1){
+                monika.style.opacity = 0;
+                natsuki.style.opacity = 0;
+                sayori.style.opacity = 0;
+                yuri.style.opacity = 0;
+                document.querySelector(".button8").style.display = 'block';
+                document.querySelector(".button9").style.display = 'block';
+                document.querySelector(".button10").style.display = 'block';
+                document.querySelector(".button11").style.display = 'block';
+                document.querySelector(".button12").style.display = 'block';
+                document.querySelector(".button13").style.display = 'block';
+                document.querySelector(".button14").style.display = 'block';
+                document.querySelector(".button15").style.display = 'block';
+                document.querySelector(".button16").style.display = 'block';
+                document.querySelector(".button17").style.display = 'block';
+                document.querySelector(".button18").style.display = 'block';
+
+                document.querySelector(".button19").style.display = 'block';
+                document.querySelector(".button20").style.display = 'block';
+                document.querySelector(".button21").style.display = 'block';
+                document.querySelector(".button22").style.display = 'block';
+                document.querySelector(".button23").style.display = 'block';
+                document.querySelector(".button24").style.display = 'block';
+                document.querySelector(".button25").style.display = 'block';
+                document.querySelector(".button26").style.display = 'block';
+                document.querySelector(".button27").style.display = 'block';
+                document.querySelector(".button28").style.display = 'block';
+                document.querySelector(".button29").style.display = 'block';
+
+                document.querySelector(".buttone6").style.display = 'block';
+                if(volume===10){
+                    document.getElementById("barra_volume10").style.opacity = '1';
+                }
+                if(volume===9){
+                    document.getElementById("barra_volume9").style.opacity = '1';
+                }
+                if(volume===8){
+                    document.getElementById("barra_volume8").style.opacity = '1';
+                }
+                if(volume===7){
+                    document.getElementById("barra_volume7").style.opacity = '1';
+                }
+                if(volume===6){
+                    document.getElementById("barra_volume6").style.opacity = '1';
+                }
+                if(volume===5){
+                    document.getElementById("barra_volume5").style.opacity = '1';
+                }
+                if(volume===4){
+                    document.getElementById("barra_volume4").style.opacity = '1';
+                }
+                if(volume===3){
+                    document.getElementById("barra_volume3").style.opacity = '1';
+                }
+                if(volume===2){
+                    document.getElementById("barra_volume2").style.opacity = '1';
+                }
+                if(volume===1){
+                    document.getElementById("barra_volume1").style.opacity = '1';
+                }
+                if(volume===0){
+                    document.getElementById("barra_volume0").style.opacity = '1';
+                }
+
+
+                if(suono===10){
+                    document.getElementById("barra_suono10").style.opacity = '1';
+                }
+                if(suono===9){
+                    document.getElementById("barra_suono9").style.opacity = '1';
+                }
+                if(suono===8){
+                    document.getElementById("barra_suono8").style.opacity = '1';
+                }
+                if(suono===7){
+                    document.getElementById("barra_suono7").style.opacity = '1';
+                }
+                if(suono===6){
+                    document.getElementById("barra_suono6").style.opacity = '1';
+                }
+                if(suono===5){
+                    document.getElementById("barra_suono5").style.opacity = '1';
+                }
+                if(suono===4){
+                    document.getElementById("barra_suono4").style.opacity = '1';
+                }
+                if(suono===3){
+                    document.getElementById("barra_suono3").style.opacity = '1';
+                }
+                if(suono===2){
+                    document.getElementById("barra_suono2").style.opacity = '1';
+                }
+                if(suono===1){
+                    document.getElementById("barra_suono1").style.opacity = '1';
+                }
+                if(suono===0){
+                    document.getElementById("barra_suono0").style.opacity = '1';
+                }
+                document.getElementById("music_volume").style.display = 'block';
+                document.getElementById("sound_volume").style.display = 'block';
+            }else{
+                monika.style.opacity = 1;
+                natsuki.style.opacity = 1;
+                sayori.style.opacity = 1;
+                yuri.style.opacity = 1;
+                document.querySelector(".button8").style.display = 'none';
+                document.querySelector(".button9").style.display = 'none';
+                document.querySelector(".button10").style.display = 'none';
+                document.querySelector(".button11").style.display = 'none';
+                document.querySelector(".button12").style.display = 'none';
+                document.querySelector(".button13").style.display = 'none';
+                document.querySelector(".button14").style.display = 'none';
+                document.querySelector(".button15").style.display = 'none';
+                document.querySelector(".button16").style.display = 'none';
+                document.querySelector(".button17").style.display = 'none';
+                document.getElementById("barra_volume0").style.opacity = '0';
+                document.getElementById("barra_volume1").style.opacity = '0';
+                document.getElementById("barra_volume2").style.opacity = '0';
+                document.getElementById("barra_volume3").style.opacity = '0';
+                document.getElementById("barra_volume4").style.opacity = '0';
+                document.getElementById("barra_volume5").style.opacity = '0';
+                document.getElementById("barra_volume6").style.opacity = '0';
+                document.getElementById("barra_volume7").style.opacity = '0';
+                document.getElementById("barra_volume8").style.opacity = '0';
+                document.getElementById("barra_volume9").style.opacity = '0';
+                document.getElementById("barra_volume10").style.opacity = '0';
+
+                document.getElementById("barra_suono0").style.opacity = '0';
+                document.getElementById("barra_suono1").style.opacity = '0';
+                document.getElementById("barra_suono2").style.opacity = '0';
+                document.getElementById("barra_suono3").style.opacity = '0';
+                document.getElementById("barra_suono4").style.opacity = '0';
+                document.getElementById("barra_suono5").style.opacity = '0';
+                document.getElementById("barra_suono6").style.opacity = '0';
+                document.getElementById("barra_suono7").style.opacity = '0';
+                document.getElementById("barra_suono8").style.opacity = '0';
+                document.getElementById("barra_suono9").style.opacity = '0';
+                document.getElementById("barra_suono10").style.opacity = '0';
+
+                document.getElementById("music_volume").style.display = 'none';
+                document.getElementById("sound_volume").style.display = 'none';
+                document.querySelector(".buttone6").style.display= 'none';
+            }
+        }
+        function Inizio(){
+            const scatola7 = document.getElementById('scatola7');
+            scatola7.classList.remove("ferma");
+        }
+        function CaricaPartita(){
+            document.querySelector(".buttone6").style.display= 'block';
+            const buttone7 = document.querySelector('.boxSalvataggio2');
+            boxSalvataggio2.style.opacity = '1';
+            document.getElementById('scatola6').style.opacity = 0;
+            document.getElementById('scatola7').style.opacity = 0;
+            document.getElementById('scatola8').style.opacity = 0;
+            document.getElementById('scatola9').style.opacity = 0;
+        }
+        const bara_volume0 = document.getElementById("barra_volume0");
+        const bara_volume1 = document.getElementById("barra_volume1");
+        const bara_volume2 = document.getElementById("barra_volume2");
+        const bara_volume3 = document.getElementById("barra_volume3");
+        const bara_volume4 = document.getElementById("barra_volume4");
+        const bara_volume5 = document.getElementById("barra_volume5");
+        const bara_volume6 = document.getElementById("barra_volume6");
+        const bara_volume7 = document.getElementById("barra_volume7");
+        const bara_volume8 = document.getElementById("barra_volume8");
+        const bara_volume9 = document.getElementById("barra_volume9");
+        const bara_volume10 = document.getElementById("barra_volume10");
+
+        const bara_suono0 = document.getElementById("barra_suono0");
+        const bara_suono1 = document.getElementById("barra_suono1");
+        const bara_suono2 = document.getElementById("barra_suono2");
+        const bara_suono3 = document.getElementById("barra_suono3");
+        const bara_suono4 = document.getElementById("barra_suono4");
+        const bara_suono5 = document.getElementById("barra_suono5");
+        const bara_suono6 = document.getElementById("barra_suono6");
+        const bara_suono7 = document.getElementById("barra_suono7");
+        const bara_suono8 = document.getElementById("barra_suono8");
+        const bara_suono9 = document.getElementById("barra_suono9");
+        const bara_suono10 = document.getElementById("barra_suono10");
+
+        function barra_volume0(){
+            bara_volume0.style.opacity = '1';
+            bara_volume1.style.opacity = '0';
+            bara_volume2.style.opacity = '0';
+            bara_volume3.style.opacity = '0';
+            bara_volume4.style.opacity = '0';
+            bara_volume5.style.opacity = '0';
+            bara_volume6.style.opacity = '0';
+            bara_volume7.style.opacity = '0';
+            bara_volume8.style.opacity = '0';
+            bara_volume9.style.opacity = '0';
+            bara_volume10.style.opacity = '0';
+            volume=0;
+            document.getElementById("doki_main_theme").volume = 0;
+        }
+        function barra_volume1(){
+            bara_volume0.style.opacity = '0';
+            bara_volume1.style.opacity = '1';
+            bara_volume2.style.opacity = '0';
+            bara_volume3.style.opacity = '0';
+            bara_volume4.style.opacity = '0';
+            bara_volume5.style.opacity = '0';
+            bara_volume6.style.opacity = '0';
+            bara_volume7.style.opacity = '0';
+            bara_volume8.style.opacity = '0';
+            bara_volume9.style.opacity = '0';
+            bara_volume10.style.opacity = '0';
+            volume=1;
+            document.getElementById("doki_main_theme").volume = 0.1;
+        }
+        function barra_volume2(){
+            bara_volume0.style.opacity = '0';
+            bara_volume1.style.opacity = '0';
+            bara_volume2.style.opacity = '1';
+            bara_volume3.style.opacity = '0';
+            bara_volume4.style.opacity = '0';
+            bara_volume5.style.opacity = '0';
+            bara_volume6.style.opacity = '0';
+            bara_volume7.style.opacity = '0';
+            bara_volume8.style.opacity = '0';
+            bara_volume9.style.opacity = '0';
+            bara_volume10.style.opacity = '0';
+            volume=2;
+            document.getElementById("doki_main_theme").volume = 0.2;
+        }
+        function barra_volume3(){
+            bara_volume0.style.opacity = '0';
+            bara_volume1.style.opacity = '0';
+            bara_volume2.style.opacity = '0';
+            bara_volume3.style.opacity = '1';
+            bara_volume4.style.opacity = '0';
+            bara_volume5.style.opacity = '0';
+            bara_volume6.style.opacity = '0';
+            bara_volume7.style.opacity = '0';
+            bara_volume8.style.opacity = '0';
+            bara_volume9.style.opacity = '0';
+            bara_volume10.style.opacity = '0';
+            volume=3;
+            document.getElementById("doki_main_theme").volume = 0.3;
+        }
+        function barra_volume4(){
+            bara_volume0.style.opacity = '0';
+            bara_volume1.style.opacity = '0';
+            bara_volume2.style.opacity = '0';
+            bara_volume3.style.opacity = '0';
+            bara_volume4.style.opacity = '1';
+            bara_volume5.style.opacity = '0';
+            bara_volume6.style.opacity = '0';
+            bara_volume7.style.opacity = '0';
+            bara_volume8.style.opacity = '0';
+            bara_volume9.style.opacity = '0';
+            bara_volume10.style.opacity = '0';
+            volume=4;
+            document.getElementById("doki_main_theme").volume = 0.4;
+        }
+        function barra_volume5(){
+            bara_volume0.style.opacity = '0';
+            bara_volume1.style.opacity = '0';
+            bara_volume2.style.opacity = '0';
+            bara_volume3.style.opacity = '0';
+            bara_volume4.style.opacity = '0';
+            bara_volume5.style.opacity = '1';
+            bara_volume6.style.opacity = '0';
+            bara_volume7.style.opacity = '0';
+            bara_volume8.style.opacity = '0';
+            bara_volume9.style.opacity = '0';
+            bara_volume10.style.opacity = '0';
+            volume=5;
+            document.getElementById("doki_main_theme").volume = 0.5;
+        }
+        function barra_volume6(){
+            bara_volume0.style.opacity = '0';
+            bara_volume1.style.opacity = '0';
+            bara_volume2.style.opacity = '0';
+            bara_volume3.style.opacity = '0';
+            bara_volume4.style.opacity = '0';
+            bara_volume5.style.opacity = '0';
+            bara_volume6.style.opacity = '1';
+            bara_volume7.style.opacity = '0';
+            bara_volume8.style.opacity = '0';
+            bara_volume9.style.opacity = '0';
+            bara_volume10.style.opacity = '0';
+            volume=6;
+            document.getElementById("doki_main_theme").volume = 0.6;
+        }
+        function barra_volume7(){
+            bara_volume0.style.opacity = '0';
+            bara_volume1.style.opacity = '0';
+            bara_volume2.style.opacity = '0';
+            bara_volume3.style.opacity = '0';
+            bara_volume4.style.opacity = '0';
+            bara_volume5.style.opacity = '0';
+            bara_volume6.style.opacity = '0';
+            bara_volume7.style.opacity = '1';
+            bara_volume8.style.opacity = '0';
+            bara_volume9.style.opacity = '0';
+            bara_volume10.style.opacity = '0';
+            volume=7;
+            document.getElementById("doki_main_theme").volume = 0.7;
+        }
+        function barra_volume8(){
+            bara_volume0.style.opacity = '0';
+            bara_volume1.style.opacity = '0';
+            bara_volume2.style.opacity = '0';
+            bara_volume3.style.opacity = '0';
+            bara_volume4.style.opacity = '0';
+            bara_volume5.style.opacity = '0';
+            bara_volume6.style.opacity = '0';
+            bara_volume7.style.opacity = '0';
+            bara_volume8.style.opacity = '1';
+            bara_volume9.style.opacity = '0';
+            bara_volume10.style.opacity = '0';
+            volume=8;
+            document.getElementById("doki_main_theme").volume = 0.8;
+        }
+        function barra_volume9(){
+            bara_volume0.style.opacity = '0';
+            bara_volume1.style.opacity = '0';
+            bara_volume2.style.opacity = '0';
+            bara_volume3.style.opacity = '0';
+            bara_volume4.style.opacity = '0';
+            bara_volume5.style.opacity = '0';
+            bara_volume6.style.opacity = '0';
+            bara_volume7.style.opacity = '0';
+            bara_volume8.style.opacity = '0';
+            bara_volume9.style.opacity = '1';
+            bara_volume10.style.opacity = '0';
+            volume=9;
+            document.getElementById("doki_main_theme").volume = 0.9;
+        }
+        function barra_volume10(){
+            bara_volume0.style.opacity = '0';
+            bara_volume1.style.opacity = '0';
+            bara_volume2.style.opacity = '0';
+            bara_volume3.style.opacity = '0';
+            bara_volume4.style.opacity = '0';
+            bara_volume5.style.opacity = '0';
+            bara_volume6.style.opacity = '0';
+            bara_volume7.style.opacity = '0';
+            bara_volume8.style.opacity = '0';
+            bara_volume9.style.opacity = '0';
+            bara_volume10.style.opacity = '1';
+            volume=10;
+            document.getElementById("doki_main_theme").volume = 1;
+        }
+        function barra_suono0(){
+            bara_suono0.style.opacity = '1';
+            bara_suono1.style.opacity = '0';
+            bara_suono2.style.opacity = '0';
+            bara_suono3.style.opacity = '0';
+            bara_suono4.style.opacity = '0';
+            bara_suono5.style.opacity = '0';
+            bara_suono6.style.opacity = '0';
+            bara_suono7.style.opacity = '0';
+            bara_suono8.style.opacity = '0';
+            bara_suono9.style.opacity = '0';
+            bara_suono10.style.opacity = '0';
+            suono=0;
+            
+        }
+        function barra_suono1(){
+            bara_suono0.style.opacity = '0';
+            bara_suono1.style.opacity = '1';
+            bara_suono2.style.opacity = '0';
+            bara_suono3.style.opacity = '0';
+            bara_suono4.style.opacity = '0';
+            bara_suono5.style.opacity = '0';
+            bara_suono6.style.opacity = '0';
+            bara_suono7.style.opacity = '0';
+            bara_suono8.style.opacity = '0';
+            bara_suono9.style.opacity = '0';
+            bara_suono10.style.opacity = '0';
+            suono=1;
+        }
+        function barra_suono2(){
+            bara_suono0.style.opacity = '0';
+            bara_suono1.style.opacity = '0';
+            bara_suono2.style.opacity = '1';
+            bara_suono3.style.opacity = '0';
+            bara_suono4.style.opacity = '0';
+            bara_suono5.style.opacity = '0';
+            bara_suono6.style.opacity = '0';
+            bara_suono7.style.opacity = '0';
+            bara_suono8.style.opacity = '0';
+            bara_suono9.style.opacity = '0';
+            bara_suono10.style.opacity = '0';
+            suono=2;
+        }
+        function barra_suono3(){
+            bara_suono0.style.opacity = '0';
+            bara_suono1.style.opacity = '0';
+            bara_suono2.style.opacity = '0';
+            bara_suono3.style.opacity = '1';
+            bara_suono4.style.opacity = '0';
+            bara_suono5.style.opacity = '0';
+            bara_suono6.style.opacity = '0';
+            bara_suono7.style.opacity = '0';
+            bara_suono8.style.opacity = '0';
+            bara_suono9.style.opacity = '0';
+            bara_suono10.style.opacity = '0';
+            suono=3;
+        }
+        function barra_suono4(){
+            bara_suono0.style.opacity = '0';
+            bara_suono1.style.opacity = '0';
+            bara_suono2.style.opacity = '0';
+            bara_suono3.style.opacity = '0';
+            bara_suono4.style.opacity = '1';
+            bara_suono5.style.opacity = '0';
+            bara_suono6.style.opacity = '0';
+            bara_suono7.style.opacity = '0';
+            bara_suono8.style.opacity = '0';
+            bara_suono9.style.opacity = '0';
+            bara_suono10.style.opacity = '0';
+            suono=4;
+        }
+        function barra_suono5(){
+            bara_suono0.style.opacity = '0';
+            bara_suono1.style.opacity = '0';
+            bara_suono2.style.opacity = '0';
+            bara_suono3.style.opacity = '0';
+            bara_suono4.style.opacity = '0';
+            bara_suono5.style.opacity = '1';
+            bara_suono6.style.opacity = '0';
+            bara_suono7.style.opacity = '0';
+            bara_suono8.style.opacity = '0';
+            bara_suono9.style.opacity = '0';
+            bara_suono10.style.opacity = '0';
+            suono=5;
+        }
+        function barra_suono6(){
+            bara_suono0.style.opacity = '0';
+            bara_suono1.style.opacity = '0';
+            bara_suono2.style.opacity = '0';
+            bara_suono3.style.opacity = '0';
+            bara_suono4.style.opacity = '0';
+            bara_suono5.style.opacity = '0';
+            bara_suono6.style.opacity = '1';
+            bara_suono7.style.opacity = '0';
+            bara_suono8.style.opacity = '0';
+            bara_suono9.style.opacity = '0';
+            bara_suono10.style.opacity = '0';
+            suono=6;
+        }
+        function barra_suono7(){
+            bara_suono0.style.opacity = '0';
+            bara_suono1.style.opacity = '0';
+            bara_suono2.style.opacity = '0';
+            bara_suono3.style.opacity = '0';
+            bara_suono4.style.opacity = '0';
+            bara_suono5.style.opacity = '0';
+            bara_suono6.style.opacity = '0';
+            bara_suono7.style.opacity = '1';
+            bara_suono8.style.opacity = '0';
+            bara_suono9.style.opacity = '0';
+            bara_suono10.style.opacity = '0';
+            suono=7;
+        }
+        function barra_suono8(){
+            bara_suono0.style.opacity = '0';
+            bara_suono1.style.opacity = '0';
+            bara_suono2.style.opacity = '0';
+            bara_suono3.style.opacity = '0';
+            bara_suono4.style.opacity = '0';
+            bara_suono5.style.opacity = '0';
+            bara_suono6.style.opacity = '0';
+            bara_suono7.style.opacity = '0';
+            bara_suono8.style.opacity = '1';
+            bara_suono9.style.opacity = '0';
+            bara_suono10.style.opacity = '0';
+            suono=8;
+        }
+        function barra_suono9(){
+            bara_suono0.style.opacity = '0';
+            bara_suono1.style.opacity = '0';
+            bara_suono2.style.opacity = '0';
+            bara_suono3.style.opacity = '0';
+            bara_suono4.style.opacity = '0';
+            bara_suono5.style.opacity = '0';
+            bara_suono6.style.opacity = '0';
+            bara_suono7.style.opacity = '0';
+            bara_suono8.style.opacity = '0';
+            bara_suono9.style.opacity = '1';
+            bara_suono10.style.opacity = '0';
+            suono=9;
+        }
+        function barra_suono10(){
+            bara_suono0.style.opacity = '0';
+            bara_suono1.style.opacity = '0';
+            bara_suono2.style.opacity = '0';
+            bara_suono3.style.opacity = '0';
+            bara_suono4.style.opacity = '0';
+            bara_suono5.style.opacity = '0';
+            bara_suono6.style.opacity = '0';
+            bara_suono7.style.opacity = '0';
+            bara_suono8.style.opacity = '0';
+            bara_suono9.style.opacity = '0';
+            bara_suono10.style.opacity = '1';
+            suono=10;
+        }
+        function salva_nome() {
+            const overlay = document.querySelector(".overlay");
+            const input = document.getElementById('salva_nome').value;
+            const nome = input.trim();
+            if(nome !== ""){
+                overlay.style.zIndex = '12';
+                overlay.classList.add("overlay_animation");
+                localStorage.setItem('salva_nome', nome);
+                localStorage.setItem('salva_volume', volume);
+                setTimeout(function() {
+                    window.location.href = 'ambiente_strada.html';
+                }, 3000);
+            }
+
+        }
+        
+    </script>
+
+                
+        </audio>
+        <script>
+            const audio = document.getElementById('doki_main_theme');
+    
+            audio.addEventListener('play', () => {
+                messaggio.style.display = 'block'
+            });  
+
+        </script>
+    
+</body>
