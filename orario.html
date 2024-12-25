@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orario in Tempo Reale</title>
+    <style>
+        #orario {
+            font-size: 2em;
+            font-family: Arial, sans-serif;
+            color: rgb(123, 5, 123);
+            font-weight:500;
+            
+        }
+    </style>
+</head>
+<body>
+    <h1>Orario in Tempo Reale</h1>
+    <div id="orario"></div>
+
+    <script>
+        function aggiornaOrario() {
+            const ora = new Date();
+            const ore = String(ora.getHours()).padStart(2, '0');
+            const minuti = String(ora.getMinutes()).padStart(2, '0');
+            const orario = ore + ':' + minuti;
+            document.getElementById('orario').textContent = orario;
+        }
+
+        setInterval(aggiornaOrario, 1000); // Aggiorna ogni secondo
+        aggiornaOrario(); // Mostra subito l'orario
+    </script>
+</body>
+</html>

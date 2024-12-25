@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DDLC</title>
+    <style>
+        .button1{
+            width: 30%;
+            height: 7vh;
+            background-color: rgb(250, 219, 232);
+            position:fixed;
+            cursor: pointer;
+            margin-top: 24.5%;
+            margin-left: 35%;
+            border: solid rgb(253, 192, 221);
+            border-width: 10px 5px 10px 5px;
+            transition: background-color 0s ease;
+            transition: color 0s ease;
+            display: none;
+            z-index: 4;
+        }
+        .button1:hover{
+            background-color: white;
+            color: rgb(249, 163, 177);
+        }
+        .button2{
+            width: 30%;
+            height: 3.5vh;
+            background-color: rgb(250, 219, 232);
+            position:fixed;
+            cursor: pointer;
+            margin-top: 31%;
+            margin-left: 35%;
+            border:7px solid rgb(253, 192, 221);
+            transition: background-color 0s ease;
+            transition: color 0s ease;
+            z-index: 4;
+            display: none;
+        }
+        .button2:hover{
+            background-color: white;
+            color: rgb(249, 163, 177);
+        }
+        .button3{
+            width: 30%;
+            height: 3.5vh;
+            background-color: rgb(250, 219, 232);
+            position:fixed;
+            cursor: pointer;
+            margin-top: 25%;
+            margin-left: 34%;
+            border:7px solid rgb(253, 192, 221);
+            transition: background-color 0s ease;
+            transition: color 0s ease;
+            z-index: 4;
+            display: none;
+        }
+        .button3:hover{
+            background-color: white;
+            color: rgb(249, 163, 177);
+        }
+    #avvertenza1{
+        position:fixed;
+        width: 100%;
+        height: 100vh;
+        z-index: 2;
+    }
+    .overlay1 {
+        position: fixed;
+        top: -2000px;
+        left: 0;
+        width: 40000px;
+        height: 450%;
+        background-color: black; 
+        opacity: 1; 
+        z-index: 3;
+        transition: opacity 2s ease-out;
+    }
+    .overlay{
+        opacity:0;
+    }
+    #avvertenza2{
+        position:fixed;
+        width: 100%;
+        height: 100vh;
+        opacity: 0;
+    }
+    .overlay2 {
+        position: fixed;
+        top: -2000px;
+        left: 0;
+        width: 40000px;
+        height: 450%;
+        background-color: white; 
+        opacity: 1; 
+        z-index: 1;
+        transition: opacity 2s ease-out;
+    }
+    .overlay_white{
+        opacity:0;
+    }
+    .rettangolo{
+        z-index: 3;
+        position: fixed;
+        opacity: 0;
+        transition: opacity 0.1s ease-out;
+    }
+    .rettangolo_animation{
+        opacity: 1;
+    }
+    .rettangolo_animation2{
+        opacity: 0;
+    }
+    .text-container {
+        overflow: hidden; 
+        display: inline-block;
+        background-color: white;
+        position: fixed;
+        z-index: 4;
+    }
+    .animated-text {
+        display: inline-block;
+        white-space: normal;
+        clip-path: inset(0 100% 0 0); 
+        animation: reveal-text 1.5s linear forwards ; 
+        opacity: 0;
+        line-height: 1.3;
+    }
+    @keyframes reveal-text {
+        0% {
+            clip-path: inset(0 100% 0 0); 
+        }
+        100% {
+            clip-path: inset(0 0 0 0); 
+        }
+        }
+    #area{
+        width: 100%;
+        height: 100vh;
+        position:fixed;
+        opacity: 0;
+        z-index: 4;
+    }
+    </style>
+</head>
+<body>
+    <div><video muted id="video" style="width: 100%; height: 100vh; z-index: -5; position: fixed;"> <source src="Doki_index_video.mp4.mp4" > </video></div>
+    <div id="area" style="width: 110%; height: 110vh; position: fixed; background-color: white;"></div>
+    <div class="text-container">
+        <span class="animated-text" style="width: 65%; height: 21vh; max-width: 62%;  z-index: 4;color: white; -webkit-text-stroke: 0.08vw black;  font-family: 'Bebas Neue', sans-serif; font-weight: bolder; position: fixed; font-size: 1.5vw; margin-left: 18%; margin-top: 42%;">This game is not suitable for children or who are easily disturbed.</span>
+      </div>
+    <div class="overlay1"></div>
+    <div class="overlay2"></div>
+    <div id="avvertenza1">
+        <img src="avvertenze.png" alt="" style="width: 110%; height: 110vh; position: fixed; margin-left: -90px; margin-top: -50px;">
+    </div>
+    <div id="avvertenza2">
+        <img src="schermata_gialla.png" alt="" style="width: 100%; height: 100vh; position: fixed; ">
+    </div>
+    <div class="rettangolo">
+        <img  src="textbox_DDLC (1).jpg" alt="" style="width: 68%; height: 21vh; position: fixed; margin-left: 16%; margin-top: 40%;" >
+    </div>
+    <div class="button1" onclick="tasto1()" > <p style="text-align: center; font-size: 3vh; font-weight: 500; margin-top: -0.9%; transition: box-shadow 0.3s; " >Yes (contains <br> spoilers)</p></div>
+    <div class="button2" onclick="tasto2()"><p style="text-align: center; font-size: 3vh; font-weight: 500; margin-top: -0.4%; transition: box-shadow 0.3s; " >No</p></div>
+    <div class="button3" onclick="tasto3()"><p style="text-align: center; font-size: 3vh; font-weight: 500; margin-top: -0.4%; transition: box-shadow 0.3s; " >I agree.</p></div>
+    <audio id="bip_sound1" style="opacity: 0;">
+        <source src="bip_sound1.mp3" type="audio/mpeg">
+    <audio id="bip_sound2" style="opacity: 0;">
+        <source src="bip_sound2.mp3" type="audio/mpeg">
+    
+
+
+    <script>
+        var bip1 = document.getElementById("bip_sound1");
+        var bip2 = document.getElementById("bip_sound2");
+        let x=0;
+        let y=0;
+        bip1.pause();
+        bip2.pause();
+        function tasto1() {
+            y=1
+            button1.style.display = 'none';
+            button2.style.display = 'none';
+            const animatedText = document.querySelector('.animated-text');
+            animatedText.innerHTML = "Thank you for your interest in Doki Doki Literature Club.";
+            animatedText.classList.remove('animated-text');
+            void animatedText.offsetWidth; 
+            animatedText.classList.add('animated-text');
+            x=1;
+            x++;
+            bip2.play();
+        }
+        function tasto2() {
+            y=2
+            button1.style.display = 'none';
+            button2.style.display = 'none';
+            bip2.play();
+            const animatedText = document.querySelector('.animated-text'); 
+            animatedText.innerHTML = "By playing Doki Doki Literature Club, you agree that you have noted the game's age rating in your region, and you consent to your exposure of highly disturbing content.";
+            animatedText.classList.remove('animated-text');
+            void animatedText.offsetWidth; 
+            animatedText.classList.add('animated-text');
+            setTimeout(function() {
+            document.querySelector(".button3").style.display = 'block';
+             bip1.play();
+            }, 1500);
+        }
+        function tasto3(){
+            document.getElementById("video").style.zIndex = '2';
+            document.getElementById("video").play();
+            document.getElementById("avvertenza2").style.display = 'none';
+            document.querySelector(".button3").style.display = 'none';
+            document.querySelector(".rettangolo").classList.add("rettangolo_animation2");
+            document.querySelector('.animated-text').style.display = 'none';
+            bip2.play();
+            setTimeout(function() {
+            window.location.href = 'ambiente_menu.html';
+            }, 3000);
+        }
+        const button1 = document.querySelector(".button1");
+        const button2 = document.querySelector(".button2");
+        function handleClick(event) {
+        if (event.button === 0 && x==0 && y==0) {  
+            const animatedText = document.querySelector('.animated-text');
+            animatedText.innerHTML = "Individuals suffering from anxiety or depression may not have a positive experience. <br> playing this game.";
+            animatedText.classList.remove('animated-text');
+            void animatedText.offsetWidth; 
+            animatedText.classList.add('animated-text');
+            x++;
+        }
+        else{
+            if(event.button === 0 && x==1 && y==0){
+                const animatedText = document.querySelector('.animated-text'); 
+                animatedText.innerHTML = "Would you like to review detailed content warnings, which contain spoiler? Alternatively, in-game content warnings can be enabled in the settings menu at any time.";
+                animatedText.classList.remove('animated-text');
+                void animatedText.offsetWidth; 
+                animatedText.classList.add('animated-text');
+                x=-1;
+                setTimeout(function() {
+                    button1.style.display = 'block';
+                    button2.style.display = 'block';
+                    bip1.play();
+                }, 1500);
+            }
+            else{
+                if(event.button === 0 && x==2 && y==1){
+                    const animatedText = document.querySelector('.animated-text'); 
+                    animatedText.innerHTML = "Doki Doki Literature Club is  horror game. Please do not take this lightly.";
+                    animatedText.classList.remove('animated-text');
+                    void animatedText.offsetWidth; 
+                    animatedText.classList.add('animated-text');
+                    x++;
+                }
+                else{
+                    if(event.button === 0 && x==3 && y==1){
+                    const animatedText = document.querySelector('.animated-text'); 
+                    animatedText.innerHTML = "Doki Doki Literature Club may not be suitable for you if you are affected by any of the following themes:";
+                    animatedText.classList.remove('animated-text');
+                    void animatedText.offsetWidth; 
+                    animatedText.classList.add('animated-text');
+                    x++;
+                }
+                    else{
+                        if(event.button === 0 && x==4 && y==1){
+                        const animatedText = document.querySelector('.animated-text'); 
+                        animatedText.innerHTML = "Depression";
+                        animatedText.classList.remove('animated-text');
+                        void animatedText.offsetWidth; 
+                        animatedText.classList.add('animated-text');
+                        x++;
+                    }
+                    else{
+                        if(event.button === 0 && x==5 && y==1){
+                        const animatedText = document.querySelector('.animated-text'); 
+                        animatedText.innerHTML = "Suicide";
+                        animatedText.classList.remove('animated-text');
+                        void animatedText.offsetWidth; 
+                        animatedText.classList.add('animated-text');
+                        x++;
+                    }
+                    else{
+                        if(event.button === 0 && x==6 && y==1){
+                        const animatedText = document.querySelector('.animated-text'); 
+                        animatedText.innerHTML = "Self-harm";
+                        animatedText.classList.remove('animated-text');
+                        void animatedText.offsetWidth; 
+                        animatedText.classList.add('animated-text');
+                        x++;
+                    }
+                    else{
+                        if(event.button === 0 && x==7 && y==1){
+                        const animatedText = document.querySelector('.animated-text'); 
+                        animatedText.innerHTML = "Abuse";
+                        animatedText.classList.remove('animated-text');
+                        void animatedText.offsetWidth; 
+                        animatedText.classList.add('animated-text');
+                        x++;
+                        }
+                        else{
+                            if(event.button === 0 && x==8 && y==1){
+                            const animatedText = document.querySelector('.animated-text'); 
+                            animatedText.innerHTML = "These themes are not merely suggested, but are often portrayed as realistically as possible, and thus may disturb you as if they were real.";
+                            animatedText.classList.remove('animated-text');
+                            void animatedText.offsetWidth; 
+                            animatedText.classList.add('animated-text');
+                            x++;
+                        }
+                        else{
+                            if(event.button === 0 && x==9 && y==1){
+                            const animatedText = document.querySelector('.animated-text'); 
+                            animatedText.innerHTML = "Futhermore, the above list is not 100% exhaustive.";
+                            animatedText.classList.remove('animated-text');
+                            void animatedText.offsetWidth; 
+                            animatedText.classList.add('animated-text');
+                            x++;
+                        }
+                        else{
+                            if(event.button === 0 && x==10 && y==1){
+                            const animatedText = document.querySelector('.animated-text'); 
+                            animatedText.innerHTML = "If you would like to be warned when potentially sensitive content is about to occur while playing the game, detailed content warnings can be enabled in the settings menu";
+                            animatedText.classList.remove('animated-text');
+                            void animatedText.offsetWidth; 
+                            animatedText.classList.add('animated-text');
+                            x++;
+                        }
+                        else{
+                            if(event.button === 0 && x==11 && y==1){
+                            const animatedText = document.querySelector('.animated-text'); 
+                            animatedText.innerHTML = "For those with extra concern for their mental health, our recommendation of the safest approach is to avoid playing Doki Doki Literature Club.";
+                            animatedText.classList.remove('animated-text');
+                            void animatedText.offsetWidth; 
+                            animatedText.classList.add('animated-text');
+                            x++;
+                        }
+                        else{
+                            if(event.button === 0 && x==12 && y==1){
+                            const animatedText = document.querySelector('.animated-text'); 
+                            animatedText.innerHTML = "We trust that given your understanding of your mental health, you are able to make the decision that is right for you.";
+                            animatedText.classList.remove('animated-text');
+                            void animatedText.offsetWidth; 
+                            animatedText.classList.add('animated-text');
+                            x++;
+                        }
+                        else{
+                            if(event.button === 0 && x==13 && y==1){
+                            const animatedText = document.querySelector('.animated-text'); 
+                            animatedText.innerHTML = "Thank you for your consideration and for staying safe.";
+                            animatedText.classList.remove('animated-text');
+                            void animatedText.offsetWidth; 
+                            animatedText.classList.add('animated-text');
+                            x++;
+                        }
+                        else{
+                            if(event.button === 0 && x==14 && y==1){
+                            const animatedText = document.querySelector('.animated-text'); 
+                            animatedText.innerHTML = "By playing Doki Doki Literature Club, you agree that you have noted the game's age rating in your region, and you consent to your exposure of highly disturbing content.";
+                            animatedText.classList.remove('animated-text');
+                            void animatedText.offsetWidth; 
+                            animatedText.classList.add('animated-text');
+                            x++;
+                            setTimeout(function() {
+                            document.querySelector(".button3").style.display = 'block';
+                            bip1.play();
+                            }, 1500);
+                            
+                        }
+                    }
+                    }
+                    }
+                }
+                        }
+                        }
+                    }
+                    }
+                       
+                    
+                }
+                }
+                }
+                }
+            }
+        }    
+        }
+        window.onload = function(){
+            
+            const avvertenza1 = document.getElementById("avvertenza1");
+            const overlay = document.querySelector(".overlay1");
+            const avvertenza2 = document.getElementById("avvertenza2");
+            const overlay2 = document.querySelector(".overlay2");
+            const rettangolo = document.querySelector(".rettangolo");
+            overlay.classList.add("overlay");
+            setTimeout(function() {
+                avvertenza1.style.display = 'none';
+                avvertenza2.style.opacity = '1';
+                overlay.style.display = 'none';
+                
+            }, 3000);
+            setTimeout(function() {
+                overlay2.classList.add("overlay_white");
+            }, 4000);
+            setTimeout(function() {
+                rettangolo.classList.add("rettangolo_animation");
+                document.getElementById('area').addEventListener('click', handleClick);
+                const animatedText = document.querySelector('.animated-text');
+                animatedText.style.opacity = '1';
+                animatedText.style.opacity = '1';
+                animatedText.classList.remove('animated-text');
+                void animatedText.offsetWidth;
+                animatedText.classList.add('animated-text');
+            }, 7000);
+        }
+        document.querySelector(".button1").addEventListener("mouseover", function() {
+            bip1.play();
+        });
+        document.querySelector(".button2").addEventListener("mouseover", function() {
+            bip1.play();
+        });
+        document.querySelector(".button3").addEventListener("mouseover", function() {
+            bip1.play();
+        });
+    
+        
+
+
+
+    </script>
+</body>
+</html>
